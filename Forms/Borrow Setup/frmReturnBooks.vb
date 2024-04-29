@@ -28,16 +28,18 @@ Public Class frmReturnBooks
         Dim copyID As Integer = GetCopyIDFunction(txtAcn.Text)
 
         Try
-            If txtStatus.SelectedIndex = 0 Then
-                'good condition
+            If txtStatus.SelectedItem = "Good Condition" Then
                 ReturnBookInGood(getBorrowID, copyID, txtStudentID.Text)
-            ElseIf txtStatus.SelectedIndex = 1 Then
-                'overdue condition
+                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in good condition.")
+            ElseIf txtStatus.SelectedItem = "Overdue" Then
                 ReturnOverdue(getBorrowID, txtPenalty.Text)
-            ElseIf txtStatus.SelectedIndex = 2 Then
-                'damaged condition
+                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} overdue.")
+            ElseIf txtStatus.SelectedItem = "Damaged" Then
                 ReturnDamaged(getBorrowID, txtPenalty.Text)
-            ElseIf txtStatus.SelectedIndex = 3 Then
+                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in damaged condition.")
+            ElseIf txtStatus.SelectedItem = "Lost" Then
+                ReturnLost(getBorrowID, txtPenalty.Text)
+                MsgBox($"{txtFirstname.Text} {txtLastname.Text} lost the {txtTitle.Text} book.")
             End If
 
             getBorrowID = Nothing

@@ -43,23 +43,22 @@
     Public smsMessage As String = ""
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ' Reset smsMessage before adding new titles
         smsMessage = ""
 
         For Each row As DataGridViewRow In dgBooks.Rows
             Dim title As String = row.Cells("distinctTitle").Value.ToString()
-            smsMessage &= title & ", " ' Concatenate titles with commas
+            smsMessage &= title & ", "
             Dim accessionNo As String = row.Cells("acnNo").Value.ToString()
             Dim copyID As Integer = GetCopyIDFunction(accessionNo)
 
             BorrowBooks(copyID, getBorrowerID)
         Next
 
-        ' Remove the trailing comma and space
         smsMessage = smsMessage.TrimEnd(", ".ToCharArray())
 
         MessageBox.Show("Book has been borrowed successfully.")
-        SMSBorrow(getBorrowerID)
+        AuditTrail($"{txtFirstname.Text} {txtLastname.Text} borrowed {txtTitle.Text}.")
+        'SMSBorrow(getBorrowerID)
         Me.Close()
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click

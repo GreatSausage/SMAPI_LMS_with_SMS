@@ -1,0 +1,325 @@
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmMain.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.Resources.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Databases\dbLMS.mdf
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Databases\dbLMS_log.ldf
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\Guna.UI2.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddUsers.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddSuppliers.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddAuthors.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddPublishers.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddGenre.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddShelf.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBookInventory.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddBooks.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddCopies.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmFindAuthor.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmFindPublisher.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmMainte.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddGrade.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddBorrowers.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmFindSuppliers.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmIssueReturn.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAddFaculty.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBorrowBooks.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBookFinder.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBorrowerFinder.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBookInfo.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmFindGenres.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmBrowsing.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmDashboard.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAuditTrail.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmAttendanceMonitoring.resources
+C:\Users\Clifford\source\repos\Software Engineering\Software Engineering\obj\Debug\Software_Engineering.frmReturnBooks.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Databases\dbLMS.mdf
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Databases\dbLMS_log.ldf
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\Guna.UI2.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddBooks.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddCopies.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBookInfo.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBookInventory.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmFindAuthor.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmFindPublisher.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmFindSuppliers.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmFindGenres.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBookFinder.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBorrowBooks.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBorrowerFinder.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmIssueReturn.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmReturnBooks.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddBorrowers.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddFaculty.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddGrade.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddAuthors.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddGenre.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddPublishers.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddShelf.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddSuppliers.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAddUsers.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmMainte.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAttendanceMonitoring.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmAuditTrail.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmBrowsing.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmDashboard.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.frmMain.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software_Engineering.Resources.resources
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\Software_Engineering-master\Software Engineering\obj\Debug\Software Engineering.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Databases\dbLMS.mdf
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Databases\dbLMS_log.ldf
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\takte-master\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddBooks.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddCopies.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBookInfo.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBookInventory.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmFindAuthor.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmFindPublisher.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmFindSuppliers.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmFindGenres.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBookFinder.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBorrowBooks.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBorrowerFinder.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmIssueReturn.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmReturnBooks.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddBorrowers.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddFaculty.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddGrade.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddAuthors.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddGenre.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddPublishers.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddShelf.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddSuppliers.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAddUsers.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmMainte.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAttendanceMonitoring.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmAuditTrail.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmBrowsing.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmDashboard.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.frmMain.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software_Engineering.Resources.resources
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\takte-master\obj\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Databases\dbLMS.mdf
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Databases\dbLMS_log.ldf
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddBooks.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddCopies.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBookInfo.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBookInventory.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmFindAuthor.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmFindPublisher.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmFindSuppliers.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmFindGenres.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBookFinder.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBorrowBooks.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBorrowerFinder.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmIssueReturn.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmReturnBooks.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddBorrowers.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddFaculty.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddGrade.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddAuthors.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddGenre.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddPublishers.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddShelf.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddSuppliers.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAddUsers.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmMainte.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAttendanceMonitoring.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmAuditTrail.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmBrowsing.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmDashboard.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmMain.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.Resources.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.VSDesigner.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.Interop.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\VsWebSite.Interop.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\EnvDTE.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\stdole.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\bin\Debug\Microsoft.VisualStudio.GraphModel.xml
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software_Engineering.frmReports.resources
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Interop.CrystalAnalysisCommonControlsLib.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Interop.CrystalReportViewerExportLib.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Interop.CrystalReportViewerWebReportSourceLib.dll
+C:\Users\Clifford\source\repos\taragis-master\taragis-master\obj\Debug\Software Engineering.vbproj.ResolveComReference.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Databases\dbLMS.mdf
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Databases\dbLMS_log.ldf
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.VSDesigner.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.Interop.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\VsWebSite.Interop.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\EnvDTE.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\stdole.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\bin\Debug\Microsoft.VisualStudio.GraphModel.xml
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.exe.config
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Interop.CrystalAnalysisCommonControlsLib.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Interop.CrystalReportViewerExportLib.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Interop.CrystalReportViewerWebReportSourceLib.dll
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.ResolveComReference.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddBooks.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddCopies.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBookInfo.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBookInventory.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmFindAuthor.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmFindPublisher.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmFindSuppliers.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmFindGenres.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBookFinder.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBorrowBooks.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBorrowerFinder.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmIssueReturn.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmReturnBooks.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddBorrowers.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddFaculty.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddGrade.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.Form1.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddAuthors.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddGenre.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddPublishers.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddShelf.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddSuppliers.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAddUsers.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmMainte.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAttendanceMonitoring.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmAuditTrail.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmBrowsing.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmDashboard.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmMain.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.frmReports.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software_Engineering.Resources.resources
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.exe
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.xml
+C:\Users\Clifford\source\repos\pangchecking\pukares-master\obj\Debug\Software Engineering.pdb

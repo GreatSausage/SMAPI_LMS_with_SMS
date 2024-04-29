@@ -329,46 +329,14 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Soft
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Software Engineering.exe
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Software Engineering.pdb
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Software Engineering.xml
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.VSDesigner.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Web.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\MySql.Data.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.Interop.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\VsWebSite.Interop.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Memory.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Collections.Immutable.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Buffers.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\EnvDTE.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.IO.Pipelines.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\stdole.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\MySql.Data.xml
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.VisualStudio.GraphModel.xml
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.SuggestedBindingRedirects.cache
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.exe.config
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Interop.CrystalActiveXReportViewerLib13.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Interop.CrystalAnalysisCommonControlsLib.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Interop.CrystalReportViewerExportLib.dll
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Interop.CrystalReportViewerWebReportSourceLib.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.ResolveComReference.cache
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddBooks.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddCopies.resources

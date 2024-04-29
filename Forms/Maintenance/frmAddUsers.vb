@@ -20,6 +20,11 @@ Public Class frmAddUsers
             MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddUser(txtFirstname.Text, txtLastname.Text, txtPhoneNumber.Text, txtUsername.Text, txtPassword.Text, txtAnswer.Text, txtQuestions.Text, roleID, roleName)
+            If txtRole.SelectedItem = "Assistant Librarian" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Assistant Librarian.")
+            ElseIf txtRole.SelectedItem = "Librarian" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Librarian.")
+            End If
         End If
     End Sub
 

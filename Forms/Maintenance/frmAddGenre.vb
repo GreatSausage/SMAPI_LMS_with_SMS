@@ -11,6 +11,7 @@
             MessageBox.Show("Please fill in the necesarry fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddGenre(txtGenre.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} has added new Genre ({txtGenre.Text}).")
             Me.Close()
         End If
     End Sub

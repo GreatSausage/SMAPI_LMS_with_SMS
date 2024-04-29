@@ -13,6 +13,7 @@
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddBookshelves(txtShelfNo.Text, txtDescription.Text, txtLocation.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} has added new Bookshelf ({txtShelfNo.Text}).")
             Me.Close()
         End If
     End Sub

@@ -6,6 +6,7 @@
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddSection(txtSection.Text, sectionID)
+            AuditTrail($"{frmMain.txtFullname.Text} has added new section {txtSection.Text}")
             Me.Close()
         End If
     End Sub

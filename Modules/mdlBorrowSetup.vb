@@ -259,7 +259,8 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Overdue'", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Overdue' WHERE borrowID = @borrowID", connection)
+                updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
 
@@ -281,7 +282,8 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Damaged'", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Damaged' WHERE borrowID = @borrowID", connection)
+                updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
 
@@ -303,7 +305,8 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Lost'", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Lost' WHERE borrowID = @borrowID", connection)
+                updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
 

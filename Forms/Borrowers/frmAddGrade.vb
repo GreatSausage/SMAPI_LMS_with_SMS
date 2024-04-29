@@ -9,6 +9,7 @@
         Else
 
             AddGrade(txtGradeLevel.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} added new Grade Level ({txtGradeLevel.Text}).")
             Me.Close()
         End If
     End Sub

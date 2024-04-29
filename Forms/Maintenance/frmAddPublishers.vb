@@ -10,6 +10,7 @@
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddPublishers(txtPublishers.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} has added {txtPublishers.Text} in Publisher's List.")
             Me.Close()
         End If
     End Sub

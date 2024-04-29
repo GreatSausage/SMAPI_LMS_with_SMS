@@ -21,8 +21,13 @@
             MessageBox.Show("Please fill in the necessary fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             AddSuppliers(txtSupplierName.Text, txtContact.Text, txtAddress.Text, type)
+            If type = "Donator" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtSupplierName.Text} as new donator.")
+            ElseIf type = "Supplier" Then
+                AuditTrail($"{frmMain.txtFullname.text} added {txtSupplierName.text} as new supplier.")
+            End If
             Me.Close()
-        End If
+            End If
     End Sub
 
     Private Sub AntiDoubleSpace(sender As Object, e As KeyPressEventArgs) Handles txtAddress.KeyPress, txtContact.KeyPress, txtSupplierName.KeyPress

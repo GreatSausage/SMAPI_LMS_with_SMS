@@ -11,6 +11,7 @@
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddAuthors(txtAuthors.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} has added {txtAuthors.Text} in Author's List.")
             Me.Close()
         End If
     End Sub

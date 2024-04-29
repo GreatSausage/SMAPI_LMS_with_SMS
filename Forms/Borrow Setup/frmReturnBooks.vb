@@ -30,16 +30,16 @@ Public Class frmReturnBooks
         Try
             If txtStatus.SelectedItem = "Good Condition" Then
                 ReturnBookInGood(getBorrowID, copyID, txtStudentID.Text)
-                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in good condition.")
+                AuditTrail($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in good condition.")
             ElseIf txtStatus.SelectedItem = "Overdue" Then
                 ReturnOverdue(getBorrowID, txtPenalty.Text)
-                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} overdue.")
+                AuditTrail($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} overdue.")
             ElseIf txtStatus.SelectedItem = "Damaged" Then
                 ReturnDamaged(getBorrowID, txtPenalty.Text)
-                MsgBox($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in damaged condition.")
+                AuditTrail($"{txtFirstname.Text} {txtLastname.Text} returned {txtTitle.Text} in damaged condition.")
             ElseIf txtStatus.SelectedItem = "Lost" Then
                 ReturnLost(getBorrowID, txtPenalty.Text)
-                MsgBox($"{txtFirstname.Text} {txtLastname.Text} lost the {txtTitle.Text} book.")
+                AuditTrail($"{txtFirstname.Text} {txtLastname.Text} lost the {txtTitle.Text} book.")
             End If
 
             getBorrowID = Nothing

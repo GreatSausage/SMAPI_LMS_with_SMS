@@ -28,40 +28,66 @@ Partial Class frmDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.txtBooks = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.txtStudents = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.txtFaculties = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.txtBorrowers = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.txtLost = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel23 = New System.Windows.Forms.Panel()
         Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.txtDamaged = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.txtOverdue = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.txtBorrowed = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.txtPenalty = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.txtOverdueCharges = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel21.SuspendLayout()
+        Me.Panel19.SuspendLayout()
+        Me.Panel17.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel22.SuspendLayout()
+        Me.Panel24.SuspendLayout()
+        Me.Panel26.SuspendLayout()
+        Me.Panel28.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.Panel33.SuspendLayout()
+        Me.Panel35.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -77,6 +103,7 @@ Partial Class frmDashboard
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(0, 83)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1598, 83)
@@ -120,12 +147,37 @@ Partial Class frmDashboard
         '
         'Panel21
         '
-        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.Panel21.Controls.Add(Me.txtBooks)
+        Me.Panel21.Controls.Add(Me.Label9)
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel21.Location = New System.Drawing.Point(1215, 0)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(340, 145)
         Me.Panel21.TabIndex = 8
+        '
+        'txtBooks
+        '
+        Me.txtBooks.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBooks.ForeColor = System.Drawing.Color.White
+        Me.txtBooks.Location = New System.Drawing.Point(0, 43)
+        Me.txtBooks.Name = "txtBooks"
+        Me.txtBooks.Size = New System.Drawing.Size(340, 102)
+        Me.txtBooks.TabIndex = 3
+        Me.txtBooks.Text = "0"
+        Me.txtBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(0, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(340, 43)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Books:"
         '
         'Panel20
         '
@@ -137,12 +189,37 @@ Partial Class frmDashboard
         '
         'Panel19
         '
-        Me.Panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.Panel19.Controls.Add(Me.txtStudents)
+        Me.Panel19.Controls.Add(Me.Label7)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel19.Location = New System.Drawing.Point(865, 0)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(340, 145)
         Me.Panel19.TabIndex = 6
+        '
+        'txtStudents
+        '
+        Me.txtStudents.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStudents.ForeColor = System.Drawing.Color.White
+        Me.txtStudents.Location = New System.Drawing.Point(0, 43)
+        Me.txtStudents.Name = "txtStudents"
+        Me.txtStudents.Size = New System.Drawing.Size(340, 102)
+        Me.txtStudents.TabIndex = 3
+        Me.txtStudents.Text = "0"
+        Me.txtStudents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(0, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(340, 43)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Students:"
         '
         'Panel18
         '
@@ -154,12 +231,37 @@ Partial Class frmDashboard
         '
         'Panel17
         '
-        Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.Panel17.Controls.Add(Me.txtFaculties)
+        Me.Panel17.Controls.Add(Me.Label5)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel17.Location = New System.Drawing.Point(515, 0)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(340, 145)
         Me.Panel17.TabIndex = 4
+        '
+        'txtFaculties
+        '
+        Me.txtFaculties.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtFaculties.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFaculties.ForeColor = System.Drawing.Color.White
+        Me.txtFaculties.Location = New System.Drawing.Point(0, 43)
+        Me.txtFaculties.Name = "txtFaculties"
+        Me.txtFaculties.Size = New System.Drawing.Size(340, 102)
+        Me.txtFaculties.TabIndex = 3
+        Me.txtFaculties.Text = "0"
+        Me.txtFaculties.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(340, 43)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Faculties:"
         '
         'Panel16
         '
@@ -171,12 +273,37 @@ Partial Class frmDashboard
         '
         'Panel15
         '
-        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.Panel15.Controls.Add(Me.txtBorrowers)
+        Me.Panel15.Controls.Add(Me.Label2)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(165, 0)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(340, 145)
         Me.Panel15.TabIndex = 2
+        '
+        'txtBorrowers
+        '
+        Me.txtBorrowers.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtBorrowers.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBorrowers.ForeColor = System.Drawing.Color.White
+        Me.txtBorrowers.Location = New System.Drawing.Point(0, 43)
+        Me.txtBorrowers.Name = "txtBorrowers"
+        Me.txtBorrowers.Size = New System.Drawing.Size(340, 102)
+        Me.txtBorrowers.TabIndex = 1
+        Me.txtBorrowers.Text = "0"
+        Me.txtBorrowers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(340, 43)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Borrowers:"
         '
         'Panel12
         '
@@ -221,12 +348,37 @@ Partial Class frmDashboard
         '
         'Panel22
         '
-        Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Panel22.Controls.Add(Me.txtLost)
+        Me.Panel22.Controls.Add(Me.Label17)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(1215, 0)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(340, 145)
         Me.Panel22.TabIndex = 15
+        '
+        'txtLost
+        '
+        Me.txtLost.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtLost.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLost.ForeColor = System.Drawing.Color.White
+        Me.txtLost.Location = New System.Drawing.Point(0, 43)
+        Me.txtLost.Name = "txtLost"
+        Me.txtLost.Size = New System.Drawing.Size(340, 102)
+        Me.txtLost.TabIndex = 3
+        Me.txtLost.Text = "0"
+        Me.txtLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label17
+        '
+        Me.Label17.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(0, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(340, 43)
+        Me.Label17.TabIndex = 2
+        Me.Label17.Text = "Lost:"
         '
         'Panel23
         '
@@ -238,12 +390,37 @@ Partial Class frmDashboard
         '
         'Panel24
         '
-        Me.Panel24.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Panel24.BackColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel24.Controls.Add(Me.txtDamaged)
+        Me.Panel24.Controls.Add(Me.Label15)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel24.Location = New System.Drawing.Point(865, 0)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(340, 145)
         Me.Panel24.TabIndex = 13
+        '
+        'txtDamaged
+        '
+        Me.txtDamaged.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDamaged.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDamaged.ForeColor = System.Drawing.Color.White
+        Me.txtDamaged.Location = New System.Drawing.Point(0, 43)
+        Me.txtDamaged.Name = "txtDamaged"
+        Me.txtDamaged.Size = New System.Drawing.Size(340, 102)
+        Me.txtDamaged.TabIndex = 3
+        Me.txtDamaged.Text = "0"
+        Me.txtDamaged.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(0, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(340, 43)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Damaged:"
         '
         'Panel25
         '
@@ -255,12 +432,37 @@ Partial Class frmDashboard
         '
         'Panel26
         '
-        Me.Panel26.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel26.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
+        Me.Panel26.Controls.Add(Me.txtOverdue)
+        Me.Panel26.Controls.Add(Me.Label13)
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel26.Location = New System.Drawing.Point(515, 0)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(340, 145)
         Me.Panel26.TabIndex = 11
+        '
+        'txtOverdue
+        '
+        Me.txtOverdue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOverdue.ForeColor = System.Drawing.Color.White
+        Me.txtOverdue.Location = New System.Drawing.Point(0, 43)
+        Me.txtOverdue.Name = "txtOverdue"
+        Me.txtOverdue.Size = New System.Drawing.Size(340, 102)
+        Me.txtOverdue.TabIndex = 3
+        Me.txtOverdue.Text = "0"
+        Me.txtOverdue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label13
+        '
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(340, 43)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "Overdue:"
         '
         'Panel27
         '
@@ -272,12 +474,37 @@ Partial Class frmDashboard
         '
         'Panel28
         '
-        Me.Panel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
+        Me.Panel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Panel28.Controls.Add(Me.txtBorrowed)
+        Me.Panel28.Controls.Add(Me.Label11)
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel28.Location = New System.Drawing.Point(165, 0)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(340, 145)
         Me.Panel28.TabIndex = 9
+        '
+        'txtBorrowed
+        '
+        Me.txtBorrowed.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtBorrowed.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBorrowed.ForeColor = System.Drawing.Color.White
+        Me.txtBorrowed.Location = New System.Drawing.Point(0, 43)
+        Me.txtBorrowed.Name = "txtBorrowed"
+        Me.txtBorrowed.Size = New System.Drawing.Size(340, 102)
+        Me.txtBorrowed.TabIndex = 3
+        Me.txtBorrowed.Text = "0"
+        Me.txtBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label11
+        '
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(0, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(340, 43)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "Borrowed:"
         '
         'Panel13
         '
@@ -305,10 +532,6 @@ Partial Class frmDashboard
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.Panel29)
-        Me.Panel8.Controls.Add(Me.Panel30)
-        Me.Panel8.Controls.Add(Me.Panel31)
-        Me.Panel8.Controls.Add(Me.Panel32)
         Me.Panel8.Controls.Add(Me.Panel33)
         Me.Panel8.Controls.Add(Me.Panel34)
         Me.Panel8.Controls.Add(Me.Panel35)
@@ -320,48 +543,39 @@ Partial Class frmDashboard
         Me.Panel8.Size = New System.Drawing.Size(1598, 145)
         Me.Panel8.TabIndex = 7
         '
-        'Panel29
-        '
-        Me.Panel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.Panel29.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel29.Location = New System.Drawing.Point(1215, 0)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(340, 145)
-        Me.Panel29.TabIndex = 15
-        '
-        'Panel30
-        '
-        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel30.Location = New System.Drawing.Point(1205, 0)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(10, 145)
-        Me.Panel30.TabIndex = 14
-        '
-        'Panel31
-        '
-        Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel31.Location = New System.Drawing.Point(865, 0)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(340, 145)
-        Me.Panel31.TabIndex = 13
-        '
-        'Panel32
-        '
-        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel32.Location = New System.Drawing.Point(855, 0)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(10, 145)
-        Me.Panel32.TabIndex = 12
-        '
         'Panel33
         '
-        Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.Panel33.Controls.Add(Me.txtPenalty)
+        Me.Panel33.Controls.Add(Me.Label21)
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel33.Location = New System.Drawing.Point(515, 0)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(340, 145)
         Me.Panel33.TabIndex = 11
+        '
+        'txtPenalty
+        '
+        Me.txtPenalty.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtPenalty.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPenalty.ForeColor = System.Drawing.Color.White
+        Me.txtPenalty.Location = New System.Drawing.Point(0, 43)
+        Me.txtPenalty.Name = "txtPenalty"
+        Me.txtPenalty.Size = New System.Drawing.Size(340, 102)
+        Me.txtPenalty.TabIndex = 3
+        Me.txtPenalty.Text = "0"
+        Me.txtPenalty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label21
+        '
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(0, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(340, 43)
+        Me.Label21.TabIndex = 2
+        Me.Label21.Text = "Damaged/Lost Penalty:"
         '
         'Panel34
         '
@@ -373,12 +587,37 @@ Partial Class frmDashboard
         '
         'Panel35
         '
-        Me.Panel35.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.Panel35.BackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Panel35.Controls.Add(Me.txtOverdueCharges)
+        Me.Panel35.Controls.Add(Me.Label19)
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel35.Location = New System.Drawing.Point(165, 0)
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(340, 145)
         Me.Panel35.TabIndex = 9
+        '
+        'txtOverdueCharges
+        '
+        Me.txtOverdueCharges.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtOverdueCharges.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOverdueCharges.ForeColor = System.Drawing.Color.White
+        Me.txtOverdueCharges.Location = New System.Drawing.Point(0, 43)
+        Me.txtOverdueCharges.Name = "txtOverdueCharges"
+        Me.txtOverdueCharges.Size = New System.Drawing.Size(340, 102)
+        Me.txtOverdueCharges.TabIndex = 3
+        Me.txtOverdueCharges.Text = "0"
+        Me.txtOverdueCharges.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label19
+        '
+        Me.Label19.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.White
+        Me.Label19.Location = New System.Drawing.Point(0, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(340, 43)
+        Me.Label19.TabIndex = 2
+        Me.Label19.Text = "Overdue Charges:"
         '
         'Panel14
         '
@@ -415,8 +654,18 @@ Partial Class frmDashboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.Panel21.ResumeLayout(False)
+        Me.Panel19.ResumeLayout(False)
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel15.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
+        Me.Panel22.ResumeLayout(False)
+        Me.Panel24.ResumeLayout(False)
+        Me.Panel26.ResumeLayout(False)
+        Me.Panel28.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
+        Me.Panel33.ResumeLayout(False)
+        Me.Panel35.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -450,11 +699,27 @@ Partial Class frmDashboard
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Panel27 As Panel
     Friend WithEvents Panel28 As Panel
-    Friend WithEvents Panel29 As Panel
-    Friend WithEvents Panel30 As Panel
-    Friend WithEvents Panel31 As Panel
-    Friend WithEvents Panel32 As Panel
     Friend WithEvents Panel33 As Panel
     Friend WithEvents Panel34 As Panel
     Friend WithEvents Panel35 As Panel
+    Friend WithEvents txtBorrowers As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtBooks As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtStudents As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtFaculties As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtLost As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtDamaged As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtOverdue As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txtBorrowed As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtPenalty As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtOverdueCharges As Label
+    Friend WithEvents Label19 As Label
 End Class

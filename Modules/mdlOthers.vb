@@ -151,5 +151,49 @@ Module mdlOthers
         End Using
     End Sub
 #End Region
+
+#Region "Dashboard"
+    Public Function GetCount(table As String) As Integer
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand($"SELECT COUNT(*) FROM {table}", connection)
+                Return Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+
+    Public Function GetBorrowerTypeCount(table As String, type As String) As Integer
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand($"SELECT COUNT(*) FROM {table} WHERE borrowerType = @type", connection)
+                command.Parameters.AddWithValue("@type", type)
+                Return Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+
+    Public Function GetBorrowedCount() As Integer
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT COUNT(*) FROM tblBorrowedBooks WHERE borrowStatus = 'Not Returned'", connection)
+                Return Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+
+    Public Function GetBorrowStatusCount(status As String) As Integer
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT COUNT(*) FROM tblBorrowedBooks WHERE borrowStatus = @status", connection)
+                command.Parameters.AddWithValue("@status", status)
+                Return Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+
+    Public Function GetPenalty(column As String) As String
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand($"SELECT {column} FROM tblMaintenance WHERE id = 1", connection)
+                Return Convert.ToString(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+#End Region
 End Module
 

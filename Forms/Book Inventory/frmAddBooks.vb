@@ -32,6 +32,9 @@
                         Dim acn As String = AccessionGenerator()
                         AddInitialCopies(acn, bookID)
                     Next
+                    AuditTrail($"{frmMain.txtFullname.Text} added {txtTitle.Text} with {initialCopies} initial copies.")
+                ElseIf initialCopies = 0 Then
+                    AuditTrail($"{frmMain.txtFullname.Text} added {txtTitle.Text} with no initial copies.")
                 End If
                 Me.Close()
             End If

@@ -29,8 +29,9 @@
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        Me.Close()
+        AuditTrail($"{txtFullname.Text} has logged out.")
         Form1.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click

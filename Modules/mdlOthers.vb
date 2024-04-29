@@ -140,6 +140,16 @@ Module mdlOthers
             End Using
         End Using
     End Function
+
+
+    Public Sub AuditTrail(action As String)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("INSERT INTO tblAudit (action, dateActed) VALUES (@action, NOW())", connection)
+                command.Parameters.AddWithValue("@action", action)
+                command.ExecuteNonQuery()
+            End Using
+        End Using
+    End Sub
 #End Region
 End Module
 

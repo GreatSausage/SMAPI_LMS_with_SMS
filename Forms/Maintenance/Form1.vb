@@ -14,6 +14,7 @@ Public Class Form1
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Login(txtUsernameSignIn.Text, txtPasswordSignIn.Text)
+            AuditTrail($"{frmMain.txtFullname.Text} has logged in.")
         End If
     End Sub
     Private Sub btnSave_Click_1(sender As Object, e As EventArgs) Handles btnSave.Click

@@ -208,7 +208,7 @@ Module mdlBorrowSetup
                                                       CONCAT(b.firstName, ' ', b.lastName) AS FullName,
                                                       b.borrowerType, b.studentID, b.firstName, b.lastName, 
                                                       bk.bookTitle, bk.ISBN, a.authorName, 
-                                                      c.accessionNo, 
+                                                      c.accessionNo, c.acquisitionType, 
                                                       bb.dateBorrowed, bb.dueDate
                                                FROM tblBorrowedBooks bb
                                                INNER JOIN tblCopies c ON bb.copyID = c.copyID

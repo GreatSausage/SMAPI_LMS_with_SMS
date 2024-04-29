@@ -1,8 +1,10 @@
-﻿Public Class frmReturnBooks
+﻿Imports System.ComponentModel.Design
+
+Public Class frmReturnBooks
 
     Dim getBorrowID As Integer = Nothing
 
-    Public Sub SetSelectedBorrowedBooks(borrowID As Integer, studentID As Integer, firstname As String, lastname As String, isbn As String, author As String, accessionNo As String, title As String)
+    Public Sub SetSelectedBorrowedBooks(borrowID As Integer, studentID As Integer, firstname As String, lastname As String, isbn As String, author As String, accessionNo As String, title As String, acquisitionType As String)
         getBorrowID = borrowID
         txtStudentID.Text = studentID
         txtFirstname.Text = firstname
@@ -11,6 +13,7 @@
         txtAuthors.Text = author
         txtAcn.Text = accessionNo
         txtTitle.Text = title
+        txtType.Text = acquisitionType
     End Sub
 
     Private Sub frmReturnBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load

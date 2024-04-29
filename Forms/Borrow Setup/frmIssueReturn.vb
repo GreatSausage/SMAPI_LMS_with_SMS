@@ -21,9 +21,10 @@
             Dim author As String = row.Cells("authorName").Value.ToString
             Dim accessionNo As String = row.Cells("acn").Value.ToString
             Dim title As String = row.Cells("bookTitle").Value.ToString
+            Dim acquisitionType As String = row.Cells("acquisitionType").Value.ToString
 
             Dim frmReturnBooks As New frmReturnBooks()
-            frmReturnBooks.SetSelectedBorrowedBooks(borrowID, studentID, firstname, lastname, isbn, author, accessionNo, title)
+            frmReturnBooks.SetSelectedBorrowedBooks(borrowID, studentID, firstname, lastname, isbn, author, accessionNo, title, acquisitionType)
             frmReturnBooks.Show()
         End If
     End Sub

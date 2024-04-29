@@ -87,6 +87,10 @@ Module mdlOthers
                 End If
             End Using
 
+            Dim fullname As String = GetFullName(userName)
+            frmMain.txtFullname.Text = fullname
+            Dim role As String = GetRoleName(userName)
+            frmMain.txtRoles.Text = role
         End Using
     End Sub
 #End Region
@@ -115,4 +119,27 @@ Module mdlOthers
         End Using
     End Function
 #End Region
+
+#Region "Audit Trail"
+    Public Function GetFullName(username As String) As String
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT CONCAT(firstName, ' ', lastName) AS Fullname FROM tblUsers WHERE userName = @userName", connection)
+                command.Parameters.AddWithValue("@userName", username)
+                Return Convert.ToString(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+
+    Public Function GetRoleName(userName As String) As String
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT r.roleName FROM tblRoles r
+                                               JOIN tblUsers u ON r.roleID = u.roleID 
+                                               WHERE u.userName = @userName", connection)
+                command.Parameters.AddWithValue("@userName", userName)
+                Return Convert.ToString(command.ExecuteScalar())
+            End Using
+        End Using
+    End Function
+#End Region
 End Module
+

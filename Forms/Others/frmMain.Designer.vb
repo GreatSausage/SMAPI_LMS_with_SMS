@@ -39,9 +39,12 @@ Partial Class frmMain
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panelDisplay = New System.Windows.Forms.Panel()
+        Me.txtFullname = New System.Windows.Forms.Label()
+        Me.txtRoles = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -201,6 +204,8 @@ Partial Class frmMain
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.txtRoles)
+        Me.Panel7.Controls.Add(Me.txtFullname)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel7.Location = New System.Drawing.Point(60, 200)
         Me.Panel7.Name = "Panel7"
@@ -248,6 +253,30 @@ Partial Class frmMain
         Me.panelDisplay.Size = New System.Drawing.Size(1298, 893)
         Me.panelDisplay.TabIndex = 2
         '
+        'txtFullname
+        '
+        Me.txtFullname.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtFullname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFullname.ForeColor = System.Drawing.Color.White
+        Me.txtFullname.Location = New System.Drawing.Point(0, 0)
+        Me.txtFullname.Name = "txtFullname"
+        Me.txtFullname.Size = New System.Drawing.Size(180, 28)
+        Me.txtFullname.TabIndex = 0
+        Me.txtFullname.Text = "Label1"
+        Me.txtFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtRoles
+        '
+        Me.txtRoles.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtRoles.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRoles.ForeColor = System.Drawing.Color.White
+        Me.txtRoles.Location = New System.Drawing.Point(0, 28)
+        Me.txtRoles.Name = "txtRoles"
+        Me.txtRoles.Size = New System.Drawing.Size(180, 22)
+        Me.txtRoles.TabIndex = 1
+        Me.txtRoles.Text = "Label1"
+        Me.txtRoles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -263,6 +292,7 @@ Partial Class frmMain
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel7.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -283,4 +313,6 @@ Partial Class frmMain
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtFullname As Label
+    Friend WithEvents txtRoles As Label
 End Class

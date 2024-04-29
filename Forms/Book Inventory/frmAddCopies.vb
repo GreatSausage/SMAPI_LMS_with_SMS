@@ -57,7 +57,7 @@
             Dim acn As String = AccessionGenerator()
             AddCopies(acn, bookID, getSupplierID, price, type)
         Next
-
+        AuditTrail($"{frmMain.txtFullname.Text} added {copiesToAdd} copies of {txtTitle.Text}.")
         MessageBox.Show("Copies added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
     End Sub

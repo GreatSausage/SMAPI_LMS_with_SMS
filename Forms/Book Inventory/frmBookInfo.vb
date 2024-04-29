@@ -74,6 +74,7 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         UpdateBook(getAuthorID, getBookID, txtTitle.Text, txtISBN.Text, getPublisherID, getShelfID, txtYearPublished.Text)
+        AuditTrail($"{frmMain.txtFullname.Text} updated {txtTitle.Text} information.")
         Me.Close()
     End Sub
 End Class

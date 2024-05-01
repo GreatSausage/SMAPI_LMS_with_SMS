@@ -39,6 +39,7 @@ Partial Class frmAddCopies
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCopiesToAdd = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.btnFindSuppliers = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBookFinder = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.txtCopiesToAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,7 +126,7 @@ Partial Class frmAddCopies
         Me.txtTitle.PlaceholderText = ""
         Me.txtTitle.ReadOnly = True
         Me.txtTitle.SelectedText = ""
-        Me.txtTitle.Size = New System.Drawing.Size(350, 44)
+        Me.txtTitle.Size = New System.Drawing.Size(290, 44)
         Me.txtTitle.TabIndex = 14
         '
         'Label3
@@ -281,12 +282,31 @@ Partial Class frmAddCopies
         Me.btnFindSuppliers.Size = New System.Drawing.Size(54, 44)
         Me.btnFindSuppliers.TabIndex = 28
         '
+        'btnBookFinder
+        '
+        Me.btnBookFinder.BackgroundImage = CType(resources.GetObject("btnBookFinder.BackgroundImage"), System.Drawing.Image)
+        Me.btnBookFinder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBookFinder.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBookFinder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBookFinder.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBookFinder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBookFinder.FillColor = System.Drawing.Color.Transparent
+        Me.btnBookFinder.FocusedColor = System.Drawing.Color.Transparent
+        Me.btnBookFinder.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnBookFinder.ForeColor = System.Drawing.Color.White
+        Me.btnBookFinder.HoverState.FillColor = System.Drawing.Color.Transparent
+        Me.btnBookFinder.Location = New System.Drawing.Point(301, 177)
+        Me.btnBookFinder.Name = "btnBookFinder"
+        Me.btnBookFinder.Size = New System.Drawing.Size(54, 44)
+        Me.btnBookFinder.TabIndex = 28
+        '
         'frmAddCopies
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(360, 525)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnBookFinder)
         Me.Controls.Add(Me.btnFindSuppliers)
         Me.Controls.Add(Me.txtCopiesToAdd)
         Me.Controls.Add(Me.Label6)
@@ -328,4 +348,5 @@ Partial Class frmAddCopies
     Friend WithEvents Label6 As Label
     Friend WithEvents txtCopiesToAdd As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents btnFindSuppliers As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnBookFinder As Guna.UI2.WinForms.Guna2Button
 End Class

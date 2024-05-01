@@ -51,7 +51,7 @@ Module mdlOthers
         Using connection As MySqlConnection = ConnectionOpen()
 
             Using userCommand As New MySqlCommand("SELECT COUNT(*) FROM tblusers WHERE userName = @userName", connection)
-                userCommand.Parameters.AddWithValue("@@userName", userName)
+                userCommand.Parameters.AddWithValue("@userName", userName)
 
                 If Convert.ToInt32(userCommand.ExecuteScalar()) > 0 Then
                     Using passCommand As New MySqlCommand("SELECT Password FROM tblusers WHERE userName = @userName", connection)
@@ -93,6 +93,7 @@ Module mdlOthers
             frmMain.txtRoles.Text = role
         End Using
     End Sub
+
 #End Region
 
 #Region "DisplayReports"

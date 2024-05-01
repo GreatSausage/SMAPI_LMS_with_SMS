@@ -57,7 +57,7 @@
         smsMessage = smsMessage.TrimEnd(", ".ToCharArray())
 
         MessageBox.Show("Book has been borrowed successfully.")
-        AuditTrail($"{txtFirstname.Text} {txtLastname.Text} borrowed {txtTitle.Text}.")
+        AuditTrail($"{txtFirstname.Text} {txtLastname.Text} borrowed {smsMessage}.")
         'SMSBorrow(getBorrowerID)
         Me.Close()
     End Sub

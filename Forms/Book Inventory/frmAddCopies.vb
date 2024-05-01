@@ -66,6 +66,10 @@
         frmFindSuppliers.Show()
     End Sub
 
+    Private Sub btnBookFinder_Click(sender As Object, e As EventArgs) Handles btnBookFinder.Click
+        frmBookFinder.Show()
+    End Sub
+
     Public Sub SetSelectedSupplier(supplierID As Integer, supplierName As String)
         txtSupplier.Text = supplierName
         getSupplierID = supplierID
@@ -87,6 +91,11 @@
             txtSupplier.DisplayMember = "supplierName"
             txtSupplier.ValueMember = "supplierID"
         End If
+    End Sub
+
+    Public Sub SetSelectedBooks(isbn As String, title As String)
+        txtISBN.Text = isbn
+        txtTitle.Text = title
     End Sub
 
 End Class

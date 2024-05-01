@@ -20,16 +20,16 @@ Public Class frmAddUsers
             MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             AddUser(txtFirstname.Text, txtLastname.Text, txtPhoneNumber.Text, txtUsername.Text, txtPassword.Text, txtAnswer.Text, txtQuestions.Text, roleID, roleName)
-            If txtRole.SelectedItem = "Assistant Librarian" Then
-                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Assistant Librarian.")
-            ElseIf txtRole.SelectedItem = "Librarian" Then
-                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Librarian.")
-            End If
+            'If txtRole.SelectedItem = "Assistant Librarian" Then
+            '    AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Assistant Librarian.")
+            'ElseIf txtRole.SelectedItem = "Librarian" Then
+            '    AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Librarian.")
+            'End If
         End If
     End Sub
 
     Private Sub frmAddUsers_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim dtRoles As DataTable = DisplayRoles()
+        Dim dtRoles As DataTable = DisplayRoles(frmMain.txtRoles.Text)
         txtRole.DataSource = dtRoles
         txtRole.DisplayMember = "roleName"
         txtRole.ValueMember = "roleID"

@@ -124,6 +124,12 @@
     <Compile Include="Forms\Book Inventory\frmBookInventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Book Inventory\frmCopyList.Designer.vb">
+      <DependentUpon>frmCopyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Book Inventory\frmCopyList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Book Inventory\frmDistinctInfo.Designer.vb">
       <DependentUpon>frmDistinctInfo.vb</DependentUpon>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Book Inventory\frmBookInventory.resx">
       <DependentUpon>frmBookInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Book Inventory\frmCopyList.resx">
+      <DependentUpon>frmCopyList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Book Inventory\frmFindAuthor.resx">
       <DependentUpon>frmFindAuthor.vb</DependentUpon>

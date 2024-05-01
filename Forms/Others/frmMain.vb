@@ -37,4 +37,8 @@
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         DisplayFormPanel(frmReports, panelDisplay)
     End Sub
+
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        DisplayFormPanel(frmDashboard, panelDisplay)
+    End Sub
 End Class

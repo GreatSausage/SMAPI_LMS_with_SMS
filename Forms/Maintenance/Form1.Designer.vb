@@ -44,6 +44,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.LinkLabel()
+        Me.cbISBN = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2TabControl1.SuspendLayout()
         Me.tabSignIn.SuspendLayout()
         Me.tabServer.SuspendLayout()
@@ -94,6 +95,7 @@ Partial Class Form1
         '
         'tabSignIn
         '
+        Me.tabSignIn.Controls.Add(Me.cbISBN)
         Me.tabSignIn.Controls.Add(Me.Panel2)
         Me.tabSignIn.Controls.Add(Me.btnLogin)
         Me.tabSignIn.Controls.Add(Me.txtPasswordSignIn)
@@ -151,7 +153,7 @@ Partial Class Form1
         Me.txtPasswordSignIn.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPasswordSignIn.MaxLength = 13
         Me.txtPasswordSignIn.Name = "txtPasswordSignIn"
-        Me.txtPasswordSignIn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPasswordSignIn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(10047)
         Me.txtPasswordSignIn.PlaceholderText = ""
         Me.txtPasswordSignIn.SelectedText = ""
         Me.txtPasswordSignIn.Size = New System.Drawing.Size(350, 44)
@@ -397,6 +399,23 @@ Partial Class Form1
         Me.btnClose.Text = "[close]"
         Me.btnClose.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         '
+        'cbISBN
+        '
+        Me.cbISBN.AutoSize = True
+        Me.cbISBN.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbISBN.CheckedState.BorderRadius = 0
+        Me.cbISBN.CheckedState.BorderThickness = 0
+        Me.cbISBN.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbISBN.Location = New System.Drawing.Point(237, 150)
+        Me.cbISBN.Name = "cbISBN"
+        Me.cbISBN.Size = New System.Drawing.Size(125, 20)
+        Me.cbISBN.TabIndex = 41
+        Me.cbISBN.Text = "Show Password"
+        Me.cbISBN.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.cbISBN.UncheckedState.BorderRadius = 0
+        Me.cbISBN.UncheckedState.BorderThickness = 0
+        Me.cbISBN.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -439,4 +458,5 @@ Partial Class Form1
     Friend WithEvents btnClose As LinkLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents cbISBN As Guna.UI2.WinForms.Guna2CheckBox
 End Class

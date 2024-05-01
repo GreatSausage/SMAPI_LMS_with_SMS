@@ -24,19 +24,25 @@
                    String.IsNullOrEmpty(txtYearPublished.Text) Then
                 MessageBox.Show("Please fill in the necessary details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                Dim bookID As Integer = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
+                Dim getBookID As Integer
+                If Not String.IsNullOrEmpty(txtTitle.Text) Then
+                    getBookID = AddBooks("No ISBN", txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
+                Else
+                    getBookID = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
+                End If
                 Dim initialCopies As Integer = Convert.ToInt32(txtInitialCopies.Value)
 
                 If initialCopies > 0 Then
                     For i As Integer = 1 To initialCopies
                         Dim acn As String = AccessionGenerator()
-                        AddInitialCopies(acn, bookID)
+                        AddInitialCopies(acn, getBookID)
                     Next
                     AuditTrail($"{frmMain.txtFullname.Text} added {txtTitle.Text} with {initialCopies} initial copies.")
                 ElseIf initialCopies = 0 Then
                     AuditTrail($"{frmMain.txtFullname.Text} added {txtTitle.Text} with no initial copies.")
                 End If
                 Me.Close()
+                getBookID = Nothing
             End If
         End If
     End Sub
@@ -108,4 +114,11 @@
         Me.Close()
     End Sub
 
+    Private Sub cbISBN_CheckedChanged(sender As Object, e As EventArgs) Handles cbISBN.CheckedChanged
+        If cbISBN.Checked Then
+            txtISBN.ReadOnly = True
+        Else
+            txtISBN.ReadOnly = False
+        End If
+    End Sub
 End Class

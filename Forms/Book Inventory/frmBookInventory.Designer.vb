@@ -31,6 +31,16 @@ Partial Class frmBookInventory
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.tabBookMaintenance = New System.Windows.Forms.TabPage()
         Me.dgBooksMainte = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.distinctBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.distinctISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.distinctTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.distinctAuthor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.distinctPublisher = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.yearPublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.genreName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.shelfNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.genreID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.shelfID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnAddBook = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -46,16 +56,6 @@ Partial Class frmBookInventory
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.distinctBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.distinctISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.distinctTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.distinctAuthor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.distinctPublisher = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.yearPublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.genreName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.shelfNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.genreID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.shelfID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2TabControl1.SuspendLayout()
         Me.tabBookMaintenance.SuspendLayout()
         CType(Me.dgBooksMainte, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +165,89 @@ Partial Class frmBookInventory
         Me.dgBooksMainte.ThemeStyle.RowsStyle.Height = 24
         Me.dgBooksMainte.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgBooksMainte.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'distinctBookID
+        '
+        Me.distinctBookID.DataPropertyName = "bookID"
+        Me.distinctBookID.HeaderText = "Book ID"
+        Me.distinctBookID.MinimumWidth = 6
+        Me.distinctBookID.Name = "distinctBookID"
+        Me.distinctBookID.ReadOnly = True
+        '
+        'distinctISBN
+        '
+        Me.distinctISBN.DataPropertyName = "isbn"
+        Me.distinctISBN.HeaderText = "ISBN"
+        Me.distinctISBN.MinimumWidth = 6
+        Me.distinctISBN.Name = "distinctISBN"
+        Me.distinctISBN.ReadOnly = True
+        '
+        'distinctTitle
+        '
+        Me.distinctTitle.DataPropertyName = "bookTitle"
+        Me.distinctTitle.HeaderText = "Title"
+        Me.distinctTitle.MinimumWidth = 6
+        Me.distinctTitle.Name = "distinctTitle"
+        Me.distinctTitle.ReadOnly = True
+        '
+        'distinctAuthor
+        '
+        Me.distinctAuthor.DataPropertyName = "authorName"
+        Me.distinctAuthor.HeaderText = "Authors"
+        Me.distinctAuthor.MinimumWidth = 6
+        Me.distinctAuthor.Name = "distinctAuthor"
+        Me.distinctAuthor.ReadOnly = True
+        '
+        'distinctPublisher
+        '
+        Me.distinctPublisher.DataPropertyName = "publisherName"
+        Me.distinctPublisher.HeaderText = "Publisher"
+        Me.distinctPublisher.MinimumWidth = 6
+        Me.distinctPublisher.Name = "distinctPublisher"
+        Me.distinctPublisher.ReadOnly = True
+        '
+        'yearPublished
+        '
+        Me.yearPublished.DataPropertyName = "yearPublished"
+        Me.yearPublished.HeaderText = "Year Published"
+        Me.yearPublished.MinimumWidth = 6
+        Me.yearPublished.Name = "yearPublished"
+        Me.yearPublished.ReadOnly = True
+        '
+        'genreName
+        '
+        Me.genreName.DataPropertyName = "genreName"
+        Me.genreName.HeaderText = "Genre"
+        Me.genreName.MinimumWidth = 6
+        Me.genreName.Name = "genreName"
+        Me.genreName.ReadOnly = True
+        '
+        'shelfNo
+        '
+        Me.shelfNo.DataPropertyName = "shelfNo"
+        Me.shelfNo.HeaderText = "Shelf No."
+        Me.shelfNo.MinimumWidth = 6
+        Me.shelfNo.Name = "shelfNo"
+        Me.shelfNo.ReadOnly = True
+        Me.shelfNo.Visible = False
+        '
+        'genreID
+        '
+        Me.genreID.DataPropertyName = "genreID"
+        Me.genreID.HeaderText = "genreID"
+        Me.genreID.MinimumWidth = 6
+        Me.genreID.Name = "genreID"
+        Me.genreID.ReadOnly = True
+        Me.genreID.Visible = False
+        '
+        'shelfID
+        '
+        Me.shelfID.DataPropertyName = "shelfID"
+        Me.shelfID.HeaderText = "shelfID"
+        Me.shelfID.MinimumWidth = 6
+        Me.shelfID.Name = "shelfID"
+        Me.shelfID.ReadOnly = True
+        Me.shelfID.Visible = False
         '
         'Panel1
         '
@@ -361,89 +444,6 @@ Partial Class frmBookInventory
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1590, 5)
         Me.Panel4.TabIndex = 0
-        '
-        'distinctBookID
-        '
-        Me.distinctBookID.DataPropertyName = "bookID"
-        Me.distinctBookID.HeaderText = "Book ID"
-        Me.distinctBookID.MinimumWidth = 6
-        Me.distinctBookID.Name = "distinctBookID"
-        Me.distinctBookID.ReadOnly = True
-        '
-        'distinctISBN
-        '
-        Me.distinctISBN.DataPropertyName = "isbn"
-        Me.distinctISBN.HeaderText = "ISBN"
-        Me.distinctISBN.MinimumWidth = 6
-        Me.distinctISBN.Name = "distinctISBN"
-        Me.distinctISBN.ReadOnly = True
-        '
-        'distinctTitle
-        '
-        Me.distinctTitle.DataPropertyName = "bookTitle"
-        Me.distinctTitle.HeaderText = "Title"
-        Me.distinctTitle.MinimumWidth = 6
-        Me.distinctTitle.Name = "distinctTitle"
-        Me.distinctTitle.ReadOnly = True
-        '
-        'distinctAuthor
-        '
-        Me.distinctAuthor.DataPropertyName = "authorName"
-        Me.distinctAuthor.HeaderText = "Authors"
-        Me.distinctAuthor.MinimumWidth = 6
-        Me.distinctAuthor.Name = "distinctAuthor"
-        Me.distinctAuthor.ReadOnly = True
-        '
-        'distinctPublisher
-        '
-        Me.distinctPublisher.DataPropertyName = "publisherName"
-        Me.distinctPublisher.HeaderText = "Publisher"
-        Me.distinctPublisher.MinimumWidth = 6
-        Me.distinctPublisher.Name = "distinctPublisher"
-        Me.distinctPublisher.ReadOnly = True
-        '
-        'yearPublished
-        '
-        Me.yearPublished.DataPropertyName = "yearPublished"
-        Me.yearPublished.HeaderText = "Year Published"
-        Me.yearPublished.MinimumWidth = 6
-        Me.yearPublished.Name = "yearPublished"
-        Me.yearPublished.ReadOnly = True
-        '
-        'genreName
-        '
-        Me.genreName.DataPropertyName = "genreName"
-        Me.genreName.HeaderText = "Genre"
-        Me.genreName.MinimumWidth = 6
-        Me.genreName.Name = "genreName"
-        Me.genreName.ReadOnly = True
-        '
-        'shelfNo
-        '
-        Me.shelfNo.DataPropertyName = "shelfNo"
-        Me.shelfNo.HeaderText = "Shelf No."
-        Me.shelfNo.MinimumWidth = 6
-        Me.shelfNo.Name = "shelfNo"
-        Me.shelfNo.ReadOnly = True
-        Me.shelfNo.Visible = False
-        '
-        'genreID
-        '
-        Me.genreID.DataPropertyName = "genreID"
-        Me.genreID.HeaderText = "genreID"
-        Me.genreID.MinimumWidth = 6
-        Me.genreID.Name = "genreID"
-        Me.genreID.ReadOnly = True
-        Me.genreID.Visible = False
-        '
-        'shelfID
-        '
-        Me.shelfID.DataPropertyName = "shelfID"
-        Me.shelfID.HeaderText = "shelfID"
-        Me.shelfID.MinimumWidth = 6
-        Me.shelfID.Name = "shelfID"
-        Me.shelfID.ReadOnly = True
-        Me.shelfID.Visible = False
         '
         'frmBookInventory
         '

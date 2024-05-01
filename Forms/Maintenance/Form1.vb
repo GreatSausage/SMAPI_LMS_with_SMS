@@ -44,4 +44,12 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
     End Sub
+
+    Private Sub cbISBN_CheckedChanged(sender As Object, e As EventArgs) Handles cbISBN.CheckedChanged
+        If cbISBN.Checked Then
+            txtPasswordSignIn.PasswordChar = ""
+        Else
+            txtPasswordSignIn.PasswordChar = "✿"
+        End If
+    End Sub
 End Class

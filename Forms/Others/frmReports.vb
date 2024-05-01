@@ -17,6 +17,7 @@ Public Class frmReports
         Dim printArea As RectangleF = e.MarginBounds
 
         Dim font As New Font("Arial", 10)
+        Dim titleFont As New Font("Arial", 12, FontStyle.Bold) ' Font for the title/header
         Dim brush As New SolidBrush(Color.Black)
 
         Dim xPos As Single = printArea.Left
@@ -31,7 +32,15 @@ Public Class frmReports
         Dim columnAlignments As New List(Of String)({"Left", "Left", "Left", "Left", "Left", "Left", "Right"})
         Dim columnHeaders As New List(Of String)({"ISBN", "Book Title", "Authors", "Fullname", "Date Borrowed", "Date Returned", "Penalty"})
 
+        ' Add the title/header
+        Dim title As String = "St. Mark Academy of Primarosa, Inc"
+        Dim titleWidth As Single = e.Graphics.MeasureString(title, titleFont).Width
+        Dim titleXPos As Single = printArea.Left + (printArea.Width - titleWidth) / 2 ' Calculate x-position to center the title
+        e.Graphics.DrawString(title, titleFont, brush, titleXPos, yPos)
+        yPos += titleFont.GetHeight() + 20 ' Adjust spacing after the title
+
         ' Display column headers
+        yPos += 20 ' Add extra space between title and columns
         For i As Integer = 0 To columnHeaders.Count - 1
             Dim columnText As String = columnHeaders(i)
             Dim alignment As String = columnAlignments(i)
@@ -68,9 +77,6 @@ Public Class frmReports
         Next
         e.HasMorePages = False
     End Sub
-
-
-
 
 
 

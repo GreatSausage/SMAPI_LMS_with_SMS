@@ -203,7 +203,7 @@ Partial Class frmReports
         Me.btnPrint.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnPrint.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnPrint.ForeColor = System.Drawing.Color.White
-        Me.btnPrint.Location = New System.Drawing.Point(1360, 43)
+        Me.btnPrint.Location = New System.Drawing.Point(1490, 43)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(235, 43)
         Me.btnPrint.TabIndex = 13

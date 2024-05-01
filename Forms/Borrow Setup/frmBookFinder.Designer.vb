@@ -33,9 +33,6 @@ Partial Class frmBookFinder
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgBooksMainte = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.distinctBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.distinctISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.distinctTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,6 +43,9 @@ Partial Class frmBookFinder
         Me.shelfNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.genreID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.shelfID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgBooksMainte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -70,7 +70,7 @@ Partial Class frmBookFinder
         Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btnClose.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnClose.Location = New System.Drawing.Point(740, 9)
+        Me.btnClose.Location = New System.Drawing.Point(1346, 9)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(48, 16)
         Me.btnClose.TabIndex = 7
@@ -199,30 +199,6 @@ Partial Class frmBookFinder
         Me.dgBooksMainte.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgBooksMainte.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Panel5
-        '
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 103)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(5, 434)
-        Me.Panel5.TabIndex = 10
-        '
-        'Panel6
-        '
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(1401, 103)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(5, 434)
-        Me.Panel6.TabIndex = 11
-        '
-        'Panel7
-        '
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(5, 532)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1396, 5)
-        Me.Panel7.TabIndex = 12
-        '
         'distinctBookID
         '
         Me.distinctBookID.DataPropertyName = "bookID"
@@ -306,6 +282,30 @@ Partial Class frmBookFinder
         Me.shelfID.Name = "shelfID"
         Me.shelfID.ReadOnly = True
         Me.shelfID.Visible = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(0, 103)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(5, 434)
+        Me.Panel5.TabIndex = 10
+        '
+        'Panel6
+        '
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(1401, 103)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(5, 434)
+        Me.Panel6.TabIndex = 11
+        '
+        'Panel7
+        '
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel7.Location = New System.Drawing.Point(5, 532)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1396, 5)
+        Me.Panel7.TabIndex = 12
         '
         'frmBookFinder
         '

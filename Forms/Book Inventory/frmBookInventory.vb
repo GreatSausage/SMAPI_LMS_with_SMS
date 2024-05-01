@@ -38,10 +38,15 @@
         End If
     End Sub
 
-    'Private Sub dgCopies_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCopies.CellContentClick
-    '    If e.RowIndex >= 0 Then
-    '        Dim row As DataGridViewRow = dgCopies.Rows(e.RowIndex)
-    '        Dim bookID As Integer = Convert.ToInt32(row.Cells(""))
-    '    End If
-    'End Sub
+    Public getBookID As Integer = Nothing
+    Private Sub dgCopies_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCopies.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgCopies.Rows(e.RowIndex)
+            getBookID = Convert.ToInt32(row.Cells("bookID").Value)
+            Dim dtCopy As DataTable = DisplayAccessions(getBookID)
+            frmCopyList.Show()
+            frmCopyList.dgCopy.DataSource = dtCopy
+        End If
+    End Sub
+
 End Class

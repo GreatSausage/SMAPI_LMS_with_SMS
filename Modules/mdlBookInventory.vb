@@ -102,8 +102,8 @@ Module mdlBookInventory
 
     Public Sub AddInitialCopies(accessionNo As String, bookID As Integer)
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("INSERT INTO tblCopies (accessionNo, bookID, acquisitionDate, status) 
-                                                 VALUES (@accessionNo, @bookID, NOW(), 'Available')", connection)
+            Using command As New MySqlCommand("INSERT INTO tblCopies (accessionNo, bookID, acquisitionDate, status, acquisitonType) 
+                                               VALUES (@accessionNo, @bookID, NOW(), 'Available', 'Initial Copy')", connection)
                 With command.Parameters
                     .AddWithValue("@accessionNo", accessionNo)
                     .AddWithValue("@bookID", bookID)
@@ -302,6 +302,21 @@ Module mdlBookInventory
             End Using
         End Using
     End Sub
+
+    Public Function DisplayAccessions(bookID As Integer) As DataTable
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT accessionNo, status, acquisitionType 
+                                               FROM tblCopies 
+                                               WHERE bookID = @bookID", connection)
+                command.Parameters.AddWithValue("@bookID", bookID)
+                Using adapter As New MySqlDataAdapter(command)
+                    Dim dt As New DataTable
+                    adapter.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 
     '    Public Sub SearchSuppliers(datagridview As DataGridView, search As String)
     '        Using connection As SqlConnection = ConnectionOpen(connString)

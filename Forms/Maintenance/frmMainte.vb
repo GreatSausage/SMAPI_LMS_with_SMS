@@ -10,6 +10,11 @@
         GradeDatatable()
         SectionDatatable()
         BorrowerDatatable()
+        If frmMain.txtRoles.Text = "Assistant Librarian" Then
+            btnUsers.Enabled = False
+            btnOverdue.Enabled = False
+            btnPenalty.Enabled = False
+        End If
     End Sub
 
     Private Sub btnAddSupplier_Click(sender As Object, e As EventArgs) Handles btnAddSupplier.Click

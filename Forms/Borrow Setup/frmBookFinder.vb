@@ -23,6 +23,11 @@
             If frmBorrowBooksInstance IsNot Nothing Then
                 frmBorrowBooksInstance.SetSelectedBooks(isbn, title, authorName)
             End If
+
+            Dim frmAddCopiesInstance As frmAddCopies = DirectCast(Application.OpenForms("frmAddCopies"), frmAddCopies)
+            If frmAddCopiesInstance IsNot Nothing Then
+                frmAddCopiesInstance.SetSelectedBooks(isbn, title)
+            End If
             Me.Close()
         End If
     End Sub

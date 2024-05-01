@@ -43,15 +43,26 @@ Module mdlMaintenance
         frmMainte.dgUsers.DataSource = dtUser
     End Sub
 
-    Public Function DisplayRoles() As DataTable
+    Public Function DisplayRoles(role As String) As DataTable
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT roleID, roleName FROM tblRoles WHERE roleID IN(1,2,3)", connection)
-                Using adapter As New MySqlDataAdapter(command)
+            Dim command As String = "SELECT roleID, roleName FROM tblRoles "
+
+            If role = "Principal" Then
+                command += "WHERE roleID IN(2,3)"
+            ElseIf role = "Librarian" Then
+                command += "WHERE roleID IN(3)"
+            ElseIf role = "Admin" Then
+                command += "WHERE roleID IN(1,2,3)"
+            End If
+
+            Using commandOne As New MySqlCommand(command, connection)
+                Using adapter As New MySqlDataAdapter(commandOne)
                     Dim datatable As New DataTable
                     adapter.Fill(datatable)
                     Return datatable
                 End Using
             End Using
+
         End Using
     End Function
 

@@ -246,10 +246,10 @@ Module mdlBookInventory
         Return Nothing
     End Function
 
-    Public Function GetBookID(isbn As String) As Integer
+    Public Function GetBookID(title As String) As Integer
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT bookID FROM tblBooks WHERE isbn = @isbn", connection)
-                command.Parameters.AddWithValue("@isbn", isbn)
+            Using command As New MySqlCommand("SELECT bookID FROM tblBooks WHERE bookTitle = @title", connection)
+                command.Parameters.AddWithValue("@title", title)
                 Using reader As MySqlDataReader = command.ExecuteReader()
                     If reader.Read() Then
                         Return reader.GetInt32(0)
@@ -280,6 +280,14 @@ Module mdlBookInventory
                     adapter.Fill(dt)
                     Return dt
                 End Using
+            End Using
+        End Using
+    End Function
+
+    Public Function GetPenaltyCopy() As Decimal
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT damagedLostPenalty FROM tblMaintenance WHERE id = 1", connection)
+                Return Convert.ToDecimal(command.ExecuteScalar())
             End Using
         End Using
     End Function

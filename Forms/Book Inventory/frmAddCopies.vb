@@ -39,18 +39,17 @@
         End If
 
         If rbDonated.Checked Then
-            If String.IsNullOrEmpty(txtISBN.Text) Then
-                MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Exit Sub
-            ElseIf Not String.IsNullOrEmpty(txtPrice.text) Then
+
+            If Not String.IsNullOrEmpty(txtPrice.Text) Then
                 price = Convert.ToDecimal(txtPrice.Text)
-            ElseIf String.IsNullOrEmpty(txtPrice.text) Then
-                price = 0.00
+            ElseIf String.IsNullOrEmpty(txtPrice.Text) Then
+                Dim penalty As Decimal = GetPenaltyCopy()
+                price = penalty
             End If
         End If
 
         Dim copiesToAdd As Integer = Convert.ToInt32(txtCopiesToAdd.Value)
-        Dim bookID As Integer = Convert.ToInt32(GetBookID(txtISBN.Text))
+        Dim bookID As Integer = Convert.ToInt32(GetBookID(txtTitle.Text))
         Dim type As String = If(rbDonated.Checked, "Donated", "Purchased")
 
         For i As Integer = 1 To copiesToAdd
@@ -81,6 +80,7 @@
             txtSupplier.DataSource = dtDonator
             txtSupplier.DisplayMember = "supplierName"
             txtSupplier.ValueMember = "supplierID"
+            txtPrice.Enabled = False
         End If
     End Sub
 
@@ -90,6 +90,7 @@
             txtSupplier.DataSource = dtSuppliers
             txtSupplier.DisplayMember = "supplierName"
             txtSupplier.ValueMember = "supplierID"
+            txtPrice.Enabled = True
         End If
     End Sub
 

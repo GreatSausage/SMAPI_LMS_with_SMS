@@ -58,34 +58,37 @@ Module mdlBookInventory
         Dim textInfo As TextInfo = cultureInfo.TextInfo
         Dim capitalizedTitle As String = textInfo.ToTitleCase(title.ToLower())
 
-        Try
-            Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID) 
+        Using connection As MySqlConnection = ConnectionOpen()
+
+            Using checkCommand As New MySqlCommand("SELECT COUNT(isbn) FROM tblBooks", connection)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+
+                If count > 1 AndAlso isbn = "" Then
+                    Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID) 
                                                    VALUES (@title, @isbn, @authorID, @publisherID, @yearPublished, @shelfID);
                                                    SELECT LAST_INSERT_ID();", connection)
-                    With command.Parameters
-                        .AddWithValue("@title", capitalizedTitle)
-                        .AddWithValue("@isbn", isbn)
-                        .AddWithValue("@authorID", authorID)
-                        .AddWithValue("@publisherID", publisherID)
-                        .AddWithValue("@yearPublished", yearPublished)
-                        .AddWithValue("@shelfID", shelfID)
-                    End With
-                    Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
-                    MessageBox.Show("Book has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Dim dtBooks As DataTable = DisplayBooks()
-                    frmBookInventory.dgBooksMainte.DataSource = dtBooks
-                    Dim dtCopies As DataTable = DisplayCopies()
-                    frmBookInventory.dgCopies.DataSource = dtCopies
-                    Return bookID
-                End Using
+                        With command.Parameters
+                            .AddWithValue("@title", capitalizedTitle)
+                            .AddWithValue("@isbn", isbn)
+                            .AddWithValue("@authorID", authorID)
+                            .AddWithValue("@publisherID", publisherID)
+                            .AddWithValue("@yearPublished", yearPublished)
+                            .AddWithValue("@shelfID", shelfID)
+                        End With
+                        Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
+                        MessageBox.Show("Book has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Dim dtBooks As DataTable = DisplayBooks()
+                        frmBookInventory.dgBooksMainte.DataSource = dtBooks
+                        Dim dtCopies As DataTable = DisplayCopies()
+                        frmBookInventory.dgCopies.DataSource = dtCopies
+                        Return bookID
+                    End Using
+                ElseIf count > 1 AndAlso Not String.IsNullOrEmpty(isbn) Then
+                    MessageBox.Show("ISBN already exists.")
+                End If
             End Using
-        Catch ex As MySqlException
-            If ex.Number = 1062 Then
-                MessageBox.Show("Some fields are duplicated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
             Return -1
-        End Try
+        End Using
     End Function
 
 
@@ -102,7 +105,7 @@ Module mdlBookInventory
 
     Public Sub AddInitialCopies(accessionNo As String, bookID As Integer)
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("INSERT INTO tblCopies (accessionNo, bookID, acquisitionDate, status, acquisitonType) 
+            Using command As New MySqlCommand("INSERT INTO tblCopies (accessionNo, bookID, acquisitionDate, status, acquisitionType) 
                                                VALUES (@accessionNo, @bookID, NOW(), 'Available', 'Initial Copy')", connection)
                 With command.Parameters
                     .AddWithValue("@accessionNo", accessionNo)

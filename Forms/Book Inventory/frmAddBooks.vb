@@ -25,11 +25,8 @@
                 MessageBox.Show("Please fill in the necessary details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim getBookID As Integer
-                If Not String.IsNullOrEmpty(txtTitle.Text) Then
-                    getBookID = AddBooks("No ISBN", txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
-                Else
-                    getBookID = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
-                End If
+
+                getBookID = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
                 Dim initialCopies As Integer = Convert.ToInt32(txtInitialCopies.Value)
 
                 If initialCopies > 0 Then

@@ -21,7 +21,11 @@
 
             Dim frmBorrowBooksInstance As frmBorrowBooks = DirectCast(Application.OpenForms("frmBorrowBooks"), frmBorrowBooks)
             If frmBorrowBooksInstance IsNot Nothing Then
-                frmBorrowBooksInstance.SetSelectedBooks(isbn, title, authorName)
+                If String.IsNullOrEmpty(isbn) Then
+                    frmBorrowBooksInstance.SetSelectedBookWithoutISBN(title, authorName)
+                Else
+                    frmBorrowBooksInstance.SetSelectedBooksWithISBN(isbn, title, authorName)
+                End If
             End If
 
             Dim frmAddCopiesInstance As frmAddCopies = DirectCast(Application.OpenForms("frmAddCopies"), frmAddCopies)

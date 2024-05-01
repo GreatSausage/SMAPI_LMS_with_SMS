@@ -91,6 +91,12 @@ Module mdlOthers
             frmMain.txtFullname.Text = fullname
             Dim role As String = GetRoleName(userName)
             frmMain.txtRoles.Text = role
+            If role = "Assistant Librarian" Then
+                frmMain.btnMaintenance.Visible = False
+                frmMain.btnReports.Visible = False
+                frmMain.btnBookInventory.Visible = False
+                frmMain.btnAudit.Visible = False
+            End If
         End Using
     End Sub
 

@@ -51,46 +51,17 @@ Module mdlBorrowSetup
         End Using
     End Sub
 
-    Public Sub BorrowBookInfo(isbn As String, title As Guna2TextBox, authors As Guna2TextBox)
+    Public Function AvailableAcn(title As String) As DataTable
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT B.bookTitle, A.AuthorName 
-                                             FROM tblBooks B 
-                                             JOIN tblAuthors A ON A.AuthorID = B.AuthorID
-                                             JOIN tblCopies C ON B.BookID = C.BookID
-                                             WHERE B.ISBN = @isbn", connection)
-                command.Parameters.AddWithValue("@isbn", isbn)
-                Using reader As MySqlDataReader = command.ExecuteReader()
-                    If reader.Read() Then
-                        title.Text = reader("bookTitle").ToString()
-                        authors.Text = reader("AuthorName").ToString()
-                    Else
-                        title.Text = ""
-                        authors.Text = ""
-                    End If
-                End Using
-            End Using
-        End Using
-    End Sub
-
-    Public Function AvailableAcn(isbn As String) As DataTable
-        Dim bookID As Integer = Convert.ToInt32(GetBookIDForBorrow(isbn))
-        Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT accessionNo FROM tblCopies WHERE status = 'Available' AND bookID = @bookID", connection)
-                command.Parameters.AddWithValue("@bookID", bookID)
+            Using command As New MySqlCommand("SELECT c.accessionNo FROM tblCopies c 
+                                               JOIN tblBooks b ON c.bookID = b.bookID 
+                                               WHERE b.bookTitle = @title AND c.status = 'Available'", connection)
+                command.Parameters.AddWithValue("@title", title)
                 Using adapter As New MySqlDataAdapter(command)
                     Dim dt As New DataTable
                     adapter.Fill(dt)
                     Return dt
                 End Using
-            End Using
-        End Using
-    End Function
-
-    Public Function GetBookIDForBorrow(isbn As String) As Integer
-        Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT bookID FROM tblBooks WHERE isbn = @isbn", connection)
-                command.Parameters.AddWithValue("@isbn", isbn)
-                Return Convert.ToInt32(command.ExecuteScalar())
             End Using
         End Using
     End Function

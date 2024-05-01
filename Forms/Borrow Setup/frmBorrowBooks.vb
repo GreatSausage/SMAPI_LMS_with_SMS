@@ -6,10 +6,9 @@
         Me.Close()
     End Sub
 
-    Private Sub txtISBN_TextChanged(sender As Object, e As EventArgs) Handles txtISBN.TextChanged
-        BorrowBookInfo(txtISBN.Text, txtTitle, txtAuthors)
+    Private Sub txtISBN_TextChanged(sender As Object, e As EventArgs) Handles txtTitle.TextChanged
 
-        Dim acnDt As DataTable = AvailableAcn(txtISBN.Text)
+        Dim acnDt As DataTable = AvailableAcn(txtTitle.Text)
         txtAcn.DataSource = acnDt
         txtAcn.DisplayMember = "accessionNo"
         txtAcn.ValueMember = "accessionNo"
@@ -23,8 +22,13 @@
         frmBookFinder.Show()
     End Sub
 
-    Public Sub SetSelectedBooks(isbn As String, title As String, authorName As String)
+    Public Sub SetSelectedBooksWithISBN(isbn As String, title As String, authorName As String)
         txtISBN.Text = isbn
+        txtTitle.Text = title
+        txtAuthors.Text = authorName
+    End Sub
+
+    Public Sub SetSelectedBookWithoutISBN(title As String, authorName As String)
         txtTitle.Text = title
         txtAuthors.Text = authorName
     End Sub
@@ -84,4 +88,5 @@
         newRow.Cells("distinctTitle").Value = title
         newRow.Cells("acnNo").Value = acn
     End Sub
+
 End Class

@@ -26,7 +26,7 @@ Partial Class frmMain
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAudit = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.btnBookInventory = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
@@ -34,13 +34,13 @@ Partial Class frmMain
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.txtRoles = New System.Windows.Forms.Label()
+        Me.txtFullname = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panelDisplay = New System.Windows.Forms.Panel()
-        Me.txtFullname = New System.Windows.Forms.Label()
-        Me.txtRoles = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +52,7 @@ Partial Class frmMain
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnReports)
         Me.Panel1.Controls.Add(Me.Guna2Button5)
-        Me.Panel1.Controls.Add(Me.Guna2Button4)
+        Me.Panel1.Controls.Add(Me.btnAudit)
         Me.Panel1.Controls.Add(Me.Guna2Button2)
         Me.Panel1.Controls.Add(Me.btnBookInventory)
         Me.Panel1.Controls.Add(Me.btnMaintenance)
@@ -96,21 +96,21 @@ Partial Class frmMain
         Me.Guna2Button5.TabIndex = 7
         Me.Guna2Button5.Text = "Logout"
         '
-        'Guna2Button4
+        'btnAudit
         '
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Button4.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(0, 530)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(300, 70)
-        Me.Guna2Button4.TabIndex = 6
-        Me.Guna2Button4.Text = "Audit Trail"
+        Me.btnAudit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAudit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAudit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAudit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAudit.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAudit.FillColor = System.Drawing.Color.Transparent
+        Me.btnAudit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAudit.ForeColor = System.Drawing.Color.White
+        Me.btnAudit.Location = New System.Drawing.Point(0, 530)
+        Me.btnAudit.Name = "btnAudit"
+        Me.btnAudit.Size = New System.Drawing.Size(300, 70)
+        Me.btnAudit.TabIndex = 6
+        Me.btnAudit.Text = "Audit Trail"
         '
         'Guna2Button2
         '
@@ -212,6 +212,30 @@ Partial Class frmMain
         Me.Panel7.Size = New System.Drawing.Size(180, 50)
         Me.Panel7.TabIndex = 4
         '
+        'txtRoles
+        '
+        Me.txtRoles.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtRoles.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRoles.ForeColor = System.Drawing.Color.White
+        Me.txtRoles.Location = New System.Drawing.Point(0, 28)
+        Me.txtRoles.Name = "txtRoles"
+        Me.txtRoles.Size = New System.Drawing.Size(180, 22)
+        Me.txtRoles.TabIndex = 1
+        Me.txtRoles.Text = "Label1"
+        Me.txtRoles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtFullname
+        '
+        Me.txtFullname.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtFullname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFullname.ForeColor = System.Drawing.Color.White
+        Me.txtFullname.Location = New System.Drawing.Point(0, 0)
+        Me.txtFullname.Name = "txtFullname"
+        Me.txtFullname.Size = New System.Drawing.Size(180, 28)
+        Me.txtFullname.TabIndex = 0
+        Me.txtFullname.Text = "Label1"
+        Me.txtFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
@@ -253,30 +277,6 @@ Partial Class frmMain
         Me.panelDisplay.Size = New System.Drawing.Size(1298, 893)
         Me.panelDisplay.TabIndex = 2
         '
-        'txtFullname
-        '
-        Me.txtFullname.Dock = System.Windows.Forms.DockStyle.Top
-        Me.txtFullname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFullname.ForeColor = System.Drawing.Color.White
-        Me.txtFullname.Location = New System.Drawing.Point(0, 0)
-        Me.txtFullname.Name = "txtFullname"
-        Me.txtFullname.Size = New System.Drawing.Size(180, 28)
-        Me.txtFullname.TabIndex = 0
-        Me.txtFullname.Text = "Label1"
-        Me.txtFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtRoles
-        '
-        Me.txtRoles.Dock = System.Windows.Forms.DockStyle.Top
-        Me.txtRoles.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRoles.ForeColor = System.Drawing.Color.White
-        Me.txtRoles.Location = New System.Drawing.Point(0, 28)
-        Me.txtRoles.Name = "txtRoles"
-        Me.txtRoles.Size = New System.Drawing.Size(180, 22)
-        Me.txtRoles.TabIndex = 1
-        Me.txtRoles.Text = "Label1"
-        Me.txtRoles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -310,7 +310,7 @@ Partial Class frmMain
     Friend WithEvents btnMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnBookInventory As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnAudit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtFullname As Label

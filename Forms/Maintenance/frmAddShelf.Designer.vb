@@ -28,8 +28,6 @@ Partial Class frmAddShelf
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDescription = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtLocation = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
@@ -43,7 +41,7 @@ Partial Class frmAddShelf
         Me.lblShelf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.lblShelf.Location = New System.Drawing.Point(0, 0)
         Me.lblShelf.Name = "lblShelf"
-        Me.lblShelf.Size = New System.Drawing.Size(748, 50)
+        Me.lblShelf.Size = New System.Drawing.Size(360, 50)
         Me.lblShelf.TabIndex = 4
         Me.lblShelf.Text = "ADD SHELF"
         Me.lblShelf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -55,9 +53,9 @@ Partial Class frmAddShelf
         Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btnClose.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnClose.Location = New System.Drawing.Point(695, 9)
+        Me.btnClose.Location = New System.Drawing.Point(299, 9)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
         Me.btnClose.TabIndex = 12
         Me.btnClose.TabStop = True
         Me.btnClose.Text = "[close]"
@@ -79,6 +77,7 @@ Partial Class frmAddShelf
         Me.txtShelfNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtShelfNo.Location = New System.Drawing.Point(5, 105)
         Me.txtShelfNo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtShelfNo.MaxLength = 2
         Me.txtShelfNo.Name = "txtShelfNo"
         Me.txtShelfNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtShelfNo.PlaceholderText = ""
@@ -129,39 +128,6 @@ Partial Class frmAddShelf
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Description:"
         '
-        'txtLocation
-        '
-        Me.txtLocation.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLocation.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtLocation.DefaultText = ""
-        Me.txtLocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLocation.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLocation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtLocation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLocation.Location = New System.Drawing.Point(393, 105)
-        Me.txtLocation.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtLocation.Name = "txtLocation"
-        Me.txtLocation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtLocation.PlaceholderText = ""
-        Me.txtLocation.SelectedText = ""
-        Me.txtLocation.Size = New System.Drawing.Size(350, 44)
-        Me.txtLocation.TabIndex = 18
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(389, 81)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 20)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Location:"
-        '
         'btnSave
         '
         Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -171,7 +137,7 @@ Partial Class frmAddShelf
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(393, 177)
+        Me.btnSave.Location = New System.Drawing.Point(5, 228)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(350, 44)
         Me.btnSave.TabIndex = 23
@@ -186,7 +152,7 @@ Partial Class frmAddShelf
         Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(576, 177)
+        Me.btnUpdate.Location = New System.Drawing.Point(188, 228)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(167, 44)
         Me.btnUpdate.TabIndex = 26
@@ -201,7 +167,7 @@ Partial Class frmAddShelf
         Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(393, 177)
+        Me.btnDelete.Location = New System.Drawing.Point(5, 228)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(167, 44)
         Me.btnDelete.TabIndex = 25
@@ -211,13 +177,11 @@ Partial Class frmAddShelf
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(748, 226)
+        Me.ClientSize = New System.Drawing.Size(360, 279)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.txtLocation)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtDescription)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtShelfNo)
@@ -238,8 +202,6 @@ Partial Class frmAddShelf
     Friend WithEvents Label2 As Label
     Friend WithEvents txtDescription As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtLocation As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button

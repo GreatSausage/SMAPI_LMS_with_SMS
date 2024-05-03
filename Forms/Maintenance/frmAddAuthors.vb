@@ -44,8 +44,9 @@
         End If
     End Sub
 
-    'Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-    '    DeleteAuthors(txtAuthorID.Text)
-    '    Me.Close()
-    'End Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DeleteAuthors(getAuthorID)
+        getAuthorID = Nothing
+        Me.Close()
+    End Sub
 End Class

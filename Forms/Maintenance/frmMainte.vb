@@ -2,7 +2,6 @@
 
     Private Sub frmMainte_Load(sender As Object, e As EventArgs) Handles Me.Load
         AuthorDatatable()
-        GenreDatatable()
         PublisherDatatable()
         ShelfDatatable()
         SupplierDatatable()
@@ -69,24 +68,6 @@
         End If
     End Sub
 
-    Private Sub btnAddGenres_Click(sender As Object, e As EventArgs) Handles btnAddGenres.Click
-        frmAddGenre.Show()
-    End Sub
-
-    Private Sub dgGenres_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgGenres.CellContentClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = dgGenres.Rows(e.RowIndex)
-            Dim genreName As String = row.Cells("genreName").Value.ToString
-            Dim genreID As Integer = Convert.ToInt32(row.Cells("genreID").Value)
-
-            Dim frmGenreInstance As New frmAddGenre()
-            frmGenreInstance.SetSelectedGenreMaintenance(genreID, genreName)
-            frmGenreInstance.Show()
-            frmGenreInstance.btnSave.Visible = False
-            frmGenreInstance.lblGenre.Text = "GENRE INFORMATION"
-        End If
-    End Sub
-
     Private Sub btnAddBookshelf_Click(sender As Object, e As EventArgs) Handles btnAddBookshelf.Click
         frmAddShelf.Show()
     End Sub
@@ -96,11 +77,10 @@
             Dim row As DataGridViewRow = dgBookshelves.Rows(e.RowIndex)
             Dim shelfID As Integer = Convert.ToInt32(row.Cells("shelfID").Value)
             Dim description As String = row.Cells("shelfDescription").Value.ToString
-            Dim location As String = row.Cells("shelfLocation").Value.ToString
             Dim shelfNo As Integer = Convert.ToInt32(row.Cells("shelfNo").Value)
 
             Dim frmShelfInstance As New frmAddShelf()
-            frmShelfInstance.SetSelectedShelfMaintenance(shelfID, description, location, shelfNo)
+            frmShelfInstance.SetSelectedShelfMaintenance(shelfID, description, shelfNo)
             frmShelfInstance.Show()
             frmShelfInstance.btnSave.Visible = False
             frmShelfInstance.txtShelfNo.ReadOnly = True
@@ -129,9 +109,8 @@
         frmAddSection.Show()
     End Sub
 
-    Private Sub refreshOne_Click(sender As Object, e As EventArgs) Handles refreshOne.Click, refreshTwo.Click, refreshThree.Click, refreshFour.Click, refreshFive.Click, refreshSix.Click
+    Private Sub refreshOne_Click(sender As Object, e As EventArgs) Handles refreshOne.Click, refreshTwo.Click, refreshThree.Click, refreshFour.Click, refreshSix.Click
         AuthorDatatable()
-        GenreDatatable()
         PublisherDatatable()
         ShelfDatatable()
         SupplierDatatable()

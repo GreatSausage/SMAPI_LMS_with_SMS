@@ -1,7 +1,6 @@
-﻿Imports System.Threading
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Imports System.IO.Ports
-Imports System.ComponentModel
+Imports System.Threading
 
 Public Class frmMain
 
@@ -223,7 +222,4 @@ Public Class frmMain
         smsport.WriteLine(message & Chr(26))
         Threading.Thread.Sleep(1000) ' Wait for modem response
     End Sub
-
-
-
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel.Design
+Imports MySql.Data.MySqlClient
 
 Public Class frmReturnBooks
 
@@ -18,8 +19,48 @@ Public Class frmReturnBooks
 
     Private Sub frmReturnBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If IsBookOverdue(getBorrowID) Then
-            CalculateInOverdue(getBorrowID, txtPenalty, txtStatus)
-            txtStatus.Enabled = False
+            Dim currentDate As Date = Date.Now
+            Dim dueDate As Date
+            Dim dateBorrowed As DateTime
+            Dim instantLost As Date
+            Try
+                Using connection As MySqlConnection = ConnectionOpen()
+                    Using selectCommand As New MySqlCommand("SELECT dueDate, dateBorrowed, instantLost FROM tblBorrowedBooks WHERE borrowID = @borrowID", connection)
+                        selectCommand.Parameters.AddWithValue("@borrowID", getBorrowID)
+
+                        Using reader As MySqlDataReader = selectCommand.ExecuteReader()
+                            If reader.Read() Then
+                                dueDate = reader("dueDate")
+                                dateBorrowed = reader("dateBorrowed")
+                                instantLost = reader("instantLost")
+                            End If
+                        End Using
+                    End Using
+
+                    Dim overDue As Integer = (currentDate - dueDate).Days
+
+                    If overDue >= 1 AndAlso overDue <= 7 Then
+                        Using getOverdueCommand As New MySqlCommand("SELECT overduePenalty FROM tblMaintenance WHERE id = 1", connection)
+                            Dim overdueCharge As Decimal = Convert.ToDecimal(getOverdueCommand.ExecuteScalar())
+                            Dim penalty As Decimal = Convert.ToDecimal(overDue) * overdueCharge
+                            MsgBox(penalty)
+                            txtPenalty.Text = penalty.ToString
+                            txtStatus.SelectedItem = "Overdue"
+                            txtStatus.Enabled = False
+                        End Using
+
+                    ElseIf overDue <= 0 Then
+                        txtStatus.SelectedIndex = 0
+                        txtStatus.Items.Remove("Overdue")
+
+                    ElseIf currentDate >= instantLost Then
+                        txtStatus.SelectedIndex = 3
+                        txtStatus.Enabled = False
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show($"Error: {ex.Message}")
+            End Try
         Else
             txtStatus.SelectedItem = "Good Condition"
             txtStatus.Items.Remove("Overdue")
@@ -52,32 +93,25 @@ Public Class frmReturnBooks
     End Sub
 
     Private Sub txtStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtStatus.SelectedIndexChanged
-        If txtStatus.SelectedIndex = 3 Then
+        If txtStatus.SelectedItem = "Lost" OrElse txtStatus.SelectedItem = "Damaged" Then
             Dim type As String = GetBookType(txtAcn.Text)
             If type = "Purchased" Then
-                txtPenalty.ReadOnly = True
+                txtPenalty.ReadOnly = False
                 txtPenalty.Text = GetBookPrice(txtAcn.Text)
+                txtPenalty.ReadOnly = True
             ElseIf type = "Donated" Then
+                txtPenalty.ReadOnly = False
                 txtPenalty.Text = GetBookPenalty()
                 txtPenalty.ReadOnly = True
             ElseIf type = "Initial Copy" Then
+                txtPenalty.ReadOnly = False
                 txtPenalty.Text = GetBookPenalty()
                 txtPenalty.ReadOnly = True
             End If
 
-        ElseIf txtStatus.SelectedIndex = 0 Then
+        Else
             txtPenalty.Clear()
             txtPenalty.ReadOnly = False
-
-        ElseIf txtStatus.SelectedIndex = 2 Then
-            Dim type As String = GetBookType(txtAcn.Text)
-            If type = "Purchased" Then
-                txtPenalty.Text = GetBookPrice(txtAcn.Text)
-                txtPenalty.ReadOnly = True
-            ElseIf type = "Donated" Then
-                txtPenalty.Text = GetBookPenalty()
-                txtPenalty.ReadOnly = True
-            End If
 
         End If
     End Sub

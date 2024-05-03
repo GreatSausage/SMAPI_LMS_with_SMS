@@ -27,10 +27,11 @@
         End If
     End Sub
 
-    'Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-    '    DeletePublisher(txtPublisherID.Text)
-    '    Me.Close()
-    'End Sub
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DeletePublisher(getPublisherID)
+        getPublisherID = Nothing
+        Me.Close()
+    End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If String.IsNullOrEmpty(txtPublishers.Text) Then

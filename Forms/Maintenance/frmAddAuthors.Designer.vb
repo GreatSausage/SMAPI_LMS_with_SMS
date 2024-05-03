@@ -53,7 +53,7 @@ Partial Class frmAddAuthors
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.btnClose.Location = New System.Drawing.Point(299, 9)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
         Me.btnClose.TabIndex = 3
         Me.btnClose.TabStop = True
         Me.btnClose.Text = "[close]"

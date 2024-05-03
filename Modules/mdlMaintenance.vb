@@ -20,15 +20,15 @@ Module mdlMaintenance
 
 
 #Region "User Maintenance"
-
     Public Function DisplayUsers() As DataTable
         Using connection As MySqlConnection = ConnectionOpen()
             Using command As New MySqlCommand("SELECT u.userID, u.firstName, u.lastName, u.phoneNumber, 
-                                                            r.roleName 
-                                                     FROM tblUsers u 
-                                                     JOIN tblRoles r 
-                                                     ON r.roleID = u.roleID 
-                                                     ORDER BY u.firstName", connection)
+                                                        r.roleName 
+                                                 FROM tblUsers u 
+                                                 JOIN tblRoles r 
+                                                 ON r.roleID = u.roleID 
+                                                 WHERE u.roleID IN(2,3,4)
+                                                 ORDER BY u.firstName", connection)
                 Using adapter As New MySqlDataAdapter(command)
                     Dim dt As New DataTable
                     adapter.Fill(dt)
@@ -37,6 +37,7 @@ Module mdlMaintenance
             End Using
         End Using
     End Function
+
 
     Public Sub UserDatatable()
         Dim dtUser As DataTable = DisplayUsers()
@@ -48,11 +49,11 @@ Module mdlMaintenance
             Dim command As String = "SELECT roleID, roleName FROM tblRoles "
 
             If role = "Principal" Then
-                command += "WHERE roleID IN(2,3)"
+                command += "WHERE roleID IN(3,4)"
             ElseIf role = "Librarian" Then
-                command += "WHERE roleID IN(3)"
+                command += "WHERE roleID IN(4)"
             ElseIf role = "Admin" Then
-                command += "WHERE roleID IN(1,2,3)"
+                command += "WHERE roleID IN(2,3,4)"
             End If
 
             Using commandOne As New MySqlCommand(command, connection)
@@ -94,9 +95,19 @@ Module mdlMaintenance
             End Using
         Catch ex As MySqlException
             If ex.Number = 1062 Then
-                MessageBox.Show("Some fields are duplicated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim errorMessage As String = "Some fields already exist:"
+                If ex.Message.Contains("userName") Then
+                    errorMessage &= vbCrLf & "- User Name"
+                End If
+                If ex.Message.Contains("phoneNumber") Then
+                    errorMessage &= vbCrLf & "- Phone Number"
+                End If
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
+
     End Sub
 #End Region
 
@@ -130,9 +141,19 @@ Module mdlMaintenance
             End Using
         Catch ex As MySqlException
             If ex.Number = 1062 Then
-                MessageBox.Show("Supplier already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim errorMessage As String = "Some fields already exist:"
+                If ex.Message.Contains("supplierName") Then
+                    errorMessage &= vbCrLf & "- Supplier Name"
+                End If
+                If ex.Message.Contains("contactNumber") Then
+                    errorMessage &= vbCrLf & "- Contact Number"
+                End If
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
+
     End Sub
 
     Public Sub UpdateSuppliers(supplierID As Integer, supplierName As String, contact As String, address As String, type As String)
@@ -159,31 +180,40 @@ Module mdlMaintenance
             End Using
         Catch ex As MySqlException
             If ex.Number = 1062 Then
-                MessageBox.Show("Supplier already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim errorMessage As String = "Some fields already exist:"
+                If ex.Message.Contains("supplierName") Then
+                    errorMessage &= vbCrLf & "- Supplier Name"
+                End If
+                If ex.Message.Contains("contactNumber") Then
+                    errorMessage &= vbCrLf & "- Contact Number"
+                End If
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
     End Sub
 
-    '    Public Sub DeleteSuppliers(supplierID As Integer)
-    '        Using connection As SqlConnection = ConnectionOpen(connString)
+    Public Sub DeleteSuppliers(supplierID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
 
-    '            Using checkCommand As New SqlCommand("SELECT COUNT(*) FROM tblCopies WHERE supplierID = @supplierID", connection)
-    '                checkCommand.Parameters.AddWithValue("@supplierID", supplierID)
-    '                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblCopies WHERE supplierID = @supplierID", connection)
+                checkCommand.Parameters.AddWithValue("@supplierID", supplierID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
-    '                If count > 0 Then
-    '                    MessageBox.Show("Supplier cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                Else
-    '                    Using command As New SqlCommand("DELETE FROM tblSuppliers WHERE supplierID = @supplierID", connection)
-    '                        command.Parameters.AddWithValue("@supplierID", supplierID)
-    '                        command.ExecuteNonQuery()
-    '                        MessageBox.Show("Supplier has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '                        SupplierDatatable()
-    '                    End Using
-    '                End If
-    '            End Using
-    '        End Using
-    '    End Sub
+                If count > 0 Then
+                    MessageBox.Show("Supplier cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblSuppliers WHERE supplierID = @supplierID", connection)
+                        command.Parameters.AddWithValue("@supplierID", supplierID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Supplier has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        SupplierDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
+    End Sub
 
 #End Region
 
@@ -243,26 +273,26 @@ Module mdlMaintenance
     End Sub
 
     'DELETE AUTHORS
-    'Public Sub DeleteAuthors(authorID As Integer)
-    '    Using connection As MySqlConnection = ConnectionOpen(connString)
+    Public Sub DeleteAuthors(authorID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
 
-    '        Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblBooks WHERE authorID = @authorID", connection)
-    '            checkCommand.Parameters.AddWithValue("@authorID", authorID)
-    '            Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblBooks WHERE authorID = @authorID", connection)
+                checkCommand.Parameters.AddWithValue("@authorID", authorID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
-    '            If count > 0 Then
-    '                MessageBox.Show("Author cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '            Else
-    '                Using command As New MySqlCommand("DELETE FROM tblAuthors WHERE authorID = @authorID", connection)
-    '                    command.Parameters.AddWithValue("@authorID", authorID)
-    '                    command.ExecuteNonQuery()
-    '                    MessageBox.Show("Author has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '                    AuthorDatatable()
-    '                End Using
-    '            End If
-    '        End Using
-    '    End Using
-    'End Sub
+                If count > 0 Then
+                    MessageBox.Show("Author cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblAuthors WHERE authorID = @authorID", connection)
+                        command.Parameters.AddWithValue("@authorID", authorID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Author has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        AuthorDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
+    End Sub
 
 #End Region
 
@@ -316,127 +346,48 @@ Module mdlMaintenance
         End Try
     End Sub
 
-    '    Public Sub DeletePublisher(publisherID As Integer)
-    '        Using connection As SqlConnection = ConnectionOpen(connString)
+    Public Sub DeletePublisher(publisherID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
 
-    '            Using checkCommand As New SqlCommand("SELECT COUNT(*) FROM tblBooks WHERE publisherID = @publisherID", connection)
-    '                checkCommand.Parameters.AddWithValue("@publisherID", publisherID)
-    '                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblBooks WHERE publisherID = @publisherID", connection)
+                checkCommand.Parameters.AddWithValue("@publisherID", publisherID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
-    '                If count > 0 Then
-    '                    MessageBox.Show("Publisher cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                Else
-    '                    Using command As New SqlCommand("DELETE FROM tblPublishers WHERE publisherID = @publisherID", connection)
-    '                        command.Parameters.AddWithValue("@publisherID", publisherID)
-    '                        command.ExecuteNonQuery()
-    '                        MessageBox.Show("Publisher has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If count > 0 Then
+                    MessageBox.Show("Publisher cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblPublishers WHERE publisherID = @publisherID", connection)
+                        command.Parameters.AddWithValue("@publisherID", publisherID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Publisher has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-    '                        PublisherDatatable()
-    '                    End Using
-    '                End If
-    '            End Using
-    '        End Using
-    '    End Sub
-
-#End Region
-
-#Region "Genres"
-
-    Public Sub GenreDatatable()
-        Dim dtGenre As DataTable = DisplayAlphabeticalData("tblgenres", "genreName")
-        frmMainte.dgGenres.DataSource = dtGenre
-    End Sub
-
-    'ADD GENRE
-    Public Sub AddGenre(genreName As String)
-        Dim cultureInfo As New CultureInfo("en-US")
-        Dim textInfo As TextInfo = cultureInfo.TextInfo
-        Dim capitalizedGenreName As String = textInfo.ToTitleCase(genreName.ToLower())
-        Try
-            Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("INSERT INTO tblGenres(genreName) VALUES (@genreName)", connection)
-                    command.Parameters.AddWithValue("@genreName", capitalizedGenreName)
-                    command.ExecuteNonQuery()
-                    MessageBox.Show("Genre added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    GenreDatatable()
-                End Using
+                        PublisherDatatable()
+                    End Using
+                End If
             End Using
-        Catch ex As MySqlException
-            If ex.Number = 1062 Then
-                MessageBox.Show("Genre already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Exit Sub
-            End If
-        End Try
+        End Using
     End Sub
 
-    Public Sub UpdateGenre(genreID As Integer, genreName As String)
-        Dim cultureInfo As New CultureInfo("en-US")
-        Dim textInfo As TextInfo = cultureInfo.TextInfo
-        Dim capitalizedGenre As String = textInfo.ToTitleCase(genreName.ToLower)
-
-        Try
-            Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("UPDATE tblgenres SET genreName = @genreName 
-                                                     WHERE genreID = @genreID", connection)
-                    command.Parameters.AddWithValue("@genreID", genreID)
-                    command.Parameters.AddWithValue("@genreName", capitalizedGenre)
-                    command.ExecuteNonQuery()
-                    MessageBox.Show("Genre updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    GenreDatatable()
-                End Using
-            End Using
-        Catch ex As MySqlException
-            If ex.Number = 1062 Then
-                MessageBox.Show("Genre name already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Exit Sub
-            End If
-        End Try
-    End Sub
-
-    '    Public Sub DeleteGenre(genreID As Integer)
-    '        Using connection As SqlConnection = ConnectionOpen(connString)
-
-    '            Using checkCommand As New SqlCommand("SELECT COUNT(*) FROM tblBooks WHERE genreID = @genreID", connection)
-    '                checkCommand.Parameters.AddWithValue("@genreID", genreID)
-    '                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
-
-    '                If count > 0 Then
-    '                    MessageBox.Show("Genre cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                Else
-    '                    Using command As New SqlCommand("DELETE FROM tblGenres WHERE genreID = @genreID", connection)
-    '                        command.Parameters.AddWithValue("@genreID", genreID)
-    '                        command.ExecuteNonQuery()
-    '                        MessageBox.Show("Genre has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-    '                        GenreDatatable()
-    '                    End Using
-    '                End If
-    '            End Using
-    '        End Using
-    '    End Sub
 #End Region
 
 #Region "Bookshelves"
-
     Public Sub ShelfDatatable()
         Dim dtShelf As DataTable = DisplayAlphabeticalData("tblBookshelves", "shelfNo")
         frmMainte.dgBookshelves.DataSource = dtShelf
     End Sub
 
-    Public Sub AddBookshelves(shelfNo As String, description As String, location As String)
+    Public Sub AddBookshelves(shelfNo As String, description As String)
         Dim cultureInfo As New CultureInfo("en-US")
         Dim textInfo As TextInfo = cultureInfo.TextInfo
         Dim capitalizedDescription As String = textInfo.ToTitleCase(description.ToLower())
-        Dim capitalizedLocation As String = textInfo.ToTitleCase(location.ToLower())
 
         Try
             Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("INSERT INTO tblBookshelves(shelfNo, description, location) 
-                                                     VALUES(@shelfNo, @description, @location)", connection)
+                Using command As New MySqlCommand("INSERT INTO tblBookshelves(shelfNo, description) 
+                                                     VALUES(@shelfNo, @description)", connection)
                     With command.Parameters
                         .AddWithValue("@shelfNo", shelfNo)
                         .AddWithValue("@description", capitalizedDescription)
-                        .AddWithValue("@location", capitalizedLocation)
                     End With
                     command.ExecuteNonQuery()
                     MessageBox.Show("Bookshelf added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -450,20 +401,18 @@ Module mdlMaintenance
         End Try
     End Sub
 
-    Public Sub UpdateBookshelf(shelfID As Integer, description As String, location As String)
+    Public Sub UpdateBookshelf(shelfID As Integer, description As String, shelfNo As Integer)
         Dim cultureInfo As New CultureInfo("en-US")
         Dim textInfo As TextInfo = cultureInfo.TextInfo
-        Dim capitalizedlocation As String = textInfo.ToTitleCase(location.ToLower)
         Dim capitalizedDescription As String = textInfo.ToTitleCase(description.ToLower)
 
         Try
             Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("UPDATE tblBookshelves SET description = @description,
-                                                                               location = @location     
-                                                     WHERE shelfID = @shelfID", connection)
+                Using command As New MySqlCommand("UPDATE tblBookshelves SET shelfNo = @shelfNo, description = @description 
+                                                   WHERE shelfID = @shelfID", connection)
                     command.Parameters.AddWithValue("@shelfID", shelfID)
                     command.Parameters.AddWithValue("@description", capitalizedDescription)
-                    command.Parameters.AddWithValue("@location", capitalizedlocation)
+                    command.Parameters.AddWithValue("@shelfNo", shelfNo)
                     command.ExecuteNonQuery()
                     MessageBox.Show("Shelf updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ShelfDatatable()
@@ -476,27 +425,27 @@ Module mdlMaintenance
         End Try
     End Sub
 
-    '    Public Sub DeleteShelf(shelfID As Integer)
-    '        Using connection As SqlConnection = ConnectionOpen(connString)
+    Public Sub DeleteShelf(shelfID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
 
-    '            Using checkCommand As New SqlCommand("SELECT COUNT(*) FROM tblBooks WHERE shelfID = @shelfID", connection)
-    '                checkCommand.Parameters.AddWithValue("@shelfID", shelfID)
-    '                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblBooks WHERE shelfID = @shelfID", connection)
+                checkCommand.Parameters.AddWithValue("@shelfID", shelfID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
-    '                If count > 0 Then
-    '                    MessageBox.Show("Shelf cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                Else
-    '                    Using command As New SqlCommand("DELETE FROM tblBookshelves WHERE shelfID = @shelfID", connection)
-    '                        command.Parameters.AddWithValue("@shelfID", shelfID)
-    '                        command.ExecuteNonQuery()
-    '                        MessageBox.Show("Shelf has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If count > 0 Then
+                    MessageBox.Show("Shelf cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblBookshelves WHERE shelfID = @shelfID", connection)
+                        command.Parameters.AddWithValue("@shelfID", shelfID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Shelf has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-    '                        ShelfDatatable()
-    '                    End Using
-    '                End If
-    '            End Using
-    '        End Using
-    '    End Sub
+                        ShelfDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
+    End Sub
 #End Region
 
 #Region "Borrow Maintenance"

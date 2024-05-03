@@ -78,12 +78,13 @@
         txtAddress.Text = address
     End Sub
 
-    'Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-    '    DeleteSuppliers(txtSupplierID.Text)
-    '    Me.Close()
-    'End Sub
-
     Private Sub frmAddSuppliers_Load(sender As Object, e As EventArgs) Handles Me.Load
         rbDonator.Checked = True
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DeleteSuppliers(getSupplierID)
+        getSupplierID = Nothing
+        Me.Close()
     End Sub
 End Class

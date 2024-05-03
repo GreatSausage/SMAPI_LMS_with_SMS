@@ -330,45 +330,56 @@ Module mdlBorrowSetup
         End Using
     End Function
 
-    Public Sub CalculateInOverdue(borrowID As Integer, penalty As Guna2TextBox, status As Guna2ComboBox)
-        Dim currentDate As Date = Date.Now
-        Dim dueDate As Date
-        Dim dateBorrowed As DateTime
-        Dim instantLost As Date
-        Try
-            Using connection As MySqlConnection = ConnectionOpen()
-                Using selectCommand As New MySqlCommand("SELECT dueDate, dateBorrowed, instantLost FROM tblBorrowedBooks WHERE borrowID = @borrowID", connection)
-                    selectCommand.Parameters.AddWithValue("@borrowID", borrowID)
+    'Public Sub CalculateInOverdue(borrowID As Integer, penalty As Guna2TextBox, status As Guna2ComboBox)
+    'Dim currentDate As Date = Date.Today
+    'Dim dueDate As Date
+    'Dim dateBorrowed As DateTime
+    'Dim instantLost As Date
+    'Try
+    '    Using connection As MySqlConnection = ConnectionOpen()
+    '        Using selectCommand As New MySqlCommand("SELECT dueDate, dateBorrowed, instantLost FROM tblBorrowedBooks WHERE borrowID = @borrowID", connection)
+    '            selectCommand.Parameters.AddWithValue("@borrowID", borrowID)
 
-                    Using reader As MySqlDataReader = selectCommand.ExecuteReader()
-                        If reader.Read() Then
-                            dueDate = reader("dueDate")
-                            dateBorrowed = reader("dateBorrowed")
-                            instantLost = reader("instantLost")
-                        End If
-                    End Using
-                End Using
+    '            Using reader As MySqlDataReader = selectCommand.ExecuteReader()
+    '                If reader.Read() Then
+    '                    dueDate = reader("dueDate")
+    '                    dateBorrowed = reader("dateBorrowed")
+    '                    instantLost = reader("instantLost")
+    '                End If
+    '            End Using
+    '        End Using
 
-                Dim overDue As Integer = (currentDate - dueDate).Days
+    '        Dim overDue As Integer = (currentDate - dueDate).Days
 
-                If overDue <= 7 Then
-                    MsgBox("this is overdue")
-                    Using getOverdueCommand As New MySqlCommand("SELECT overduePenalty FROM tblMaintenance WHERE id = 1", connection)
-                        Dim overdueCharge As Decimal = Convert.ToDecimal(getOverdueCommand.ExecuteScalar())
-                        Dim totalPenalty As Decimal = overDue * overdueCharge
-                        MsgBox(totalPenalty)
-                        penalty.Text = totalPenalty.ToString
-                        status.SelectedItem = "Overdue"
-                    End Using
+    '        If overDue >= 0 AndAlso overDue <= 7 Then
+    '            Using getOverdueCommand As New MySqlCommand("SELECT overduePenalty FROM tblMaintenance WHERE id = 1", connection)
+    '                Dim overdueCharge As Decimal = Convert.ToDecimal(getOverdueCommand.ExecuteScalar())
+    '                Dim totalPenalty As Decimal = overDue * overdueCharge
+    '                MsgBox(totalPenalty)
+    '                penalty.Text = totalPenalty.ToString()
+    '                status.SelectedItem = "Overdue"
+    '                ' Remove other items from status ComboBox
+    '                For Each item As Object In status.Items.ToList()
+    '                    If item.ToString() <> "Overdue" Then
+    '                        status.Items.Remove(item)
+    '                    End If
+    '                Next
+    '                status.Enabled = False
+    '            End Using
 
-                ElseIf currentDate >= instantLost Then
-                    status.SelectedIndex = 3
-                End If
-            End Using
-        Catch ex As Exception
-            MessageBox.Show($"Error: {ex.Message}")
-        End Try
-    End Sub
+    '        ElseIf overDue < 0 Then
+    '            status.SelectedIndex = 0
+    '            status.Items.Remove("Overdue")
+
+    '        ElseIf currentDate >= instantLost Then
+    '            status.SelectedIndex = 3
+    '            status.Enabled = False
+    '        End If
+    '    End Using
+    'Catch ex As Exception
+    '    MessageBox.Show($"Error: {ex.Message}")
+    'End Try
+    'End Sub
 
 
     Public Function IsBookOverdue(borrowID As Integer) As Boolean

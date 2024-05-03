@@ -20,12 +20,13 @@
 
             ElseIf String.IsNullOrEmpty(txtISBN.Text) AndAlso Not cbISBN.Checked OrElse
                    String.IsNullOrEmpty(txtTitle.Text) OrElse
-                   String.IsNullOrEmpty(txtYearPublished.Text) Then
+                   String.IsNullOrEmpty(txtYearPublished.Text) OrElse
+                   String.IsNullOrEmpty(txtGenre.text) Then
                 MessageBox.Show("Please fill in the necessary details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim getBookID As Integer
 
-                getBookID = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID)
+                getBookID = AddBooks(txtISBN.Text, txtTitle.Text, getAuthorID, getPublisherID, txtYearPublished.Text, getShelfID, txtGenre.Text)
                 Dim initialCopies As Integer = Convert.ToInt32(txtInitialCopies.Value)
 
                 If initialCopies > 0 Then
@@ -107,4 +108,5 @@
             txtISBN.ReadOnly = False
         End If
     End Sub
+
 End Class

@@ -7,7 +7,7 @@ Module mdlBookInventory
 #Region "Book Inventory"
     Public Function DisplayBooks() As DataTable
         Using connection As MySqlConnection = ConnectionOpen()
-            Using command As New MySqlCommand("SELECT b.bookID, b.bookTitle, b.isbn, b.yearPublished, 
+            Using command As New MySqlCommand("SELECT b.bookID, b.bookTitle, b.isbn, b.yearPublished, b.genres, 
                                                       a.authorName,
                                                       p.publisherName, 
                                                       s.shelfNo, s.shelfID 
@@ -16,7 +16,7 @@ Module mdlBookInventory
                                                INNER JOIN tblPublishers p ON b.publisherID = p.publisherID
                                                INNER JOIN tblBookshelves s ON b.shelfID = s.shelfID
                                                LEFT JOIN tblCopies c ON b.bookID = c.bookID
-                                               GROUP BY b.bookID, b.bookTitle, b.isbn, b.yearPublished,
+                                               GROUP BY b.bookID, b.bookTitle, b.isbn, b.yearPublished, b.genres, 
                                                         a.authorName,
                                                         p.publisherName, 
                                                         s.shelfNo, s.shelfID", connection)
@@ -53,7 +53,7 @@ Module mdlBookInventory
         End Using
     End Function
 
-    Public Function AddBooks(isbn As String, title As String, authorID As Integer, publisherID As Integer, yearPublished As String, shelfID As Integer) As Integer
+    Public Function AddBooks(isbn As String, title As String, authorID As Integer, publisherID As Integer, yearPublished As String, shelfID As Integer, genre As String) As Integer
         Dim cultureInfo As New CultureInfo("en-US")
         Dim textInfo As TextInfo = cultureInfo.TextInfo
         Dim capitalizedTitle As String = textInfo.ToTitleCase(title.ToLower())
@@ -63,8 +63,25 @@ Module mdlBookInventory
                 Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
                 If count > 0 AndAlso isbn = "" Then
-                    MessageBox.Show("ISBN cannot be empty if there are books with ISBN already.")
-                    Return -1
+                    Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID, genres) 
+                                               VALUES (@title, '', @authorID, @publisherID, @yearPublished, @shelfID, @genres);
+                                               SELECT LAST_INSERT_ID();", connection)
+                        With command.Parameters
+                            .AddWithValue("@title", capitalizedTitle)
+                            .AddWithValue("@authorID", authorID)
+                            .AddWithValue("@publisherID", publisherID)
+                            .AddWithValue("@yearPublished", yearPublished)
+                            .AddWithValue("@shelfID", shelfID)
+                            .AddWithValue("@genres", genre)
+                        End With
+                        Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
+                        MessageBox.Show("Book has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Dim dtBooks As DataTable = DisplayBooks()
+                        frmBookInventory.dgBooksMainte.DataSource = dtBooks
+                        Dim dtCopies As DataTable = DisplayCopies()
+                        frmBookInventory.dgCopies.DataSource = dtCopies
+                        Return bookID
+                    End Using
                 End If
 
                 Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID) 
@@ -196,7 +213,7 @@ Module mdlBookInventory
         End Using
     End Function
 
-    Public Sub UpdateBook(authorID As Integer, bookID As Integer, bookTitle As String, isbn As String, publisherID As Integer, shelfID As Integer, yearPublished As Integer)
+    Public Sub UpdateBook(authorID As Integer, bookID As Integer, bookTitle As String, isbn As String, publisherID As Integer, shelfID As Integer, yearPublished As Integer, genre As String)
         Try
             Using connection As MySqlConnection = ConnectionOpen()
                 Using command As New MySqlCommand("UPDATE tblBooks SET authorID = @authorID, 
@@ -204,7 +221,8 @@ Module mdlBookInventory
                                                                isbn = @isbn, 
                                                                publisherID = @publisherID, 
                                                                shelfID = @shelfID, 
-                                                               yearPublished = @yearPublished
+                                                               yearPublished = @yearPublished, 
+                                                               genres = @genre 
                                                            WHERE bookID = @bookID", connection)
                     With command.Parameters
                         .AddWithValue("@authorID", authorID)
@@ -214,6 +232,7 @@ Module mdlBookInventory
                         .AddWithValue("@shelfID", shelfID)
                         .AddWithValue("@yearPublished", yearPublished)
                         .AddWithValue("@bookID", bookID)
+                        .AddWithValue("@genre", genre)
                     End With
                     command.ExecuteNonQuery()
                     MessageBox.Show("Book has been updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)

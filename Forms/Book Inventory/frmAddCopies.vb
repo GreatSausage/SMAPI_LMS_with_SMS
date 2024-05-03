@@ -13,12 +13,8 @@
     End Sub
 
     Private Sub frmAddCopies_Load(sender As Object, e As EventArgs) Handles Me.Load
-        rbDonated.Checked = True
+        rbPurchased.Checked = True
 
-        Dim dtSupplier As DataTable = DisplayAlphabeticalData("tblSuppliers", "supplierName")
-        txtSupplier.DataSource = dtSupplier
-        txtSupplier.ValueMember = "supplierID"
-        txtSupplier.DisplayMember = "supplierName"
         getSupplierID = txtSupplier.SelectedValue
     End Sub
 
@@ -30,7 +26,7 @@
         Dim price As Decimal
 
         If rbPurchased.Checked Then
-            If String.IsNullOrEmpty(txtPrice.Text) OrElse String.IsNullOrEmpty(txtISBN.Text) Then
+            If String.IsNullOrEmpty(txtPrice.Text) Then
                 MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             ElseIf Not String.IsNullOrEmpty(txtPrice.Text) Then

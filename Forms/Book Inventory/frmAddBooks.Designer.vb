@@ -37,7 +37,6 @@ Partial Class frmAddBooks
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.btnFindAuthor = New Guna.UI2.WinForms.Guna2Button()
         Me.btnFindPublisher = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtGenre = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtShelfNo = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -45,6 +44,7 @@ Partial Class frmAddBooks
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtInitialCopies = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.cbISBN = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.txtGenre = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.txtInitialCopies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -267,23 +267,6 @@ Partial Class frmAddBooks
         Me.btnFindPublisher.Size = New System.Drawing.Size(54, 44)
         Me.btnFindPublisher.TabIndex = 25
         '
-        'txtGenre
-        '
-        Me.txtGenre.BackColor = System.Drawing.Color.Transparent
-        Me.txtGenre.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.txtGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtGenre.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.txtGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.txtGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.ItemHeight = 30
-        Me.txtGenre.Location = New System.Drawing.Point(389, 248)
-        Me.txtGenre.Name = "txtGenre"
-        Me.txtGenre.Size = New System.Drawing.Size(348, 36)
-        Me.txtGenre.TabIndex = 29
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -370,13 +353,37 @@ Partial Class frmAddBooks
         Me.cbISBN.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cbISBN.Location = New System.Drawing.Point(5, 58)
         Me.cbISBN.Name = "cbISBN"
-        Me.cbISBN.Size = New System.Drawing.Size(81, 20)
+        Me.cbISBN.Size = New System.Drawing.Size(83, 21)
         Me.cbISBN.TabIndex = 40
         Me.cbISBN.Text = "No ISBN"
         Me.cbISBN.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.cbISBN.UncheckedState.BorderRadius = 0
         Me.cbISBN.UncheckedState.BorderThickness = 0
         Me.cbISBN.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
+        'txtGenre
+        '
+        Me.txtGenre.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtGenre.DefaultText = ""
+        Me.txtGenre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGenre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Location = New System.Drawing.Point(389, 249)
+        Me.txtGenre.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtGenre.MaxLength = 100
+        Me.txtGenre.Name = "txtGenre"
+        Me.txtGenre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtGenre.PlaceholderText = ""
+        Me.txtGenre.SelectedText = ""
+        Me.txtGenre.Size = New System.Drawing.Size(350, 44)
+        Me.txtGenre.TabIndex = 20
         '
         'frmAddBooks
         '
@@ -390,11 +397,11 @@ Partial Class frmAddBooks
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtShelfNo)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtGenre)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnFindPublisher)
         Me.Controls.Add(Me.btnFindAuthor)
         Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.txtGenre)
         Me.Controls.Add(Me.txtYearPublished)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtPublisher)
@@ -429,7 +436,6 @@ Partial Class frmAddBooks
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnFindAuthor As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnFindPublisher As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtGenre As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents txtShelfNo As Guna.UI2.WinForms.Guna2ComboBox
@@ -437,4 +443,5 @@ Partial Class frmAddBooks
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtInitialCopies As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents cbISBN As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents txtGenre As Guna.UI2.WinForms.Guna2TextBox
 End Class

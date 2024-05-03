@@ -22,7 +22,7 @@
         getPublisherID = publisherID
     End Sub
 
-    Public Sub SetSelectedBooks(bookID As Integer, isbn As String, title As String, author As String, publisher As String, yearPublished As String, shelfNo As Integer, shelfID As Integer)
+    Public Sub SetSelectedBooks(bookID As Integer, isbn As String, title As String, author As String, publisher As String, yearPublished As String, shelfNo As Integer, shelfID As Integer, genres As String)
         getBookID = bookID
         txtISBN.Text = isbn
         txtTitle.Text = title
@@ -31,6 +31,7 @@
         txtYearPublished.Text = yearPublished
         txtShelfNo.Text = shelfNo
         getShelfID = shelfID
+        txtGenre.Text = genres
     End Sub
 
     Private Sub btnFindAuthor_Click(sender As Object, e As EventArgs) Handles btnFindAuthor.Click
@@ -51,11 +52,8 @@
         txtPublisher.Text = publisherName
     End Sub
 
-    Private Sub txtGenre_SelectedValueChanged(sender As Object, e As EventArgs) Handles txtGenre.SelectedValueChanged
-        'txtGenreID.Text = txtGenre.SelectedValue.ToString
-    End Sub
 
-    Private Sub btnFindGenres_Click(sender As Object, e As EventArgs) Handles btnFindGenres.Click
+    Private Sub btnFindGenres_Click(sender As Object, e As EventArgs)
         frmFindGenres.Show()
     End Sub
 
@@ -64,7 +62,7 @@
         getAuthorID = authorID
     End Sub
 
-    Private Sub txtPublisher_TextChanged(sender As Object, e As EventArgs) Handles txtPublisher.TextChanged
+    Private Sub txtPublisher_TextChanged(sender As Object, e As EventArgs) Handles txtPublisher.TextChanged, txtGenre.TextChanged
         Dim publisherID As Integer = GetPublisherIDFunction(txtPublisher.Text)
         getPublisherID = publisherID
     End Sub
@@ -77,7 +75,7 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        UpdateBook(getAuthorID, getBookID, txtTitle.Text, txtISBN.Text, getPublisherID, getShelfID, txtYearPublished.Text)
+        UpdateBook(getAuthorID, getBookID, txtTitle.Text, txtISBN.Text, getPublisherID, getShelfID, txtYearPublished.Text, txtGenre.Text)
         AuditTrail($"{frmMain.txtFullname.Text} updated {txtTitle.Text} information.")
         Me.Close()
     End Sub

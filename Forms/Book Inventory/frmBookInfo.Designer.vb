@@ -28,7 +28,6 @@ Partial Class frmBookInfo
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtShelfNo = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtGenre = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnFindPublisher = New Guna.UI2.WinForms.Guna2Button()
         Me.btnFindAuthor = New Guna.UI2.WinForms.Guna2Button()
@@ -44,7 +43,7 @@ Partial Class frmBookInfo
         Me.txtLabel = New System.Windows.Forms.Label()
         Me.txtAuthor = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPublisher = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnFindGenres = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtGenre = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.txtInitialCopies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -115,23 +114,6 @@ Partial Class frmBookInfo
         Me.Label8.Size = New System.Drawing.Size(69, 20)
         Me.Label8.TabIndex = 59
         Me.Label8.Text = "Shelf No:"
-        '
-        'txtGenre
-        '
-        Me.txtGenre.BackColor = System.Drawing.Color.Transparent
-        Me.txtGenre.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.txtGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtGenre.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.txtGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.txtGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtGenre.ItemHeight = 30
-        Me.txtGenre.Location = New System.Drawing.Point(389, 248)
-        Me.txtGenre.Name = "txtGenre"
-        Me.txtGenre.Size = New System.Drawing.Size(290, 36)
-        Me.txtGenre.TabIndex = 57
         '
         'Label7
         '
@@ -378,23 +360,29 @@ Partial Class frmBookInfo
         Me.txtPublisher.Size = New System.Drawing.Size(290, 44)
         Me.txtPublisher.TabIndex = 65
         '
-        'btnFindGenres
+        'txtGenre
         '
-        Me.btnFindGenres.BackgroundImage = CType(resources.GetObject("btnFindGenres.BackgroundImage"), System.Drawing.Image)
-        Me.btnFindGenres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnFindGenres.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnFindGenres.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnFindGenres.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnFindGenres.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnFindGenres.FillColor = System.Drawing.Color.Transparent
-        Me.btnFindGenres.FocusedColor = System.Drawing.Color.Transparent
-        Me.btnFindGenres.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnFindGenres.ForeColor = System.Drawing.Color.White
-        Me.btnFindGenres.HoverState.FillColor = System.Drawing.Color.Transparent
-        Me.btnFindGenres.Location = New System.Drawing.Point(685, 249)
-        Me.btnFindGenres.Name = "btnFindGenres"
-        Me.btnFindGenres.Size = New System.Drawing.Size(54, 44)
-        Me.btnFindGenres.TabIndex = 66
+        Me.txtGenre.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtGenre.DefaultText = ""
+        Me.txtGenre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGenre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtGenre.Location = New System.Drawing.Point(389, 249)
+        Me.txtGenre.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtGenre.MaxLength = 13
+        Me.txtGenre.Name = "txtGenre"
+        Me.txtGenre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtGenre.PlaceholderText = ""
+        Me.txtGenre.SelectedText = ""
+        Me.txtGenre.Size = New System.Drawing.Size(350, 44)
+        Me.txtGenre.TabIndex = 65
         '
         'frmBookInfo
         '
@@ -402,7 +390,7 @@ Partial Class frmBookInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 423)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnFindGenres)
+        Me.Controls.Add(Me.txtGenre)
         Me.Controls.Add(Me.txtPublisher)
         Me.Controls.Add(Me.txtAuthor)
         Me.Controls.Add(Me.txtInitialCopies)
@@ -410,7 +398,6 @@ Partial Class frmBookInfo
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtShelfNo)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtGenre)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnFindPublisher)
         Me.Controls.Add(Me.btnFindAuthor)
@@ -438,7 +425,6 @@ Partial Class frmBookInfo
     Friend WithEvents Label9 As Label
     Friend WithEvents txtShelfNo As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtGenre As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents btnFindPublisher As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnFindAuthor As Guna.UI2.WinForms.Guna2Button
@@ -454,5 +440,5 @@ Partial Class frmBookInfo
     Friend WithEvents txtLabel As Label
     Friend WithEvents txtAuthor As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtPublisher As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents btnFindGenres As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtGenre As Guna.UI2.WinForms.Guna2TextBox
 End Class

@@ -182,7 +182,50 @@ Module mdlBorrower
                 MessageBox.Show("Grade level already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
+    End Sub
 
+    Public Sub UpdateGrade(gradeLevel As Integer, gradeID As Integer)
+        Dim cultureInfo As New CultureInfo("en-US")
+        Dim textInfo As TextInfo = cultureInfo.TextInfo
+
+        Try
+            Using connection As MySqlConnection = ConnectionOpen()
+                Using command As New MySqlCommand("UPDATE tblgrade SET grade = @grade  
+                                                   WHERE gradeID = @gradeID", connection)
+                    command.Parameters.AddWithValue("@gradeID", gradeID)
+                    command.Parameters.AddWithValue("@grade", gradeLevel)
+                    command.ExecuteNonQuery()
+                    MessageBox.Show("Grade level updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GradeDatatable()
+                End Using
+            End Using
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Grade level already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End Try
+    End Sub
+
+    Public Sub DeleteGrade(getID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
+
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblattendance WHERE gradeID = @gradeID", connection)
+                checkCommand.Parameters.AddWithValue("@gradeID", getID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+
+                If count > 0 Then
+                    MessageBox.Show("Grade cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblgrade WHERE gradeID = @gradeID", connection)
+                        command.Parameters.AddWithValue("@gradeID", getID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Grade has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        GradeDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
     End Sub
 #End Region
 
@@ -228,6 +271,52 @@ Module mdlBorrower
             End If
         End Try
     End Sub
+
+    Public Sub UpdateSection(sectionID As Integer, section As String, gradeID As Integer)
+        Dim cultureInfo As New CultureInfo("en-US")
+        Dim textInfo As TextInfo = cultureInfo.TextInfo
+
+        Try
+            Using connection As MySqlConnection = ConnectionOpen()
+                Using command As New MySqlCommand("UPDATE tblsection SET section = @section, gradeID = @gradeID   
+                                                   WHERE sectionID = @sectionID", connection)
+                    command.Parameters.AddWithValue("@section", section)
+                    command.Parameters.AddWithValue("@gradeID", gradeID)
+                    command.Parameters.AddWithValue("@sectionID", sectionID)
+                    command.ExecuteNonQuery()
+                    MessageBox.Show("Section updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    SectionDatatable()
+                End Using
+            End Using
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Section already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End Try
+    End Sub
+
+    Public Sub DeleteSection(sectionID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
+
+            Using checkCommand As New MySqlCommand("SELECT gradeID FROM tblattendance WHERE sectionID = @sectionID", connection)
+                checkCommand.Parameters.AddWithValue("@sectionID", sectionID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+
+                If count > 0 Then
+                    MessageBox.Show("Section cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblsection WHERE sectionID = @sectionID", connection)
+                        command.Parameters.AddWithValue("@sectionID", sectionID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Section has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        SectionDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
+    End Sub
+
 #End Region
 
 End Module

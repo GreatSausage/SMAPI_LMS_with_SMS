@@ -93,6 +93,9 @@ Partial Class frmMainte
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.tabBookshelves = New System.Windows.Forms.TabPage()
         Me.dgBookshelves = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.shelfID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.shelfNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.shelfDescription = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.refreshSix = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel25 = New System.Windows.Forms.Panel()
@@ -109,7 +112,7 @@ Partial Class frmMainte
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.tabSectionMainte = New System.Windows.Forms.TabPage()
         Me.dgSection = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gradeMainte = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sectionMainte = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sectionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -117,14 +120,6 @@ Partial Class frmMainte
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.tabBorrowerMainte = New System.Windows.Forms.TabPage()
         Me.dgBorrowers = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.borrowerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.studentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.firstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gradeLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.section = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.borrowerType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -139,9 +134,14 @@ Partial Class frmMainte
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtOverdue = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.shelfID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.shelfNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.shelfDescription = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.borrowerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.studentID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.firstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gradeLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.section = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.guardianContact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.borrowerType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2TabControl1.SuspendLayout()
         Me.tabUsers.SuspendLayout()
         CType(Me.dgUsers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -499,6 +499,7 @@ Partial Class frmMainte
         Me.supplierID.MinimumWidth = 6
         Me.supplierID.Name = "supplierID"
         Me.supplierID.ReadOnly = True
+        Me.supplierID.Visible = False
         '
         'supplierName
         '
@@ -669,6 +670,7 @@ Partial Class frmMainte
         Me.authorID.MinimumWidth = 6
         Me.authorID.Name = "authorID"
         Me.authorID.ReadOnly = True
+        Me.authorID.Visible = False
         '
         'authorName
         '
@@ -815,6 +817,7 @@ Partial Class frmMainte
         Me.publisherID.MinimumWidth = 6
         Me.publisherID.Name = "publisherID"
         Me.publisherID.ReadOnly = True
+        Me.publisherID.Visible = False
         '
         'publisherName
         '
@@ -953,6 +956,31 @@ Partial Class frmMainte
         Me.dgBookshelves.ThemeStyle.RowsStyle.Height = 24
         Me.dgBookshelves.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgBookshelves.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'shelfID
+        '
+        Me.shelfID.DataPropertyName = "shelfID"
+        Me.shelfID.HeaderText = "Shelf ID"
+        Me.shelfID.MinimumWidth = 6
+        Me.shelfID.Name = "shelfID"
+        Me.shelfID.ReadOnly = True
+        Me.shelfID.Visible = False
+        '
+        'shelfNo
+        '
+        Me.shelfNo.DataPropertyName = "shelfNo"
+        Me.shelfNo.HeaderText = "Shelf No."
+        Me.shelfNo.MinimumWidth = 6
+        Me.shelfNo.Name = "shelfNo"
+        Me.shelfNo.ReadOnly = True
+        '
+        'shelfDescription
+        '
+        Me.shelfDescription.DataPropertyName = "description"
+        Me.shelfDescription.HeaderText = "Description"
+        Me.shelfDescription.MinimumWidth = 6
+        Me.shelfDescription.Name = "shelfDescription"
+        Me.shelfDescription.ReadOnly = True
         '
         'Panel11
         '
@@ -1100,6 +1128,7 @@ Partial Class frmMainte
         Me.dgGrade.Location = New System.Drawing.Point(3, 53)
         Me.dgGrade.MultiSelect = False
         Me.dgGrade.Name = "dgGrade"
+        Me.dgGrade.ReadOnly = True
         Me.dgGrade.RowHeadersVisible = False
         Me.dgGrade.RowHeadersWidth = 51
         Me.dgGrade.RowTemplate.Height = 24
@@ -1118,7 +1147,7 @@ Partial Class frmMainte
         Me.dgGrade.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgGrade.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgGrade.ThemeStyle.HeaderStyle.Height = 40
-        Me.dgGrade.ThemeStyle.ReadOnly = False
+        Me.dgGrade.ThemeStyle.ReadOnly = True
         Me.dgGrade.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgGrade.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgGrade.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1133,6 +1162,7 @@ Partial Class frmMainte
         Me.gradeID.HeaderText = "Grade ID"
         Me.gradeID.MinimumWidth = 6
         Me.gradeID.Name = "gradeID"
+        Me.gradeID.ReadOnly = True
         Me.gradeID.Visible = False
         '
         'grade
@@ -1141,6 +1171,7 @@ Partial Class frmMainte
         Me.grade.HeaderText = "Grade"
         Me.grade.MinimumWidth = 6
         Me.grade.Name = "grade"
+        Me.grade.ReadOnly = True
         '
         'Panel14
         '
@@ -1205,7 +1236,7 @@ Partial Class frmMainte
         DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgSection.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.dgSection.ColumnHeadersHeight = 40
-        Me.dgSection.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.sectionMainte, Me.sectionID})
+        Me.dgSection.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.gradeMainte, Me.sectionMainte, Me.sectionID})
         DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1219,6 +1250,7 @@ Partial Class frmMainte
         Me.dgSection.Location = New System.Drawing.Point(0, 50)
         Me.dgSection.MultiSelect = False
         Me.dgSection.Name = "dgSection"
+        Me.dgSection.ReadOnly = True
         Me.dgSection.RowHeadersVisible = False
         Me.dgSection.RowHeadersWidth = 51
         Me.dgSection.RowTemplate.Height = 24
@@ -1237,7 +1269,7 @@ Partial Class frmMainte
         Me.dgSection.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgSection.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgSection.ThemeStyle.HeaderStyle.Height = 40
-        Me.dgSection.ThemeStyle.ReadOnly = False
+        Me.dgSection.ThemeStyle.ReadOnly = True
         Me.dgSection.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgSection.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgSection.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1246,12 +1278,13 @@ Partial Class frmMainte
         Me.dgSection.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgSection.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'DataGridViewTextBoxColumn2
+        'gradeMainte
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "grade"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Grade"
-        Me.DataGridViewTextBoxColumn2.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.gradeMainte.DataPropertyName = "grade"
+        Me.gradeMainte.HeaderText = "Grade"
+        Me.gradeMainte.MinimumWidth = 6
+        Me.gradeMainte.Name = "gradeMainte"
+        Me.gradeMainte.ReadOnly = True
         '
         'sectionMainte
         '
@@ -1259,6 +1292,7 @@ Partial Class frmMainte
         Me.sectionMainte.HeaderText = "Section"
         Me.sectionMainte.MinimumWidth = 6
         Me.sectionMainte.Name = "sectionMainte"
+        Me.sectionMainte.ReadOnly = True
         '
         'sectionID
         '
@@ -1266,6 +1300,7 @@ Partial Class frmMainte
         Me.sectionID.HeaderText = "Section ID"
         Me.sectionID.MinimumWidth = 6
         Me.sectionID.Name = "sectionID"
+        Me.sectionID.ReadOnly = True
         Me.sectionID.Visible = False
         '
         'Panel15
@@ -1332,7 +1367,7 @@ Partial Class frmMainte
         DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgBorrowers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.dgBorrowers.ColumnHeadersHeight = 40
-        Me.dgBorrowers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowerID, Me.studentID, Me.firstName, Me.lastName, Me.gradeLevel, Me.section, Me.DataGridViewTextBoxColumn1, Me.borrowerType})
+        Me.dgBorrowers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowerID, Me.studentID, Me.firstName, Me.lastName, Me.gradeLevel, Me.section, Me.guardianContact, Me.borrowerType})
         DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1346,6 +1381,7 @@ Partial Class frmMainte
         Me.dgBorrowers.Location = New System.Drawing.Point(3, 53)
         Me.dgBorrowers.MultiSelect = False
         Me.dgBorrowers.Name = "dgBorrowers"
+        Me.dgBorrowers.ReadOnly = True
         Me.dgBorrowers.RowHeadersVisible = False
         Me.dgBorrowers.RowHeadersWidth = 51
         Me.dgBorrowers.RowTemplate.Height = 24
@@ -1364,7 +1400,7 @@ Partial Class frmMainte
         Me.dgBorrowers.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgBorrowers.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgBorrowers.ThemeStyle.HeaderStyle.Height = 40
-        Me.dgBorrowers.ThemeStyle.ReadOnly = False
+        Me.dgBorrowers.ThemeStyle.ReadOnly = True
         Me.dgBorrowers.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgBorrowers.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgBorrowers.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1372,66 +1408,6 @@ Partial Class frmMainte
         Me.dgBorrowers.ThemeStyle.RowsStyle.Height = 24
         Me.dgBorrowers.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgBorrowers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'borrowerID
-        '
-        Me.borrowerID.DataPropertyName = "borrowerID"
-        Me.borrowerID.HeaderText = "BorrowerID"
-        Me.borrowerID.MinimumWidth = 6
-        Me.borrowerID.Name = "borrowerID"
-        Me.borrowerID.Visible = False
-        '
-        'studentID
-        '
-        Me.studentID.DataPropertyName = "studentID"
-        Me.studentID.HeaderText = "Student ID"
-        Me.studentID.MinimumWidth = 6
-        Me.studentID.Name = "studentID"
-        '
-        'firstName
-        '
-        Me.firstName.DataPropertyName = "firstName"
-        Me.firstName.HeaderText = "Firstname"
-        Me.firstName.MinimumWidth = 6
-        Me.firstName.Name = "firstName"
-        '
-        'lastName
-        '
-        Me.lastName.DataPropertyName = "lastName"
-        Me.lastName.HeaderText = "Lastname"
-        Me.lastName.MinimumWidth = 6
-        Me.lastName.Name = "lastName"
-        '
-        'gradeLevel
-        '
-        Me.gradeLevel.DataPropertyName = "grade"
-        Me.gradeLevel.HeaderText = "Grade"
-        Me.gradeLevel.MinimumWidth = 6
-        Me.gradeLevel.Name = "gradeLevel"
-        Me.gradeLevel.Visible = False
-        '
-        'section
-        '
-        Me.section.DataPropertyName = "section"
-        Me.section.HeaderText = "Section"
-        Me.section.MinimumWidth = 6
-        Me.section.Name = "section"
-        Me.section.Visible = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "guardianContact"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Guardian's Contact"
-        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'borrowerType
-        '
-        Me.borrowerType.DataPropertyName = "borrowerType"
-        Me.borrowerType.HeaderText = ""
-        Me.borrowerType.MinimumWidth = 6
-        Me.borrowerType.Name = "borrowerType"
         '
         'Panel3
         '
@@ -1636,29 +1612,73 @@ Partial Class frmMainte
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Overdue Charges:"
         '
-        'shelfID
+        'borrowerID
         '
-        Me.shelfID.DataPropertyName = "shelfID"
-        Me.shelfID.HeaderText = "Shelf ID"
-        Me.shelfID.MinimumWidth = 6
-        Me.shelfID.Name = "shelfID"
-        Me.shelfID.ReadOnly = True
+        Me.borrowerID.DataPropertyName = "borrowerID"
+        Me.borrowerID.HeaderText = "BorrowerID"
+        Me.borrowerID.MinimumWidth = 6
+        Me.borrowerID.Name = "borrowerID"
+        Me.borrowerID.ReadOnly = True
+        Me.borrowerID.Visible = False
         '
-        'shelfNo
+        'studentID
         '
-        Me.shelfNo.DataPropertyName = "shelfNo"
-        Me.shelfNo.HeaderText = "Shelf No."
-        Me.shelfNo.MinimumWidth = 6
-        Me.shelfNo.Name = "shelfNo"
-        Me.shelfNo.ReadOnly = True
+        Me.studentID.DataPropertyName = "studentID"
+        Me.studentID.HeaderText = "Student ID"
+        Me.studentID.MinimumWidth = 6
+        Me.studentID.Name = "studentID"
+        Me.studentID.ReadOnly = True
         '
-        'shelfDescription
+        'firstName
         '
-        Me.shelfDescription.DataPropertyName = "description"
-        Me.shelfDescription.HeaderText = "Description"
-        Me.shelfDescription.MinimumWidth = 6
-        Me.shelfDescription.Name = "shelfDescription"
-        Me.shelfDescription.ReadOnly = True
+        Me.firstName.DataPropertyName = "firstName"
+        Me.firstName.HeaderText = "Firstname"
+        Me.firstName.MinimumWidth = 6
+        Me.firstName.Name = "firstName"
+        Me.firstName.ReadOnly = True
+        '
+        'lastName
+        '
+        Me.lastName.DataPropertyName = "lastName"
+        Me.lastName.HeaderText = "Lastname"
+        Me.lastName.MinimumWidth = 6
+        Me.lastName.Name = "lastName"
+        Me.lastName.ReadOnly = True
+        '
+        'gradeLevel
+        '
+        Me.gradeLevel.DataPropertyName = "grade"
+        Me.gradeLevel.HeaderText = "Grade"
+        Me.gradeLevel.MinimumWidth = 6
+        Me.gradeLevel.Name = "gradeLevel"
+        Me.gradeLevel.ReadOnly = True
+        Me.gradeLevel.Visible = False
+        '
+        'section
+        '
+        Me.section.DataPropertyName = "section"
+        Me.section.HeaderText = "Section"
+        Me.section.MinimumWidth = 6
+        Me.section.Name = "section"
+        Me.section.ReadOnly = True
+        Me.section.Visible = False
+        '
+        'guardianContact
+        '
+        Me.guardianContact.DataPropertyName = "guardianContact"
+        Me.guardianContact.HeaderText = "Guardian's Contact"
+        Me.guardianContact.MinimumWidth = 6
+        Me.guardianContact.Name = "guardianContact"
+        Me.guardianContact.ReadOnly = True
+        Me.guardianContact.Visible = False
+        '
+        'borrowerType
+        '
+        Me.borrowerType.DataPropertyName = "borrowerType"
+        Me.borrowerType.HeaderText = ""
+        Me.borrowerType.MinimumWidth = 6
+        Me.borrowerType.Name = "borrowerType"
+        Me.borrowerType.ReadOnly = True
         '
         'frmMainte
         '
@@ -1725,14 +1745,10 @@ Partial Class frmMainte
     Friend WithEvents btnAddAuthors As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents dgAuthors As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents authorID As DataGridViewTextBoxColumn
-    Friend WithEvents authorName As DataGridViewTextBoxColumn
     Friend WithEvents Panel7 As Panel
     Friend WithEvents btnAddPublishers As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel8 As Panel
     Friend WithEvents dgPublishers As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents publisherID As DataGridViewTextBoxColumn
-    Friend WithEvents publisherName As DataGridViewTextBoxColumn
     Friend WithEvents Panel11 As Panel
     Friend WithEvents btnAddBookshelf As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel12 As Panel
@@ -1763,22 +1779,6 @@ Partial Class frmMainte
     Friend WithEvents btnAddBorrower As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents gradeID As DataGridViewTextBoxColumn
     Friend WithEvents grade As DataGridViewTextBoxColumn
-    Friend WithEvents supplierID As DataGridViewTextBoxColumn
-    Friend WithEvents supplierName As DataGridViewTextBoxColumn
-    Friend WithEvents contactNumber As DataGridViewTextBoxColumn
-    Friend WithEvents address As DataGridViewTextBoxColumn
-    Friend WithEvents type As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents sectionMainte As DataGridViewTextBoxColumn
-    Friend WithEvents sectionID As DataGridViewTextBoxColumn
-    Friend WithEvents borrowerID As DataGridViewTextBoxColumn
-    Friend WithEvents studentID As DataGridViewTextBoxColumn
-    Friend WithEvents firstName As DataGridViewTextBoxColumn
-    Friend WithEvents lastName As DataGridViewTextBoxColumn
-    Friend WithEvents gradeLevel As DataGridViewTextBoxColumn
-    Friend WithEvents section As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents borrowerType As DataGridViewTextBoxColumn
     Friend WithEvents refreshOne As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel18 As Panel
     Friend WithEvents refreshTwo As Guna.UI2.WinForms.Guna2Button
@@ -1798,7 +1798,27 @@ Partial Class frmMainte
     Friend WithEvents Label3 As Label
     Friend WithEvents btnPenalty As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnOverdue As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents supplierID As DataGridViewTextBoxColumn
+    Friend WithEvents supplierName As DataGridViewTextBoxColumn
+    Friend WithEvents contactNumber As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents type As DataGridViewTextBoxColumn
+    Friend WithEvents authorID As DataGridViewTextBoxColumn
+    Friend WithEvents authorName As DataGridViewTextBoxColumn
+    Friend WithEvents publisherID As DataGridViewTextBoxColumn
+    Friend WithEvents publisherName As DataGridViewTextBoxColumn
     Friend WithEvents shelfID As DataGridViewTextBoxColumn
     Friend WithEvents shelfNo As DataGridViewTextBoxColumn
     Friend WithEvents shelfDescription As DataGridViewTextBoxColumn
+    Friend WithEvents gradeMainte As DataGridViewTextBoxColumn
+    Friend WithEvents sectionMainte As DataGridViewTextBoxColumn
+    Friend WithEvents sectionID As DataGridViewTextBoxColumn
+    Friend WithEvents borrowerID As DataGridViewTextBoxColumn
+    Friend WithEvents studentID As DataGridViewTextBoxColumn
+    Friend WithEvents firstName As DataGridViewTextBoxColumn
+    Friend WithEvents lastName As DataGridViewTextBoxColumn
+    Friend WithEvents gradeLevel As DataGridViewTextBoxColumn
+    Friend WithEvents section As DataGridViewTextBoxColumn
+    Friend WithEvents guardianContact As DataGridViewTextBoxColumn
+    Friend WithEvents borrowerType As DataGridViewTextBoxColumn
 End Class

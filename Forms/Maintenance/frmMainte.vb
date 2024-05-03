@@ -121,4 +121,48 @@
         BorrowerDatatable()
     End Sub
 
+    Private Sub dgGrade_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgGrade.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgGrade.Rows(e.RowIndex)
+            Dim gradeID As Integer = Convert.ToInt32(row.Cells("gradeID").Value)
+            Dim gradeLevel As Integer = Convert.ToInt32(row.Cells("grade").Value)
+
+            Dim frmGradeInstance As New frmAddGrade()
+            frmGradeInstance.SetSelectedGradeLevel(gradeID, gradeLevel)
+            frmGradeInstance.Show()
+            frmGradeInstance.btnSave.Visible = False
+        End If
+    End Sub
+
+    Private Sub dgSection_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgSection.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgSection.Rows(e.RowIndex)
+            Dim section As String = row.Cells("sectionMainte").Value.ToString
+            Dim sectionID As Integer = Convert.ToInt32(row.Cells("sectionID").Value)
+            Dim gradeID As Integer = Convert.ToInt32(row.Cells("gradeMainte").Value)
+
+            Dim frmSectionInstance As New frmAddSection()
+            frmSectionInstance.SetSelectedSection(gradeID, section, sectionID)
+            frmSectionInstance.Show()
+            frmSectionInstance.btnSave.Visible = False
+        End If
+    End Sub
+
+    Private Sub dgBorrowers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgBorrowers.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgBorrowers.Rows(e.RowIndex)
+            Dim borrowerID As Integer = Convert.ToInt32(row.Cells("borrowerID").Value)
+            Dim studentID As String = row.Cells("studentID").Value.ToString
+            Dim firstName As String = row.Cells("firstName").Value.ToString
+            Dim lastName As String = row.Cells("lastName").Value.ToString
+            Dim gradeID As Integer = Convert.ToInt32(row.Cells("gradeLevel").Value)
+            Dim section As String = row.Cells("section").Value.ToString
+            Dim guardianContact As String = row.Cells("guardianContact").Value.ToString
+
+            Dim frmBorrowerInstance As New frmAddBorrowers
+            frmBorrowerInstance.SetSelectedBorrower(borrowerID, studentID, firstName, lastName, gradeID, section, guardianContact)
+            frmBorrowerInstance.Show()
+            frmBorrowerInstance.btnSave.Visible = False
+        End If
+    End Sub
 End Class

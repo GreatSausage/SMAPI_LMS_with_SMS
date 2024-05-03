@@ -27,6 +27,8 @@ Partial Class frmAddGrade
         Me.txtGradeLevel = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'lblAuthors
@@ -51,7 +53,7 @@ Partial Class frmAddGrade
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.btnClose.Location = New System.Drawing.Point(301, 9)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
         Me.btnClose.TabIndex = 4
         Me.btnClose.TabStop = True
         Me.btnClose.Text = "[close]"
@@ -73,6 +75,7 @@ Partial Class frmAddGrade
         Me.txtGradeLevel.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtGradeLevel.Location = New System.Drawing.Point(5, 105)
         Me.txtGradeLevel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtGradeLevel.MaxLength = 2
         Me.txtGradeLevel.Name = "txtGradeLevel"
         Me.txtGradeLevel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGradeLevel.PlaceholderText = ""
@@ -105,6 +108,36 @@ Partial Class frmAddGrade
         Me.btnSave.TabIndex = 24
         Me.btnSave.Text = "SAVE"
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(188, 156)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(167, 44)
+        Me.btnUpdate.TabIndex = 26
+        Me.btnUpdate.Text = "SAVE"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(5, 156)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(167, 44)
+        Me.btnDelete.TabIndex = 25
+        Me.btnDelete.Text = "DELETE"
+        '
         'frmAddGrade
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -112,6 +145,8 @@ Partial Class frmAddGrade
         Me.ClientSize = New System.Drawing.Size(361, 206)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtGradeLevel)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
@@ -129,4 +164,6 @@ Partial Class frmAddGrade
     Friend WithEvents txtGradeLevel As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

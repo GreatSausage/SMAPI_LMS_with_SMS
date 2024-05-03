@@ -2,6 +2,7 @@
 
 Public Class frmAddBorrowers
 
+    Dim getBorrowerID As Integer = Nothing
     Private Sub frmAddBorrowers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rbStudent.Checked = True
     End Sub
@@ -10,6 +11,15 @@ Public Class frmAddBorrowers
         Me.Close()
     End Sub
 
+    Public Sub SetSelectedBorrower(borrowerID As Integer, studentID As String, firstname As String, lastname As String, gradelevel As Integer, section As String, number As String)
+        getBorrowerID = borrowerID
+        txtStudentID.Text = studentID
+        txtFirstname.Text = firstname
+        txtLastname.Text = lastname
+        txtSelectedGrade.Text = gradelevel
+        txtSelectedSection.Text = section
+        txtGuardianContact.Text = number
+    End Sub
     Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
         Using connection As MySqlConnection = ConnectionOpen()
             Using command As New MySqlCommand("SELECT a.studentID, a.firstName, a.lastName, g.grade, s.section 
@@ -28,8 +38,8 @@ Public Class frmAddBorrowers
 
                         txtFirstname.ReadOnly = True
                         txtLastname.ReadOnly = True
-                        txtSelectedGrade.ReadOnly = True
-                        txtSelectedSection.ReadOnly = True
+                        txtSelectedGrade.Enabled = False
+                        txtSelectedSection.Enabled = False
                     Else
                         txtFirstname.Text = ""
                         txtLastname.Text = ""

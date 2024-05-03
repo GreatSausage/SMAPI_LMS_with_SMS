@@ -37,8 +37,10 @@ Partial Class frmAddBorrowers
         Me.btnClose = New System.Windows.Forms.LinkLabel()
         Me.rbStudent = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.rbFaculty = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.txtSelectedGrade = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtSelectedSection = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtSelectedGrade = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtSelectedSection = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'lblAuthors
@@ -230,7 +232,7 @@ Partial Class frmAddBorrowers
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.btnClose.Location = New System.Drawing.Point(300, 9)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
         Me.btnClose.TabIndex = 26
         Me.btnClose.TabStop = True
         Me.btnClose.Text = "[close]"
@@ -246,7 +248,7 @@ Partial Class frmAddBorrowers
         Me.rbStudent.CheckedState.InnerOffset = -4
         Me.rbStudent.Location = New System.Drawing.Point(5, 58)
         Me.rbStudent.Name = "rbStudent"
-        Me.rbStudent.Size = New System.Drawing.Size(73, 20)
+        Me.rbStudent.Size = New System.Drawing.Size(78, 21)
         Me.rbStudent.TabIndex = 29
         Me.rbStudent.Text = "Student"
         Me.rbStudent.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -264,7 +266,7 @@ Partial Class frmAddBorrowers
         Me.rbFaculty.CheckedState.InnerOffset = -4
         Me.rbFaculty.Location = New System.Drawing.Point(84, 58)
         Me.rbFaculty.Name = "rbFaculty"
-        Me.rbFaculty.Size = New System.Drawing.Size(71, 20)
+        Me.rbFaculty.Size = New System.Drawing.Size(74, 21)
         Me.rbFaculty.TabIndex = 29
         Me.rbFaculty.Text = "Faculty"
         Me.rbFaculty.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -274,49 +276,67 @@ Partial Class frmAddBorrowers
         '
         'txtSelectedGrade
         '
+        Me.txtSelectedGrade.BackColor = System.Drawing.Color.Transparent
         Me.txtSelectedGrade.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedGrade.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSelectedGrade.DefaultText = ""
-        Me.txtSelectedGrade.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSelectedGrade.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSelectedGrade.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSelectedGrade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSelectedGrade.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.txtSelectedGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtSelectedGrade.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtSelectedGrade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedGrade.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedGrade.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSelectedGrade.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtSelectedGrade.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtSelectedGrade.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.txtSelectedGrade.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedGrade.Location = New System.Drawing.Point(5, 321)
-        Me.txtSelectedGrade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSelectedGrade.ItemHeight = 30
+        Me.txtSelectedGrade.Location = New System.Drawing.Point(5, 320)
         Me.txtSelectedGrade.Name = "txtSelectedGrade"
-        Me.txtSelectedGrade.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSelectedGrade.PlaceholderText = ""
-        Me.txtSelectedGrade.SelectedText = ""
-        Me.txtSelectedGrade.Size = New System.Drawing.Size(350, 44)
-        Me.txtSelectedGrade.TabIndex = 30
+        Me.txtSelectedGrade.Size = New System.Drawing.Size(346, 36)
+        Me.txtSelectedGrade.TabIndex = 32
         '
         'txtSelectedSection
         '
+        Me.txtSelectedSection.BackColor = System.Drawing.Color.Transparent
         Me.txtSelectedSection.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedSection.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSelectedSection.DefaultText = ""
-        Me.txtSelectedSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSelectedSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSelectedSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSelectedSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSelectedSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.txtSelectedSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtSelectedSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtSelectedSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedSection.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSelectedSection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtSelectedSection.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtSelectedSection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.txtSelectedSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtSelectedSection.Location = New System.Drawing.Point(5, 393)
-        Me.txtSelectedSection.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSelectedSection.ItemHeight = 30
+        Me.txtSelectedSection.Location = New System.Drawing.Point(5, 392)
         Me.txtSelectedSection.Name = "txtSelectedSection"
-        Me.txtSelectedSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSelectedSection.PlaceholderText = ""
-        Me.txtSelectedSection.SelectedText = ""
-        Me.txtSelectedSection.Size = New System.Drawing.Size(350, 44)
-        Me.txtSelectedSection.TabIndex = 31
+        Me.txtSelectedSection.Size = New System.Drawing.Size(346, 36)
+        Me.txtSelectedSection.TabIndex = 33
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(188, 516)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(167, 44)
+        Me.btnUpdate.TabIndex = 35
+        Me.btnUpdate.Text = "SAVE"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(5, 516)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(167, 44)
+        Me.btnDelete.TabIndex = 34
+        Me.btnDelete.Text = "DELETE"
         '
         'frmAddBorrowers
         '
@@ -324,12 +344,14 @@ Partial Class frmAddBorrowers
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(360, 566)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtSelectedSection)
         Me.Controls.Add(Me.txtSelectedGrade)
         Me.Controls.Add(Me.rbFaculty)
         Me.Controls.Add(Me.rbStudent)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtGuardianContact)
         Me.Controls.Add(Me.labelContact)
         Me.Controls.Add(Me.Label5)
@@ -364,6 +386,8 @@ Partial Class frmAddBorrowers
     Friend WithEvents btnClose As LinkLabel
     Friend WithEvents rbStudent As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents rbFaculty As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents txtSelectedGrade As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txtSelectedSection As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtSelectedGrade As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents txtSelectedSection As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

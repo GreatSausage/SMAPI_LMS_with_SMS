@@ -29,6 +29,8 @@ Partial Class frmAddSection
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClose = New System.Windows.Forms.LinkLabel()
         Me.txtGrade = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'lblAuthors
@@ -96,7 +98,7 @@ Partial Class frmAddSection
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(5, 228)
+        Me.btnSave.Location = New System.Drawing.Point(5, 229)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(350, 44)
         Me.btnSave.TabIndex = 25
@@ -111,7 +113,7 @@ Partial Class frmAddSection
         Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.btnClose.Location = New System.Drawing.Point(300, 9)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
         Me.btnClose.TabIndex = 26
         Me.btnClose.TabStop = True
         Me.btnClose.Text = "[close]"
@@ -134,15 +136,47 @@ Partial Class frmAddSection
         Me.txtGrade.Size = New System.Drawing.Size(346, 36)
         Me.txtGrade.TabIndex = 27
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(188, 229)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(167, 44)
+        Me.btnUpdate.TabIndex = 29
+        Me.btnUpdate.Text = "SAVE"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(5, 229)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(167, 44)
+        Me.btnDelete.TabIndex = 28
+        Me.btnDelete.Text = "DELETE"
+        '
         'frmAddSection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(360, 279)
+        Me.ClientSize = New System.Drawing.Size(360, 281)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtGrade)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtSection)
         Me.Controls.Add(Me.Label2)
@@ -162,4 +196,6 @@ Partial Class frmAddSection
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClose As LinkLabel
     Friend WithEvents txtGrade As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

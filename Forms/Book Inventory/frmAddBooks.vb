@@ -3,7 +3,6 @@
     Public someVariables As String
     Dim getAuthorID As String = Nothing
     Dim getPublisherID As String = Nothing
-    Dim getGenreID As String = Nothing
     Dim getShelfID As String = Nothing
 
     Private Sub btnClose_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
@@ -55,11 +54,6 @@
         txtPublisher.DisplayMember = "publisherName"
         txtPublisher.ValueMember = "publisherID"
 
-        Dim dtGenre As DataTable = DisplayAlphabeticalData("tblGenres", "genreName")
-        txtGenre.DataSource = dtGenre
-        txtGenre.DisplayMember = "genreName"
-        txtGenre.ValueMember = "genreID"
-
         Dim dtShelf As DataTable = DisplayShelves()
         txtShelfNo.DataSource = dtShelf
         txtShelfNo.DisplayMember = "shelfNo"
@@ -90,10 +84,6 @@
 
     Private Sub txtPublisher_SelectedValueChanged(sender As Object, e As EventArgs) Handles txtPublisher.SelectedValueChanged
         getPublisherID = txtPublisher.SelectedValue.ToString
-    End Sub
-
-    Private Sub txtGenre_SelectedValueChanged(sender As Object, e As EventArgs) Handles txtGenre.SelectedValueChanged
-        getGenreID = txtGenre.SelectedValue.ToString
     End Sub
 
     Private Sub txtShelfNo_SelectedValueChanged(sender As Object, e As EventArgs) Handles txtShelfNo.SelectedValueChanged

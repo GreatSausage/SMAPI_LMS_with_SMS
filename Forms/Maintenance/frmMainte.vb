@@ -9,7 +9,8 @@
         GradeDatatable()
         SectionDatatable()
         BorrowerDatatable()
-
+        lblOverdue.Text = GetPenalty("overduePenalty")
+        lblPenalty.Text = GetPenalty("damagedLostPenalty")
     End Sub
 
     Private Sub btnAddSupplier_Click(sender As Object, e As EventArgs) Handles btnAddSupplier.Click
@@ -159,10 +160,27 @@
             Dim section As String = row.Cells("section").Value.ToString
             Dim guardianContact As String = row.Cells("guardianContact").Value.ToString
 
-            Dim frmBorrowerInstance As New frmAddBorrowers
+            Dim frmBorrowerInstance As New frmBorrowerInfo
             frmBorrowerInstance.SetSelectedBorrower(borrowerID, studentID, firstName, lastName, gradeID, section, guardianContact)
             frmBorrowerInstance.Show()
-            frmBorrowerInstance.btnSave.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnOverdue_Click(sender As Object, e As EventArgs) Handles btnOverdue.Click
+        If String.IsNullOrEmpty(txtOverdue.Text) Then
+            MessageBox.Show("Please fill in the necessary fields.", "Error")
+        Else
+            UpdateOverdue(txtOverdue.Text)
+            txtOverdue.Clear()
+        End If
+    End Sub
+
+    Private Sub btnPenalty_Click(sender As Object, e As EventArgs) Handles btnPenalty.Click
+        If String.IsNullOrEmpty(txtPenalty.Text) Then
+            MessageBox.Show("Please fill in the necessary fields.", "Error")
+        Else
+            UpdatePenalty(txtPenalty.Text)
+            txtPenalty.Clear()
         End If
     End Sub
 End Class

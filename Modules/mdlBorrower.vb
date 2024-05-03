@@ -119,10 +119,59 @@ Module mdlBorrower
             End Using
         Catch ex As MySqlException
             If ex.Number = 1062 Then
-                MessageBox.Show("Some fields are duplicated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Student ID already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
     End Sub
+
+    Public Sub UpdateBorrowwer(borrower As Integer, studentId As String, firstname As String, lastname As String, grade As Integer, section As Integer, number As String)
+        Dim cultureInfo As New CultureInfo("en-US")
+        Dim textInfo As TextInfo = cultureInfo.TextInfo
+        Dim capitalizedFirstname As String = textInfo.ToTitleCase(firstname.ToLower)
+        Dim capitalizedLastname As String = textInfo.ToTitleCase(lastname.ToLower)
+
+        Try
+            Using connection As MySqlConnection = ConnectionOpen()
+                Using command As New MySqlCommand("UPDATE tblborrowers SET firstname = @firstname, lastname = @lastname, gradeID = @grade, sectionID = @section, guardianContact = @number", connection)
+                    command.Parameters.AddWithValue("@firstname", firstname)
+                    command.Parameters.AddWithValue("@lastname", lastname)
+                    command.Parameters.AddWithValue("@grade", grade)
+                    command.Parameters.AddWithValue("@section", section)
+                    command.Parameters.AddWithValue("@number", number)
+                    command.ExecuteNonQuery()
+                    MessageBox.Show("Borrower updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    BorrowerDatatable()
+                End Using
+            End Using
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Student ID already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+        End Try
+    End Sub
+
+    Public Sub DeleteBorrower(borrowerID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
+
+            Using checkCommand As New MySqlCommand("SELECT COUNT(*) FROM tblBorrowedBooks WHERE borrowerID = @borrowerID", connection)
+                checkCommand.Parameters.AddWithValue("@borrowerID", borrowerID)
+                Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+
+                If count > 0 Then
+                    MessageBox.Show("Borrower cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    Using command As New MySqlCommand("DELETE FROM tblborrowers WHERE borrowerID = @borrowerID", connection)
+                        command.Parameters.AddWithValue("@authorID", borrowerID)
+                        command.ExecuteNonQuery()
+                        MessageBox.Show("Borrower has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        BorrowerDatatable()
+                    End Using
+                End If
+            End Using
+        End Using
+    End Sub
+
 
     Public Sub SearchBorrowers(datagridview As DataGridView, search As String)
         Using connection As MySqlConnection = ConnectionOpen()
@@ -244,6 +293,23 @@ Module mdlBorrower
             End Using
         End Using
     End Function
+
+    Public Function DisplaySectionDependencies(gradeID As Integer) As DataTable
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT s.sectionID, s.section 
+                                           FROM tblSection s 
+                                           WHERE s.gradeID = @gradeID 
+                                           ORDER BY s.section", connection)
+                command.Parameters.AddWithValue("@gradeID", gradeID)
+                Using adp As New MySqlDataAdapter(command)
+                    Dim dt As New DataTable
+                    adp.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+
 
     Public Sub SectionDatatable()
         Dim sectionDt As DataTable = DisplaySection()

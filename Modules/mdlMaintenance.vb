@@ -449,9 +449,31 @@ Module mdlMaintenance
 #End Region
 
 #Region "Borrow Maintenance"
-    'Public Sub ConfigDueDate(interval As Integer)
-    '    Using connection As MySqlConnection = ConnectionOpen()
-    '    End Using
-    'End Sub
+
+    Public Sub UpdateOverdue(charge As Decimal)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("UPDATE tblmaintenance SET overduePenalty = @penalty", connection)
+                command.Parameters.AddWithValue("@penalty", charge)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Overdue charges has been updated successfully.")
+                Dim dt As String = GetPenalty("overduePenalty")
+                frmMainte.lblOverdue.Text = dt
+                frmDashboard.txtOverdueCharges.Text = dt
+            End Using
+        End Using
+    End Sub
+
+    Public Sub UpdatePenalty(penalty As Decimal)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("UPDATE tblmaintenance SET damagedLostPenalty = @penalty", connection)
+                command.Parameters.AddWithValue("@penalty", penalty)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Penalty has been updated successfully.")
+                Dim dt As String = GetPenalty("damagedLostPenalty")
+                frmMainte.lblPenalty.Text = dt
+                frmDashboard.txtPenalty.Text = dt
+            End Using
+        End Using
+    End Sub
 #End Region
 End Module

@@ -334,7 +334,16 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Crys
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\EPPlus.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\MySql.Data.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Buffers.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Memory.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
@@ -349,7 +358,13 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Crys
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\stdole.dll
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\EPPlus.xml
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\MySql.Data.xml
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Buffers.xml
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Memory.xml
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.ResolveComReference.cache
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddBooks.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddCopies.resources
@@ -369,6 +384,7 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Soft
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddFaculty.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddGrade.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddSection.resources
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmBorrowerInfo.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.Form1.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddAuthors.resources
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software_Engineering.frmAddPublishers.resources
@@ -390,4 +406,3 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Soft
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.exe
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.xml
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.pdb
-C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache

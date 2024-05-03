@@ -11,15 +11,6 @@ Public Class frmAddBorrowers
         Me.Close()
     End Sub
 
-    Public Sub SetSelectedBorrower(borrowerID As Integer, studentID As String, firstname As String, lastname As String, gradelevel As Integer, section As String, number As String)
-        getBorrowerID = borrowerID
-        txtStudentID.Text = studentID
-        txtFirstname.Text = firstname
-        txtLastname.Text = lastname
-        txtSelectedGrade.Text = gradelevel
-        txtSelectedSection.Text = section
-        txtGuardianContact.Text = number
-    End Sub
     Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
         Using connection As MySqlConnection = ConnectionOpen()
             Using command As New MySqlCommand("SELECT a.studentID, a.firstName, a.lastName, g.grade, s.section 
@@ -35,16 +26,15 @@ Public Class frmAddBorrowers
                         txtLastname.Text = reader("lastName").ToString()
                         txtSelectedGrade.Text = reader("grade").ToString()
                         txtSelectedSection.Text = reader("section").ToString()
-
                         txtFirstname.ReadOnly = True
                         txtLastname.ReadOnly = True
-                        txtSelectedGrade.Enabled = False
-                        txtSelectedSection.Enabled = False
                     Else
                         txtFirstname.Text = ""
                         txtLastname.Text = ""
                         txtSelectedGrade.Text = ""
                         txtSelectedSection.Text = ""
+                        txtFirstname.ReadOnly = False
+                        txtLastname.ReadOnly = False
                     End If
                 End Using
             End Using
@@ -86,7 +76,7 @@ Public Class frmAddBorrowers
         AuditTrail($"{txtFirstname.Text} {txtLastname.Text} has been added as borrower.")
     End Sub
 
-    Private Sub AntiDoubleSpace(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtGuardianContact.KeyPress, txtLastname.KeyPress, txtStudentID.KeyPress
+    Private Sub AntiDoubleSpace(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtGuardianContact.KeyPress, txtLastname.KeyPress, txtStudentID.KeyPress, txtSelectedGrade.KeyPress, txtSelectedSection.KeyPress
         If e.KeyChar = " " AndAlso txtFirstname.Text.EndsWith(" ") Then
             e.Handled = True
         ElseIf e.KeyChar = " " AndAlso txtGuardianContact.Text.EndsWith(" ") Then
@@ -97,4 +87,6 @@ Public Class frmAddBorrowers
             e.Handled = True
         End If
     End Sub
+
+
 End Class

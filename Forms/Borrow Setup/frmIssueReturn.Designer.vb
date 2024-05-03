@@ -25,25 +25,14 @@ Partial Class frmIssueReturn
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.tabBorrow = New System.Windows.Forms.TabPage()
         Me.dgBorrowed = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnAddBook = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.tabPullout = New System.Windows.Forms.TabPage()
-        Me.dgPullout = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.borrowID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pullOutFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.penalty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.returnStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.borrowedID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.borrowerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.copyID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,6 +47,18 @@ Partial Class frmIssueReturn
         Me.dateBorrowed = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dueDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.borrowerType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnAddBook = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.tabPullout = New System.Windows.Forms.TabPage()
+        Me.dgPullout = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.borrowID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pulloutID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.title = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pullOutFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.penalty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.returnStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2TabControl1.SuspendLayout()
         Me.tabBorrow.SuspendLayout()
         CType(Me.dgBorrowed, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,155 +167,6 @@ Partial Class frmIssueReturn
         Me.dgBorrowed.ThemeStyle.RowsStyle.Height = 24
         Me.dgBorrowed.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgBorrowed.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.btnAddBook)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1590, 50)
-        Me.Panel1.TabIndex = 3
-        '
-        'btnAddBook
-        '
-        Me.btnAddBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAddBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAddBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAddBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAddBook.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnAddBook.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAddBook.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnAddBook.ForeColor = System.Drawing.Color.White
-        Me.btnAddBook.Location = New System.Drawing.Point(1355, 0)
-        Me.btnAddBook.Name = "btnAddBook"
-        Me.btnAddBook.Size = New System.Drawing.Size(235, 45)
-        Me.btnAddBook.TabIndex = 1
-        Me.btnAddBook.Text = "BORROW"
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 45)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1590, 5)
-        Me.Panel2.TabIndex = 0
-        '
-        'tabPullout
-        '
-        Me.tabPullout.Controls.Add(Me.dgPullout)
-        Me.tabPullout.Location = New System.Drawing.Point(4, 44)
-        Me.tabPullout.Name = "tabPullout"
-        Me.tabPullout.Size = New System.Drawing.Size(1590, 750)
-        Me.tabPullout.TabIndex = 2
-        Me.tabPullout.Text = "Pullout"
-        Me.tabPullout.UseVisualStyleBackColor = True
-        '
-        'dgPullout
-        '
-        Me.dgPullout.AllowUserToAddRows = False
-        Me.dgPullout.AllowUserToDeleteRows = False
-        Me.dgPullout.AllowUserToResizeColumns = False
-        Me.dgPullout.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        Me.dgPullout.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgPullout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgPullout.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
-        Me.dgPullout.ColumnHeadersHeight = 40
-        Me.dgPullout.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowID, Me.DataGridViewTextBoxColumn6, Me.pullOutFullname, Me.status, Me.penalty, Me.returnStatus})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgPullout.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgPullout.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgPullout.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPullout.Location = New System.Drawing.Point(0, 0)
-        Me.dgPullout.MultiSelect = False
-        Me.dgPullout.Name = "dgPullout"
-        Me.dgPullout.RowHeadersVisible = False
-        Me.dgPullout.RowHeadersWidth = 51
-        Me.dgPullout.RowTemplate.Height = 24
-        Me.dgPullout.Size = New System.Drawing.Size(1590, 750)
-        Me.dgPullout.TabIndex = 6
-        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgPullout.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.dgPullout.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPullout.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPullout.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgPullout.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgPullout.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgPullout.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgPullout.ThemeStyle.HeaderStyle.Height = 40
-        Me.dgPullout.ThemeStyle.ReadOnly = False
-        Me.dgPullout.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgPullout.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgPullout.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgPullout.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgPullout.ThemeStyle.RowsStyle.Height = 24
-        Me.dgPullout.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPullout.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'borrowID
-        '
-        Me.borrowID.DataPropertyName = "borrowID"
-        Me.borrowID.HeaderText = "Borrow ID"
-        Me.borrowID.MinimumWidth = 6
-        Me.borrowID.Name = "borrowID"
-        Me.borrowID.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "bookTitle"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Title"
-        Me.DataGridViewTextBoxColumn6.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'pullOutFullname
-        '
-        Me.pullOutFullname.DataPropertyName = "fullName"
-        Me.pullOutFullname.HeaderText = "Borrower"
-        Me.pullOutFullname.MinimumWidth = 6
-        Me.pullOutFullname.Name = "pullOutFullname"
-        Me.pullOutFullname.ReadOnly = True
-        '
-        'status
-        '
-        Me.status.DataPropertyName = "status"
-        Me.status.HeaderText = "Status"
-        Me.status.MinimumWidth = 6
-        Me.status.Name = "status"
-        Me.status.ReadOnly = True
-        '
-        'penalty
-        '
-        Me.penalty.DataPropertyName = "penalty"
-        Me.penalty.HeaderText = "Penalty"
-        Me.penalty.MinimumWidth = 6
-        Me.penalty.Name = "penalty"
-        '
-        'returnStatus
-        '
-        Me.returnStatus.DataPropertyName = "returnStatus"
-        Me.returnStatus.HeaderText = ""
-        Me.returnStatus.MinimumWidth = 6
-        Me.returnStatus.Name = "returnStatus"
         '
         'borrowedID
         '
@@ -440,6 +292,163 @@ Partial Class frmIssueReturn
         Me.borrowerType.Name = "borrowerType"
         Me.borrowerType.ReadOnly = True
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnAddBook)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1590, 50)
+        Me.Panel1.TabIndex = 3
+        '
+        'btnAddBook
+        '
+        Me.btnAddBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAddBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAddBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAddBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAddBook.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnAddBook.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAddBook.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnAddBook.ForeColor = System.Drawing.Color.White
+        Me.btnAddBook.Location = New System.Drawing.Point(1355, 0)
+        Me.btnAddBook.Name = "btnAddBook"
+        Me.btnAddBook.Size = New System.Drawing.Size(235, 45)
+        Me.btnAddBook.TabIndex = 1
+        Me.btnAddBook.Text = "BORROW"
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 45)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1590, 5)
+        Me.Panel2.TabIndex = 0
+        '
+        'tabPullout
+        '
+        Me.tabPullout.Controls.Add(Me.dgPullout)
+        Me.tabPullout.Location = New System.Drawing.Point(4, 44)
+        Me.tabPullout.Name = "tabPullout"
+        Me.tabPullout.Size = New System.Drawing.Size(1590, 750)
+        Me.tabPullout.TabIndex = 2
+        Me.tabPullout.Text = "Pullout"
+        Me.tabPullout.UseVisualStyleBackColor = True
+        '
+        'dgPullout
+        '
+        Me.dgPullout.AllowUserToAddRows = False
+        Me.dgPullout.AllowUserToDeleteRows = False
+        Me.dgPullout.AllowUserToResizeColumns = False
+        Me.dgPullout.AllowUserToResizeRows = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        Me.dgPullout.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgPullout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgPullout.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgPullout.ColumnHeadersHeight = 40
+        Me.dgPullout.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowID, Me.pulloutID, Me.title, Me.pullOutFullname, Me.status, Me.penalty, Me.returnStatus})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgPullout.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgPullout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgPullout.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgPullout.Location = New System.Drawing.Point(0, 0)
+        Me.dgPullout.MultiSelect = False
+        Me.dgPullout.Name = "dgPullout"
+        Me.dgPullout.RowHeadersVisible = False
+        Me.dgPullout.RowHeadersWidth = 51
+        Me.dgPullout.RowTemplate.Height = 24
+        Me.dgPullout.Size = New System.Drawing.Size(1590, 750)
+        Me.dgPullout.TabIndex = 6
+        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.dgPullout.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.dgPullout.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dgPullout.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgPullout.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgPullout.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgPullout.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgPullout.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgPullout.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgPullout.ThemeStyle.HeaderStyle.Height = 40
+        Me.dgPullout.ThemeStyle.ReadOnly = False
+        Me.dgPullout.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgPullout.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgPullout.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgPullout.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgPullout.ThemeStyle.RowsStyle.Height = 24
+        Me.dgPullout.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgPullout.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'borrowID
+        '
+        Me.borrowID.DataPropertyName = "borrowID"
+        Me.borrowID.HeaderText = "Borrow ID"
+        Me.borrowID.MinimumWidth = 6
+        Me.borrowID.Name = "borrowID"
+        Me.borrowID.ReadOnly = True
+        '
+        'pulloutID
+        '
+        Me.pulloutID.DataPropertyName = "pulloutID"
+        Me.pulloutID.HeaderText = "Pullout ID"
+        Me.pulloutID.MinimumWidth = 6
+        Me.pulloutID.Name = "pulloutID"
+        Me.pulloutID.Visible = False
+        '
+        'title
+        '
+        Me.title.DataPropertyName = "bookTitle"
+        Me.title.HeaderText = "Title"
+        Me.title.MinimumWidth = 6
+        Me.title.Name = "title"
+        Me.title.ReadOnly = True
+        '
+        'pullOutFullname
+        '
+        Me.pullOutFullname.DataPropertyName = "fullName"
+        Me.pullOutFullname.HeaderText = "Borrower"
+        Me.pullOutFullname.MinimumWidth = 6
+        Me.pullOutFullname.Name = "pullOutFullname"
+        Me.pullOutFullname.ReadOnly = True
+        '
+        'status
+        '
+        Me.status.DataPropertyName = "status"
+        Me.status.HeaderText = "Status"
+        Me.status.MinimumWidth = 6
+        Me.status.Name = "status"
+        Me.status.ReadOnly = True
+        '
+        'penalty
+        '
+        Me.penalty.DataPropertyName = "penalty"
+        Me.penalty.HeaderText = "Penalty"
+        Me.penalty.MinimumWidth = 6
+        Me.penalty.Name = "penalty"
+        '
+        'returnStatus
+        '
+        Me.returnStatus.DataPropertyName = "returnStatus"
+        Me.returnStatus.HeaderText = ""
+        Me.returnStatus.MinimumWidth = 6
+        Me.returnStatus.Name = "returnStatus"
+        '
         'frmIssueReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -468,12 +477,6 @@ Partial Class frmIssueReturn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgBorrowed As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents dgPullout As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents borrowID As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents pullOutFullname As DataGridViewTextBoxColumn
-    Friend WithEvents status As DataGridViewTextBoxColumn
-    Friend WithEvents penalty As DataGridViewTextBoxColumn
-    Friend WithEvents returnStatus As DataGridViewTextBoxColumn
     Friend WithEvents borrowedID As DataGridViewTextBoxColumn
     Friend WithEvents borrowerID As DataGridViewTextBoxColumn
     Friend WithEvents copyID As DataGridViewTextBoxColumn
@@ -488,4 +491,11 @@ Partial Class frmIssueReturn
     Friend WithEvents dateBorrowed As DataGridViewTextBoxColumn
     Friend WithEvents dueDate As DataGridViewTextBoxColumn
     Friend WithEvents borrowerType As DataGridViewTextBoxColumn
+    Friend WithEvents borrowID As DataGridViewTextBoxColumn
+    Friend WithEvents pulloutID As DataGridViewTextBoxColumn
+    Friend WithEvents title As DataGridViewTextBoxColumn
+    Friend WithEvents pullOutFullname As DataGridViewTextBoxColumn
+    Friend WithEvents status As DataGridViewTextBoxColumn
+    Friend WithEvents penalty As DataGridViewTextBoxColumn
+    Friend WithEvents returnStatus As DataGridViewTextBoxColumn
 End Class

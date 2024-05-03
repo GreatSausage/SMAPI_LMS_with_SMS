@@ -208,7 +208,6 @@ Public Class frmMain
             If smsport IsNot Nothing AndAlso smsport.IsOpen Then
                 smsport.Close()
             End If
-            smsport.Dispose()
         End Try
     End Sub
 

@@ -28,4 +28,20 @@
             frmReturnBooks.Show()
         End If
     End Sub
+
+    Private Sub dgPullout_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPullout.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = dgPullout.Rows(e.RowIndex)
+            Dim borrowID As Integer = Convert.ToInt32(row.Cells("borrowID").Value)
+            Dim title As String = row.Cells("title").Value.ToString
+            Dim fullname As String = row.Cells("pullOutFullname").Value.ToString
+            Dim status As String = row.Cells("status").Value.ToString
+            Dim penalty As Decimal = row.Cells("penalty").Value.ToString
+            Dim returnstatus As String = row.Cells("returnStatus").Value.ToString
+
+            Dim frmPulloutInstance As New frmPullout()
+            frmPulloutInstance.SetSelectedPullout(borrowID, title, fullname, status, penalty)
+            frmPulloutInstance.Show()
+        End If
+    End Sub
 End Class

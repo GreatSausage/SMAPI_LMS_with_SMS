@@ -431,6 +431,9 @@
     <EmbeddedResource Include="Forms\Borrow Setup\frmIssueReturn.resx">
       <DependentUpon>frmIssueReturn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Borrow Setup\frmPullout.resx">
+      <DependentUpon>frmPullout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Borrow Setup\frmReturnBooks.resx">
       <DependentUpon>frmReturnBooks.vb</DependentUpon>
     </EmbeddedResource>

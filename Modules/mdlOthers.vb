@@ -23,27 +23,36 @@ Module mdlOthers
 
     'Public Sub SMSNotif(phoneNumber As String, message As String)
     '    Dim smsport = New SerialPort
+    '    Try
+    '        With smsport
+    '            .PortName = "COM6"
+    '            .BaudRate = 9600
+    '            .DataBits = 8
+    '            .StopBits = StopBits.One
+    '            .Handshake = Handshake.None
+    '            .DtrEnable = True
+    '            .RtsEnable = True
+    '            .NewLine = vbCrLf
 
-    '    With smsport
-    '        .PortName = "COM6"
-    '        .BaudRate = 9600
-    '        .DataBits = 8
-    '        .StopBits = StopBits.One
-    '        .Handshake = Handshake.None
-    '        .DtrEnable = True
-    '        .RtsEnable = True
-    '        .NewLine = vbCrLf
-    'End With
+    '            smsport.Open()
+    '            smsport.WriteLine("AT" & Chr(13))
+    '            Threading.Thread.Sleep(6000)
+    '            smsport.WriteLine("AT+CMGF=1" & Chr(13))
+    '            Threading.Thread.Sleep(6000)
+    '            smsport.WriteLine("AT+CMGS=" & Chr(34) & phoneNumber & Chr(34))
+    '            Threading.Thread.Sleep(6000)
+    '            smsport.WriteLine(message & Chr(26))
+    '            Threading.Thread.Sleep(6000)
+    '        End With
 
-    '    smsport.Open()
-    '    smsport.WriteLine("AT" & Chr(13))
-    '    Threading.Thread.Sleep(6000)
-    '    smsport.WriteLine("AT+CMGF=1" & Chr(13))
-    '    Threading.Thread.Sleep(6000)
-    '    smsport.WriteLine("AT+CMGS=" & Chr(34) & phoneNumber & Chr(34))
-    '    Threading.Thread.Sleep(6000)
-    '    smsport.WriteLine(message & Chr(26))
-    '    Threading.Thread.Sleep(6000)
+    '    Catch ex As Exception
+    '        MessageBox.Show("Logged in successfully")
+    '    Finally
+    '        If smsport IsNot Nothing AndAlso smsport.IsOpen Then
+    '            smsport.Close()
+    '        End If
+    '    End Try
+
     'End Sub
 
 #Region "Sign In"

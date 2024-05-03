@@ -415,16 +415,17 @@ Module mdlBorrowSetup
     Public Function DisplayPullout() As DataTable
         Using connection As MySqlConnection = ConnectionOpen()
             Using command As New MySqlCommand("SELECT p.pulloutID, p.borrowID,
-                                                      b.bookTitle,
-                                                      CONCAT(br.firstName, ' ', br.lastName) AS fullName,
-                                                      p.status,
-                                                      p.penalty,
-                                                      p.returnStatus
-                                               FROM tblPullout p
-                                               JOIN tblBorrowedBooks bb ON p.borrowID = bb.borrowID
-                                               JOIN tblCopies c ON bb.copyID = c.copyID
-                                               JOIN tblBooks b ON c.bookID = b.bookID
-                                               JOIN tblBorrowers br ON bb.borrowerID = br.borrowerID", connection)
+                                                  b.bookTitle,
+                                                  CONCAT(br.firstName, ' ', br.lastName) AS fullName,
+                                                  p.status,
+                                                  p.penalty,
+                                                  p.returnStatus
+                                           FROM tblPullout p
+                                           JOIN tblBorrowedBooks bb ON p.borrowID = bb.borrowID
+                                           JOIN tblCopies c ON bb.copyID = c.copyID
+                                           JOIN tblBooks b ON c.bookID = b.bookID
+                                           JOIN tblBorrowers br ON bb.borrowerID = br.borrowerID
+                                           WHERE p.status = 'Not Paid/Replaced'", connection)
                 Using adapter As New MySqlDataAdapter(command)
                     Dim dt As New DataTable
                     adapter.Fill(dt)
@@ -434,6 +435,19 @@ Module mdlBorrowSetup
         End Using
     End Function
 
+
+    Public Sub UpdatePullout(status As String, borrowID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("UPDATE tblPullout SET status = @status WHERE borrowID = @borrowID", connection)
+                command.Parameters.AddWithValue("@status", status)
+                command.Parameters.AddWithValue("@borrowID", borrowID)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Book has been disposed successfully.")
+                Dim dt As DataTable = DisplayPullout()
+                frmIssueReturn.dgPullout.DataSource = dt
+            End Using
+        End Using
+    End Sub
 
 
 #End Region

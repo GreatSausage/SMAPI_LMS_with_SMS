@@ -64,6 +64,8 @@ Partial Class frmAttendanceMonitoring
         Me.section = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.timeIn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.timeOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btntimeOut = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,6 +194,8 @@ Partial Class frmAttendanceMonitoring
         '
         'Panel10
         '
+        Me.Panel10.Controls.Add(Me.btntimeOut)
+        Me.Panel10.Controls.Add(Me.Panel15)
         Me.Panel10.Controls.Add(Me.btnSave)
         Me.Panel10.Controls.Add(Me.Panel14)
         Me.Panel10.Controls.Add(Me.Panel13)
@@ -564,6 +568,30 @@ Partial Class frmAttendanceMonitoring
         Me.timeOut.Name = "timeOut"
         Me.timeOut.ReadOnly = True
         '
+        'btntimeOut
+        '
+        Me.btntimeOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btntimeOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btntimeOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btntimeOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btntimeOut.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btntimeOut.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btntimeOut.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntimeOut.ForeColor = System.Drawing.Color.White
+        Me.btntimeOut.Location = New System.Drawing.Point(0, 548)
+        Me.btntimeOut.Name = "btntimeOut"
+        Me.btntimeOut.Size = New System.Drawing.Size(305, 44)
+        Me.btntimeOut.TabIndex = 25
+        Me.btntimeOut.Text = "TIME OUT "
+        '
+        'Panel15
+        '
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel15.Location = New System.Drawing.Point(0, 538)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(305, 10)
+        Me.Panel15.TabIndex = 24
+        '
         'frmAttendanceMonitoring
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -629,4 +657,6 @@ Partial Class frmAttendanceMonitoring
     Friend WithEvents section As DataGridViewTextBoxColumn
     Friend WithEvents timeIn As DataGridViewTextBoxColumn
     Friend WithEvents timeOut As DataGridViewTextBoxColumn
+    Friend WithEvents btntimeOut As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel15 As Panel
 End Class

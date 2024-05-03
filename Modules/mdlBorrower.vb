@@ -74,6 +74,10 @@ Module mdlBorrower
         End Try
     End Sub
 
+
+
+
+
     Public Function GetSectionID(section As String) As Integer
         Using connection As MySqlConnection = ConnectionOpen()
             Using command As New MySqlCommand("SELECT sectionID FROM tblSection WHERE section = @section", connection)

@@ -41,6 +41,7 @@ Partial Class frmMain
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panelDisplay = New System.Windows.Forms.Panel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -277,6 +278,9 @@ Partial Class frmMain
         Me.panelDisplay.Size = New System.Drawing.Size(1298, 893)
         Me.panelDisplay.TabIndex = 2
         '
+        'BackgroundWorker1
+        '
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -315,4 +319,5 @@ Partial Class frmMain
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtFullname As Label
     Friend WithEvents txtRoles As Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

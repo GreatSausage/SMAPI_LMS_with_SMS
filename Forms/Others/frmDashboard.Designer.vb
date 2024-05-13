@@ -32,7 +32,6 @@ Partial Class frmDashboard
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.txtStudents = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
@@ -74,6 +73,7 @@ Partial Class frmDashboard
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.txtStudents = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel21.SuspendLayout()
@@ -197,18 +197,6 @@ Partial Class frmDashboard
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(340, 145)
         Me.Panel19.TabIndex = 6
-        '
-        'txtStudents
-        '
-        Me.txtStudents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStudents.ForeColor = System.Drawing.Color.White
-        Me.txtStudents.Location = New System.Drawing.Point(0, 43)
-        Me.txtStudents.Name = "txtStudents"
-        Me.txtStudents.Size = New System.Drawing.Size(340, 102)
-        Me.txtStudents.TabIndex = 3
-        Me.txtStudents.Text = "0"
-        Me.txtStudents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
         '
@@ -635,6 +623,18 @@ Partial Class frmDashboard
         Me.Panel11.Size = New System.Drawing.Size(165, 145)
         Me.Panel11.TabIndex = 1
         '
+        'txtStudents
+        '
+        Me.txtStudents.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStudents.ForeColor = System.Drawing.Color.White
+        Me.txtStudents.Location = New System.Drawing.Point(0, 43)
+        Me.txtStudents.Name = "txtStudents"
+        Me.txtStudents.Size = New System.Drawing.Size(340, 102)
+        Me.txtStudents.TabIndex = 4
+        Me.txtStudents.Text = "0"
+        Me.txtStudents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -677,13 +677,6 @@ Partial Class frmDashboard
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel21 As Panel
-    Friend WithEvents Panel20 As Panel
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents Panel17 As Panel
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Panel15 As Panel
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel13 As Panel
@@ -699,17 +692,8 @@ Partial Class frmDashboard
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Panel27 As Panel
     Friend WithEvents Panel28 As Panel
-    Friend WithEvents Panel33 As Panel
     Friend WithEvents Panel34 As Panel
     Friend WithEvents Panel35 As Panel
-    Friend WithEvents txtBorrowers As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtBooks As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtStudents As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtFaculties As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents txtLost As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents txtDamaged As Label
@@ -718,8 +702,24 @@ Partial Class frmDashboard
     Friend WithEvents Label13 As Label
     Friend WithEvents txtBorrowed As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents txtPenalty As Label
-    Friend WithEvents Label21 As Label
     Friend WithEvents txtOverdueCharges As Label
     Friend WithEvents Label19 As Label
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents txtBooks As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents txtFaculties As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents txtBorrowers As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel33 As Panel
+    Friend WithEvents txtPenalty As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtStudents As Label
 End Class

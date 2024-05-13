@@ -108,22 +108,22 @@ Module mdlBorrowSetup
         End Using
     End Function
 
-    'Public Sub SMSBorrow(borrowerID)
-    '    Using connection As MySqlConnection = ConnectionOpen()
-    '        Using getPhoneNumber As New MySqlCommand("SELECT b.guardianContact, CONCAT(b.firstName, ' ', b.lastName) AS fullName
-    '                          FROM tblBorrowers b
-    '                          WHERE b.borrowerID = @borrowerID", connection)
-    '            getPhoneNumber.Parameters.AddWithValue("@borrowerID", borrowerID)
-    '            Dim reader As MySqlDataReader = getPhoneNumber.ExecuteReader()
+    Public Sub SMSBorrow(borrowerID)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using getPhoneNumber As New MySqlCommand("SELECT b.guardianContact, CONCAT(b.firstName, ' ', b.lastName) AS fullName
+                              FROM tblBorrowers b
+                              WHERE b.borrowerID = @borrowerID", connection)
+                getPhoneNumber.Parameters.AddWithValue("@borrowerID", borrowerID)
+                Dim reader As MySqlDataReader = getPhoneNumber.ExecuteReader()
 
-    '            If reader.Read() Then
-    '                Dim number As String = reader("guardianContact").ToString()
-    '                Dim fullName As String = reader("fullName").ToString()
-    '                SMSNotif(number, $"{fullName} borrowed {frmBorrowBooks.smsMessage} from St. Mark Academy of Primarosa, Inc.")
-    '            End If
-    '        End Using
-    '    End Using
-    'End Sub
+                If reader.Read() Then
+                    Dim number As String = reader("guardianContact").ToString()
+                    Dim fullName As String = reader("fullName").ToString()
+                    SMSNotif(number, $"{fullName} borrowed {frmBorrowBooks.smsMessage} from St. Mark Academy of Primarosa, Inc.")
+                End If
+            End Using
+        End Using
+    End Sub
     Public Sub BorrowBooks(copyID As Integer, borrowerID As Integer)
         Dim dateBorrowed As DateTime = DateTime.Now
         Dim dueDate As DateTime = CalculateDueDate(dateBorrowed)
@@ -237,10 +237,10 @@ Module mdlBorrowSetup
 
             MessageBox.Show("Book has been added to pullout.")
             Dim dtPullout As DataTable = DisplayPullout()
-                frmIssueReturn.dgPullout.DataSource = dtPullout
-                Dim dtBorrowed As DataTable = DisplayBorrowedBooks()
-                frmIssueReturn.dgBorrowed.DataSource = dtBorrowed
-            End Using
+            frmIssueReturn.dgPullout.DataSource = dtPullout
+            Dim dtBorrowed As DataTable = DisplayBorrowedBooks()
+            frmIssueReturn.dgBorrowed.DataSource = dtBorrowed
+        End Using
     End Sub
 
     Public Sub ReturnDamaged(borrowID As Integer, penalty As Decimal)
@@ -410,5 +410,29 @@ Module mdlBorrowSetup
             End Using
         End Using
     End Function
+
+
+    Public Sub CheckOverdueBooks()
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT bb.borrowID, bb.copyID, b.firstName, b.lastName, b.guardianContact, bk.bookTitle, bb.dueDate
+                               FROM tblBorrowedBooks bb
+                               JOIN tblBorrowers b ON bb.borrowerID = b.borrowerID
+                               JOIN tblCopies c ON bb.copyID = c.copyID
+                               JOIN tblBooks bk ON c.bookID = bk.bookID
+                               WHERE DATE(bb.dueDate) < DATE(CURDATE()) And bb.borrowStatus = 'Not Returned'", connection)
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    While reader.Read()
+                        Dim firstName As String = reader("firstName").ToString()
+                        Dim lastName As String = reader("lastName").ToString()
+                        Dim bookTitle As String = reader("bookTitle").ToString()
+                        Dim phoneNumber As String = reader("guardianContact").ToString()
+                        Dim message As String = String.Format("The book that {0} {1} borrowed, '{2}', is now overdue.", firstName, lastName, bookTitle)
+                        SMSNotif(phoneNumber, message)
+                    End While
+                End Using
+            End Using
+        End Using
+    End Sub
+
 #End Region
 End Module

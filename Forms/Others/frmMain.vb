@@ -1,4 +1,6 @@
-﻿Public Class frmMain
+﻿Imports System.ComponentModel
+Imports System.Threading
+Public Class frmMain
     Private Sub frmMain_Resized(sender As Object, e As EventArgs) Handles Me.Resize
         Dim x As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim y As Integer = Screen.PrimaryScreen.Bounds.Height
@@ -40,5 +42,15 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         DisplayFormPanel(frmDashboard, panelDisplay)
+        BackgroundWorker1.RunWorkerAsync()
     End Sub
+
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        Do
+            CheckOverdueBooks()
+            Thread.Sleep(6000)
+        Loop
+    End Sub
+
 End Class

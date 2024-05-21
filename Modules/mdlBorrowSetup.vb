@@ -125,7 +125,7 @@ Module mdlBorrowSetup
     '    End Using
     'End Sub
     Public Sub BorrowBooks(copyID As Integer, borrowerID As Integer)
-        Dim dateBorrowed As DateTime = DateTime.Now
+        Dim dateBorrowed As Date = Date.Now
         Dim dueDate As DateTime = CalculateDueDate(dateBorrowed)
 
         Using connection As MySqlConnection = ConnectionOpen()
@@ -134,8 +134,8 @@ Module mdlBorrowSetup
                 Dim limit As Integer = Convert.ToInt32(checkLimit.ExecuteScalar())
 
                 If limit > 0 Then
-                    Using borrowBook As New MySqlCommand("INSERT INTO tblBorrowedBooks (copyID, borrowerID, dateBorrowed, dueDate, borrowStatus) 
-                                                          VALUES (@copyID, @borrowerID, @dateBorrowed, @dueDate, 'Not Returned')", connection)
+                    Using borrowBook As New MySqlCommand("INSERT INTO tblBorrowedBooks (copyID, borrowerID, dateBorrowed, dueDate, borrowStatus, smsSent) 
+                                                          VALUES (@copyID, @borrowerID, @dateBorrowed, @dueDate, 'Not Returned', 'False')", connection)
                         borrowBook.Parameters.AddWithValue("@copyID", copyID)
                         borrowBook.Parameters.AddWithValue("@borrowerID", borrowerID)
                         borrowBook.Parameters.AddWithValue("@dateBorrowed", dateBorrowed)

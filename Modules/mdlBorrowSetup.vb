@@ -127,6 +127,7 @@ Module mdlBorrowSetup
     Public Sub BorrowBooks(copyID As Integer, borrowerID As Integer)
         Dim dateBorrowed As Date = Date.Now
         Dim dueDate As DateTime = CalculateDueDate(dateBorrowed)
+        Dim instantLostDate As DateTime = CalculateInstantLost(dateBorrowed)
 
         Using connection As MySqlConnection = ConnectionOpen()
             Using checkLimit As New MySqlCommand("SELECT borrowLimit FROM tblBorrowers WHERE borrowerID = @borrowerID", connection)
@@ -134,12 +135,13 @@ Module mdlBorrowSetup
                 Dim limit As Integer = Convert.ToInt32(checkLimit.ExecuteScalar())
 
                 If limit > 0 Then
-                    Using borrowBook As New MySqlCommand("INSERT INTO tblBorrowedBooks (copyID, borrowerID, dateBorrowed, dueDate, borrowStatus, smsSent) 
-                                                          VALUES (@copyID, @borrowerID, @dateBorrowed, @dueDate, 'Not Returned', 'False')", connection)
+                    Using borrowBook As New MySqlCommand("INSERT INTO tblBorrowedBooks (copyID, borrowerID, dateBorrowed, dueDate, borrowStatus, dayBeforeDue, dueDateNow, afterDueDate, instantLost, smsInstantLost) 
+                                                          VALUES (@copyID, @borrowerID, @dateBorrowed, @dueDate, 'Not Returned', 'False', 'False', 'False', @instantLost, 'False')", connection)
                         borrowBook.Parameters.AddWithValue("@copyID", copyID)
                         borrowBook.Parameters.AddWithValue("@borrowerID", borrowerID)
                         borrowBook.Parameters.AddWithValue("@dateBorrowed", dateBorrowed)
                         borrowBook.Parameters.AddWithValue("@dueDate", dueDate)
+                        borrowBook.Parameters.AddWithValue("@instantLost", instantLostDate)
                         borrowBook.ExecuteNonQuery()
                     End Using
 
@@ -172,6 +174,19 @@ Module mdlBorrowSetup
         End While
         Return dueDate
     End Function
+
+    Public Function CalculateInstantLost(dateBorrowed As DateTime) As DateTime
+        Dim dueDate As DateTime = CalculateDueDate(dateBorrowed) ' Calculate the due date excluding weekends
+
+        ' Add 7 days excluding weekends
+        Dim instantLostDate As DateTime = dueDate.AddDays(9)
+        While instantLostDate.DayOfWeek = DayOfWeek.Saturday OrElse instantLostDate.DayOfWeek = DayOfWeek.Sunday
+            instantLostDate = instantLostDate.AddDays(1)
+        End While
+
+        Return instantLostDate
+    End Function
+
 
     Public Function DisplayBorrowedBooks() As DataTable
         Using connection As MySqlConnection = ConnectionOpen()

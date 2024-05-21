@@ -9,14 +9,22 @@ Public Class Form1
 
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        If String.IsNullOrEmpty(txtUsernameSignIn.Text) OrElse
-           String.IsNullOrEmpty(txtPasswordSignIn.Text) Then
+        If String.IsNullOrEmpty(txtUsernameSignIn.Text) OrElse String.IsNullOrEmpty(txtPasswordSignIn.Text) Then
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
+            ' Perform login operation
             Login(txtUsernameSignIn.Text, txtPasswordSignIn.Text)
-            AuditTrail($"{frmMain.txtFullname.Text} has logged in.")
+
+            ' Start BackgroundWorker if not already running
+            If Not frmMain.BackgroundWorker1.IsBusy Then
+                frmMain.BackgroundWorker1.RunWorkerAsync()
+                AuditTrail($"{frmMain.txtFullname.Text} has logged in.")
+            End If
         End If
     End Sub
+
+
+
     Private Sub btnSave_Click_1(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim server As String = txtServer.Text.Trim

@@ -45,6 +45,8 @@ Partial Class frmIssueReturn
         Me.penalty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.returnStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.borrowedID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.borrowerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.copyID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.acquisitionType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.acn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -123,7 +125,7 @@ Partial Class frmIssueReturn
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgBorrowed.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgBorrowed.ColumnHeadersHeight = 40
-        Me.dgBorrowed.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowedID, Me.acquisitionType, Me.acn, Me.ISBN, Me.firstName, Me.lastName, Me.studentID, Me.bookTitle, Me.authorName, Me.dateBorrowed, Me.dueDate, Me.borrowerType})
+        Me.dgBorrowed.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.borrowedID, Me.borrowerID, Me.copyID, Me.acquisitionType, Me.acn, Me.ISBN, Me.firstName, Me.lastName, Me.studentID, Me.bookTitle, Me.authorName, Me.dateBorrowed, Me.dueDate, Me.borrowerType})
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -323,6 +325,24 @@ Partial Class frmIssueReturn
         Me.borrowedID.ReadOnly = True
         Me.borrowedID.Visible = False
         '
+        'borrowerID
+        '
+        Me.borrowerID.DataPropertyName = "borrowerID"
+        Me.borrowerID.HeaderText = "Borrower ID"
+        Me.borrowerID.MinimumWidth = 6
+        Me.borrowerID.Name = "borrowerID"
+        Me.borrowerID.ReadOnly = True
+        Me.borrowerID.Visible = False
+        '
+        'copyID
+        '
+        Me.copyID.DataPropertyName = "copyID"
+        Me.copyID.HeaderText = "Copy ID"
+        Me.copyID.MinimumWidth = 6
+        Me.copyID.Name = "copyID"
+        Me.copyID.ReadOnly = True
+        Me.copyID.Visible = False
+        '
         'acquisitionType
         '
         Me.acquisitionType.DataPropertyName = "acquisitionType"
@@ -455,6 +475,8 @@ Partial Class frmIssueReturn
     Friend WithEvents penalty As DataGridViewTextBoxColumn
     Friend WithEvents returnStatus As DataGridViewTextBoxColumn
     Friend WithEvents borrowedID As DataGridViewTextBoxColumn
+    Friend WithEvents borrowerID As DataGridViewTextBoxColumn
+    Friend WithEvents copyID As DataGridViewTextBoxColumn
     Friend WithEvents acquisitionType As DataGridViewTextBoxColumn
     Friend WithEvents acn As DataGridViewTextBoxColumn
     Friend WithEvents ISBN As DataGridViewTextBoxColumn

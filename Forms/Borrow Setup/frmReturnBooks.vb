@@ -22,6 +22,7 @@ Public Class frmReturnBooks
             CalculateInOverdue(getBorrowID, txtPenalty, txtStatus)
             txtStatus.Enabled = False
         End If
+        txtStatus.SelectedItem = "Good Condition"
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -58,6 +59,9 @@ Public Class frmReturnBooks
             ElseIf type = "Donated" Then
                 txtPenalty.Text = GetBookPenalty()
                 txtPenalty.ReadOnly = True
+            ElseIf type = "Initial Copy" Then
+                txtPenalty.Text = GetBookPenalty()
+                txtPenalty.ReadOnly = True
             End If
 
         ElseIf txtStatus.SelectedIndex = 0 Then
@@ -75,5 +79,9 @@ Public Class frmReturnBooks
             End If
 
         End If
+    End Sub
+
+    Private Sub btnClose_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnClose.LinkClicked
+        Me.Close()
     End Sub
 End Class

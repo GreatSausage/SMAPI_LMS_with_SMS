@@ -22,7 +22,7 @@
         getPublisherID = publisherID
     End Sub
 
-    Public Sub SetSelectedBooks(bookID As Integer, isbn As String, title As String, author As String, publisher As String, yearPublished As String, shelfNo As Integer, shelfID As Integer, genreID As Integer)
+    Public Sub SetSelectedBooks(bookID As Integer, isbn As String, title As String, author As String, publisher As String, yearPublished As String, shelfNo As Integer, shelfID As Integer)
         getBookID = bookID
         txtISBN.Text = isbn
         txtTitle.Text = title
@@ -70,6 +70,10 @@
     End Sub
 
     Private Sub txtShelfNo_SelectedValueChanged(sender As Object, e As EventArgs) Handles txtShelfNo.SelectedValueChanged
+        If TypeOf txtShelfNo.SelectedItem Is DataRowView Then
+            Dim drv As DataRowView = DirectCast(txtShelfNo.SelectedItem, DataRowView)
+            getShelfID = Convert.ToInt32(drv.Row("ShelfID"))
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

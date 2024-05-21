@@ -33,6 +33,9 @@ Public Class frmMain
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        'If BackgroundWorker1.IsBusy Then
+        '    BackgroundWorker1.CancelAsync()
+        'End If
         AuditTrail($"{txtFullname.Text} has logged out.")
         Form1.Show()
         Me.Close()
@@ -44,7 +47,6 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         DisplayFormPanel(frmDashboard, panelDisplay)
-        BackgroundWorker1.RunWorkerAsync()
     End Sub
 
 
@@ -63,6 +65,7 @@ Public Class frmMain
             smsport.Open()
 
             Do
+
                 Dim currentDate As Date = Date.Today
 
                 ' Check for books due today
@@ -72,7 +75,7 @@ Public Class frmMain
                                                    JOIN tblBorrowers b ON bb.borrowerID = b.borrowerID 
                                                    JOIN tblCopies c ON bb.copyID = c.copyID 
                                                    JOIN tblBooks bk ON c.bookID = bk.bookID 
-                                                   WHERE DATE(bb.dueDate) = @currentDate AND bb.borrowStatus = 'Not Returned' AND bb.smsSent = 'False'", connection)
+                                                   WHERE DATE(bb.dueDate) = @currentDate AND bb.borrowStatus = 'Not Returned' AND bb.dayBeforeDue = 'True' AND bb.dueDateNow = 'False' AND bb.afterDueDate = 'False' AND bb.smsInstantLost = 'False'", connection)
                         command.Parameters.AddWithValue("@currentDate", currentDate)
                         Using reader As MySqlDataReader = command.ExecuteReader()
                             While reader.Read()
@@ -83,7 +86,7 @@ Public Class frmMain
 
                                 ' Update smsSent to 'True' for the current book
                                 Using updateConnection As MySqlConnection = ConnectionOpen()
-                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET smsSent = 'True' WHERE borrowID = @borrowID", updateConnection)
+                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET dueDateNow = 'True' WHERE borrowID = @borrowID", updateConnection)
                                         updateCommand.Parameters.AddWithValue("@borrowID", reader("borrowID"))
                                         updateCommand.ExecuteNonQuery()
                                     End Using
@@ -104,7 +107,7 @@ Public Class frmMain
                                                    JOIN tblBorrowers b ON bb.borrowerID = b.borrowerID 
                                                    JOIN tblCopies c ON bb.copyID = c.copyID 
                                                    JOIN tblBooks bk ON c.bookID = bk.bookID 
-                                                   WHERE DATE(bb.dueDate) = @tomorrowDate AND bb.borrowStatus = 'Not Returned' AND bb.smsSent = 'False'", connection)
+                                                   WHERE DATE(bb.dueDate) = @tomorrowDate AND bb.borrowStatus = 'Not Returned' AND bb.dayBeforeDue = 'False' AND bb.dueDateNow = 'False' AND bb.afterDueDate = 'False' AND bb.smsInstantLost = 'False'", connection)
                         command.Parameters.AddWithValue("@tomorrowDate", tomorrowDate)
                         Using reader As MySqlDataReader = command.ExecuteReader()
                             While reader.Read()
@@ -115,13 +118,73 @@ Public Class frmMain
 
                                 ' Update smsSent to 'True' for the current book
                                 Using updateConnection As MySqlConnection = ConnectionOpen()
-                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET smsSent = 'True' WHERE borrowID = @borrowID", updateConnection)
+                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET dayBeforeDue = 'True' WHERE borrowID = @borrowID", updateConnection)
                                         updateCommand.Parameters.AddWithValue("@borrowID", reader("borrowID"))
                                         updateCommand.ExecuteNonQuery()
                                     End Using
                                 End Using
 
                                 Dim message As String = String.Format("Dear {0} {1} from St. Mark Academy of Primarosa, Inc., we kindly remind you that the book '{2}' you borrowed is due tomorrow. Please return it as soon as possible to avoid any inconvenience. Thank you.", firstName, lastName, bookTitle)
+                                SMSNotifs(smsport, phoneNumber, message)
+                            End While
+                        End Using
+                    End Using
+                End Using
+
+                ' Check for books that are 1 day overdue
+                Using connection As MySqlConnection = ConnectionOpen()
+                    Using command As New MySqlCommand("SELECT bb.borrowID, bb.copyID, b.firstName, b.lastName, b.guardianContact, bk.bookTitle, bb.dueDate 
+                                       FROM tblBorrowedBooks bb 
+                                       JOIN tblBorrowers b ON bb.borrowerID = b.borrowerID 
+                                       JOIN tblCopies c ON bb.copyID = c.copyID 
+                                       JOIN tblBooks bk ON c.bookID = bk.bookID 
+                                       WHERE DATEDIFF(CURDATE(), bb.dueDate) = 1 AND bb.borrowStatus = 'Not Returned' AND bb.dayBeforeDue = 'True' AND bb.dueDateNow = 'True' AND bb.afterDueDate = 'False' AND bb.smsInstantLost = 'False'", connection)
+                        Using reader As MySqlDataReader = command.ExecuteReader()
+                            While reader.Read()
+                                Dim firstName As String = reader("firstName").ToString()
+                                Dim lastName As String = reader("lastName").ToString()
+                                Dim bookTitle As String = reader("bookTitle").ToString()
+                                Dim phoneNumber As String = reader("guardianContact").ToString()
+
+                                ' Update afterDueDate to 'True' for the current book
+                                Using updateConnection As MySqlConnection = ConnectionOpen()
+                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET afterDueDate = 'True' WHERE borrowID = @borrowID", updateConnection)
+                                        updateCommand.Parameters.AddWithValue("@borrowID", reader("borrowID"))
+                                        updateCommand.ExecuteNonQuery()
+                                    End Using
+                                End Using
+
+                                Dim message As String = String.Format("Dear {0} {1} from St. Mark Academy of Primarosa, Inc., we kindly remind you that the book '{2}' you borrowed is now 1 day overdue. Please return it as soon as possible to avoid any inconvenience. Thank you.", firstName, lastName, bookTitle)
+                                SMSNotifs(smsport, phoneNumber, message)
+                            End While
+                        End Using
+                    End Using
+                End Using
+
+                ' Check for books that are instantly lost
+                Using connection As MySqlConnection = ConnectionOpen()
+                    Using command As New MySqlCommand("SELECT bb.borrowID, bb.copyID, b.firstName, b.lastName, b.guardianContact, bk.bookTitle, bb.instantLost
+                                       FROM tblBorrowedBooks bb 
+                                       JOIN tblBorrowers b ON bb.borrowerID = b.borrowerID 
+                                       JOIN tblCopies c ON bb.copyID = c.copyID 
+                                       JOIN tblBooks bk ON c.bookID = bk.bookID 
+                                       WHERE DATE(bb.instantLost) = CURDATE() AND bb.borrowStatus = 'Not Returned' AND bb.dayBeforeDue = 'True' AND bb.dueDateNow = 'True' AND bb.afterDueDate = 'True' AND bb.smsInstantLost = 'False'", connection)
+                        Using reader As MySqlDataReader = command.ExecuteReader()
+                            While reader.Read()
+                                Dim firstName As String = reader("firstName").ToString()
+                                Dim lastName As String = reader("lastName").ToString()
+                                Dim bookTitle As String = reader("bookTitle").ToString()
+                                Dim phoneNumber As String = reader("guardianContact").ToString()
+
+                                ' Update smsInstantLost to 'True' for the current book
+                                Using updateConnection As MySqlConnection = ConnectionOpen()
+                                    Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET smsInstantLost = 'True' WHERE borrowID = @borrowID", updateConnection)
+                                        updateCommand.Parameters.AddWithValue("@borrowID", reader("borrowID"))
+                                        updateCommand.ExecuteNonQuery()
+                                    End Using
+                                End Using
+
+                                Dim message As String = String.Format("Dear {0} {1} from St. Mark Academy of Primarosa, Inc., we regret to inform you that the book '{2}' you borrowed is now considered lost. Please contact the library for further instructions on how to settle the lost book fee. Thank you.", firstName, lastName, bookTitle)
                                 SMSNotifs(smsport, phoneNumber, message)
                             End While
                         End Using

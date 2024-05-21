@@ -59,37 +59,37 @@ Module mdlBookInventory
         Dim capitalizedTitle As String = textInfo.ToTitleCase(title.ToLower())
 
         Using connection As MySqlConnection = ConnectionOpen()
-
             Using checkCommand As New MySqlCommand("SELECT COUNT(isbn) FROM tblBooks", connection)
                 Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
 
-                If count > 1 AndAlso isbn = "" Then
-                    Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID) 
-                                                   VALUES (@title, @isbn, @authorID, @publisherID, @yearPublished, @shelfID);
-                                                   SELECT LAST_INSERT_ID();", connection)
-                        With command.Parameters
-                            .AddWithValue("@title", capitalizedTitle)
-                            .AddWithValue("@isbn", isbn)
-                            .AddWithValue("@authorID", authorID)
-                            .AddWithValue("@publisherID", publisherID)
-                            .AddWithValue("@yearPublished", yearPublished)
-                            .AddWithValue("@shelfID", shelfID)
-                        End With
-                        Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
-                        MessageBox.Show("Book has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Dim dtBooks As DataTable = DisplayBooks()
-                        frmBookInventory.dgBooksMainte.DataSource = dtBooks
-                        Dim dtCopies As DataTable = DisplayCopies()
-                        frmBookInventory.dgCopies.DataSource = dtCopies
-                        Return bookID
-                    End Using
-                ElseIf count > 1 AndAlso Not String.IsNullOrEmpty(isbn) Then
-                    MessageBox.Show("ISBN already exists.")
+                If count > 0 AndAlso isbn = "" Then
+                    MessageBox.Show("ISBN cannot be empty if there are books with ISBN already.")
+                    Return -1
                 End If
+
+                Using command As New MySqlCommand("INSERT INTO tblBooks (bookTitle, isbn, authorID, publisherID, yearPublished, shelfID) 
+                                               VALUES (@title, @isbn, @authorID, @publisherID, @yearPublished, @shelfID);
+                                               SELECT LAST_INSERT_ID();", connection)
+                    With command.Parameters
+                        .AddWithValue("@title", capitalizedTitle)
+                        .AddWithValue("@isbn", isbn)
+                        .AddWithValue("@authorID", authorID)
+                        .AddWithValue("@publisherID", publisherID)
+                        .AddWithValue("@yearPublished", yearPublished)
+                        .AddWithValue("@shelfID", shelfID)
+                    End With
+                    Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
+                    MessageBox.Show("Book has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim dtBooks As DataTable = DisplayBooks()
+                    frmBookInventory.dgBooksMainte.DataSource = dtBooks
+                    Dim dtCopies As DataTable = DisplayCopies()
+                    frmBookInventory.dgCopies.DataSource = dtCopies
+                    Return bookID
+                End Using
             End Using
-            Return -1
         End Using
     End Function
+
 
 
     Public Function AccessionGenerator() As String

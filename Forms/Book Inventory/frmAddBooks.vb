@@ -39,7 +39,6 @@
                     AuditTrail($"{frmMain.txtFullname.Text} added {txtTitle.Text} with no initial copies.")
                 End If
                 Me.Close()
-                getBookID = Nothing
             End If
         End If
     End Sub

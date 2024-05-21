@@ -39,6 +39,7 @@ Partial Class frmReturnBooks
         Me.txtPenalty = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtISBN = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtType = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtTitle = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -46,7 +47,7 @@ Partial Class frmReturnBooks
         Me.txtAuthors = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtType = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnClose = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -320,6 +321,29 @@ Partial Class frmReturnBooks
         Me.txtISBN.Size = New System.Drawing.Size(350, 44)
         Me.txtISBN.TabIndex = 10
         '
+        'txtType
+        '
+        Me.txtType.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtType.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtType.DefaultText = ""
+        Me.txtType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtType.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtType.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtType.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtType.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtType.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtType.Location = New System.Drawing.Point(361, 166)
+        Me.txtType.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtType.Name = "txtType"
+        Me.txtType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtType.PlaceholderText = ""
+        Me.txtType.SelectedText = ""
+        Me.txtType.Size = New System.Drawing.Size(348, 44)
+        Me.txtType.TabIndex = 10
+        '
         'txtTitle
         '
         Me.txtTitle.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
@@ -429,28 +453,20 @@ Partial Class frmReturnBooks
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "ISBN:"
         '
-        'txtType
+        'btnClose
         '
-        Me.txtType.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtType.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtType.DefaultText = ""
-        Me.txtType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtType.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtType.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtType.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtType.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtType.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtType.Location = New System.Drawing.Point(361, 166)
-        Me.txtType.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtType.Name = "txtType"
-        Me.txtType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtType.PlaceholderText = ""
-        Me.txtType.SelectedText = ""
-        Me.txtType.Size = New System.Drawing.Size(348, 44)
-        Me.txtType.TabIndex = 10
+        Me.btnClose.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnClose.AutoSize = True
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btnClose.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnClose.Location = New System.Drawing.Point(1013, 9)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(49, 17)
+        Me.btnClose.TabIndex = 41
+        Me.btnClose.TabStop = True
+        Me.btnClose.Text = "[close]"
+        Me.btnClose.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         '
         'frmReturnBooks
         '
@@ -458,6 +474,7 @@ Partial Class frmReturnBooks
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 506)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtLastname)
         Me.Controls.Add(Me.txtFirstname)
@@ -503,4 +520,5 @@ Partial Class frmReturnBooks
     Friend WithEvents Label11 As Label
     Friend WithEvents txtStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents txtType As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnClose As LinkLabel
 End Class

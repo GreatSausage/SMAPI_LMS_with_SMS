@@ -1,8 +1,16 @@
-﻿Imports System.ComponentModel
-Imports System.Threading
+﻿Imports System.Threading
 Imports MySql.Data.MySqlClient
 Imports System.IO.Ports
+Imports System.ComponentModel
+
 Public Class frmMain
+
+    Public Sub New()
+        InitializeComponent()
+        BackgroundWorker1.WorkerSupportsCancellation = True
+    End Sub
+
+
     Private Sub frmMain_Resized(sender As Object, e As EventArgs) Handles Me.Resize
         Dim x As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim y As Integer = Screen.PrimaryScreen.Bounds.Height
@@ -33,13 +41,14 @@ Public Class frmMain
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        'If BackgroundWorker1.IsBusy Then
-        '    BackgroundWorker1.CancelAsync()
-        'End If
+        If BackgroundWorker1.IsBusy Then
+            BackgroundWorker1.CancelAsync()
+        End If
         AuditTrail($"{txtFullname.Text} has logged out.")
         Form1.Show()
         Me.Close()
     End Sub
+
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         DisplayFormPanel(frmReports, panelDisplay)
@@ -51,7 +60,8 @@ Public Class frmMain
 
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        Using smsport As New SerialPort
+        Dim smsport As New SerialPort
+        Try
             With smsport
                 .PortName = "COM6"
                 .BaudRate = 9600
@@ -193,7 +203,14 @@ Public Class frmMain
 
                 Thread.Sleep(30000) ' Sleep for 30 seconds
             Loop
-        End Using
+        Catch ex As Exception
+            MessageBox.Show("Logged in successfully")
+        Finally
+            If smsport IsNot Nothing AndAlso smsport.IsOpen Then
+                smsport.Close()
+            End If
+            smsport.Dispose()
+        End Try
     End Sub
 
     Private Sub SMSNotifs(smsport As SerialPort, phoneNumber As String, message As String)

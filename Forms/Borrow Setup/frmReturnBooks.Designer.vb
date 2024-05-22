@@ -168,6 +168,7 @@ Partial Class frmReturnBooks
         '
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.txtISBN)
         Me.Panel1.Controls.Add(Me.txtType)
         Me.Panel1.Controls.Add(Me.txtTitle)
@@ -187,7 +188,6 @@ Partial Class frmReturnBooks
         '
         Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.txtStatus)
-        Me.Panel2.Controls.Add(Me.btnSave)
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.txtPenalty)
@@ -233,7 +233,7 @@ Partial Class frmReturnBooks
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(717, 93)
+        Me.btnSave.Location = New System.Drawing.Point(724, 156)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(350, 44)
         Me.btnSave.TabIndex = 39

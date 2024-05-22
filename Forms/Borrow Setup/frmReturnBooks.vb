@@ -17,12 +17,13 @@ Public Class frmReturnBooks
     End Sub
 
     Private Sub frmReturnBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtStatus.Items.Remove("Overdue")
         If IsBookOverdue(getBorrowID) Then
             CalculateInOverdue(getBorrowID, txtPenalty, txtStatus)
             txtStatus.Enabled = False
+        Else
+            txtStatus.SelectedItem = "Good Condition"
+            txtStatus.Items.Remove("Overdue")
         End If
-        txtStatus.SelectedItem = "Good Condition"
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -51,7 +52,7 @@ Public Class frmReturnBooks
     End Sub
 
     Private Sub txtStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtStatus.SelectedIndexChanged
-        If txtStatus.SelectedIndex = 1 Then
+        If txtStatus.SelectedIndex = 3 Then
             Dim type As String = GetBookType(txtAcn.Text)
             If type = "Purchased" Then
                 txtPenalty.ReadOnly = True

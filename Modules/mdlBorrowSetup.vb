@@ -330,20 +330,21 @@ Module mdlBorrowSetup
         End Using
     End Function
 
-    Public Sub CalculateInOverdue(borrowID As Integer, textbox As Guna2TextBox, combobox As Guna2ComboBox)
-        Dim currentDate As DateTime = DateTime.Now
-        Dim dueDate As DateTime
+    Public Sub CalculateInOverdue(borrowID As Integer, penalty As Guna2TextBox, status As Guna2ComboBox)
+        Dim currentDate As Date = Date.Now
+        Dim dueDate As Date
         Dim dateBorrowed As DateTime
-
+        Dim instantLost As Date
         Try
             Using connection As MySqlConnection = ConnectionOpen()
-                Using selectCommand As New MySqlCommand("SELECT dueDate, dateBorrowed FROM tblBorrowedBooks WHERE borrowID = @borrowID", connection)
+                Using selectCommand As New MySqlCommand("SELECT dueDate, dateBorrowed, instantLost FROM tblBorrowedBooks WHERE borrowID = @borrowID", connection)
                     selectCommand.Parameters.AddWithValue("@borrowID", borrowID)
 
                     Using reader As MySqlDataReader = selectCommand.ExecuteReader()
                         If reader.Read() Then
-                            dueDate = Convert.ToDateTime(reader("dueDate"))
-                            dateBorrowed = Convert.ToDateTime(reader("dateBorrowed"))
+                            dueDate = reader("dueDate")
+                            dateBorrowed = reader("dateBorrowed")
+                            instantLost = reader("instantLost")
                         End If
                     End Using
                 End Using
@@ -351,20 +352,17 @@ Module mdlBorrowSetup
                 Dim overDue As Integer = (currentDate - dueDate).Days
 
                 If overDue <= 7 Then
-                    MessageBox.Show("this is overdue")
-                    Dim totalPenalty As Integer = overDue * 20
-                    textbox.Text = totalPenalty.ToString()
-                    textbox.ReadOnly = True
-                    combobox.SelectedIndex = 1
-                ElseIf overDue > 7 Then
-                    MessageBox.Show("this is lost")
-                    Dim penalty As Integer = 900
-                    textbox.Text = penalty.ToString()
-                    textbox.ReadOnly = penalty
-                    combobox.SelectedIndex = 2
-                Else
-                    textbox.Text = ""
-                    textbox.ReadOnly = False
+                    MsgBox("this is overdue")
+                    Using getOverdueCommand As New MySqlCommand("SELECT overduePenalty FROM tblMaintenance WHERE id = 1", connection)
+                        Dim overdueCharge As Decimal = Convert.ToDecimal(getOverdueCommand.ExecuteScalar())
+                        Dim totalPenalty As Decimal = overDue * overdueCharge
+                        MsgBox(totalPenalty)
+                        penalty.Text = totalPenalty.ToString
+                        status.SelectedItem = "Overdue"
+                    End Using
+
+                ElseIf currentDate >= instantLost Then
+                    status.SelectedIndex = 3
                 End If
             End Using
         Catch ex As Exception
@@ -374,8 +372,8 @@ Module mdlBorrowSetup
 
 
     Public Function IsBookOverdue(borrowID As Integer) As Boolean
-        Dim currentDate As DateTime = DateTime.Now
-        Dim dueDate As DateTime
+        Dim currentDate As Date = Date.Now
+        Dim dueDate As Date
 
         Try
             Using connection As MySqlConnection = ConnectionOpen()
@@ -385,12 +383,11 @@ Module mdlBorrowSetup
                     Dim reader As MySqlDataReader = selectCommand.ExecuteReader()
 
                     If reader.Read() Then
-                        dueDate = Convert.ToDateTime(reader("dueDate"))
-                        ' Check if the book is overdue
+                        dueDate = reader("dueDate")
                         If currentDate > dueDate Then
                             Return True
                         Else
-                            Return False ' The book is not overdue
+                            Return False
                         End If
                     Else
                         MessageBox.Show("Error: No record found for the given borrowID.")

@@ -21,44 +21,42 @@ Module mdlOthers
         frm.Show()
     End Sub
 
-    'Public Sub SMSNotif(phoneNumber As String, message As String)
-    '    Dim smsport = New SerialPort
-    '    Try
-    '        With smsport
-    '            .PortName = "COM6"
-    '            .BaudRate = 9600
-    '            .DataBits = 8
-    '            .StopBits = StopBits.One
-    '            .Handshake = Handshake.None
-    '            .DtrEnable = True
-    '            .RtsEnable = True
-    '            .NewLine = vbCrLf
+    Public Sub SMSNotif(phoneNumber As String, message As String)
+        Dim smsport = New SerialPort
+        Try
+            With smsport
+                .PortName = "COM6"
+                .BaudRate = 9600
+                .DataBits = 8
+                .StopBits = StopBits.One
+                .Handshake = Handshake.None
+                .DtrEnable = True
+                .RtsEnable = True
+                .NewLine = vbCrLf
 
-    '            smsport.Open()
-    '            smsport.WriteLine("AT" & Chr(13))
-    '            Threading.Thread.Sleep(6000)
-    '            smsport.WriteLine("AT+CMGF=1" & Chr(13))
-    '            Threading.Thread.Sleep(6000)
-    '            smsport.WriteLine("AT+CMGS=" & Chr(34) & phoneNumber & Chr(34))
-    '            Threading.Thread.Sleep(6000)
-    '            smsport.WriteLine(message & Chr(26))
-    '            Threading.Thread.Sleep(6000)
-    '        End With
+                smsport.Open()
+                smsport.WriteLine("AT" & Chr(13))
+                Threading.Thread.Sleep(6000)
+                smsport.WriteLine("AT+CMGF=1" & Chr(13))
+                Threading.Thread.Sleep(6000)
+                smsport.WriteLine("AT+CMGS=" & Chr(34) & phoneNumber & Chr(34))
+                Threading.Thread.Sleep(6000)
+                smsport.WriteLine(message & Chr(26))
+                Threading.Thread.Sleep(6000)
+            End With
 
-    '    Catch ex As Exception
-    '        MessageBox.Show("Logged in successfully")
-    '    Finally
-    '        If smsport IsNot Nothing AndAlso smsport.IsOpen Then
-    '            smsport.Close()
-    '        End If
-    '    End Try
+        Catch ex As Exception
+        Finally
+            If smsport IsNot Nothing AndAlso smsport.IsOpen Then
+                smsport.Close()
+            End If
+        End Try
 
-    'End Sub
+    End Sub
 
 #Region "Sign In"
     Public Sub Login(userName As String, password As String)
         Using connection As MySqlConnection = ConnectionOpen()
-
             Using userCommand As New MySqlCommand("SELECT COUNT(*) FROM tblusers WHERE userName = @userName", connection)
                 userCommand.Parameters.AddWithValue("@userName", userName)
 
@@ -68,25 +66,38 @@ Module mdlOthers
                         Dim dbPassword As String = Convert.ToString(passCommand.ExecuteScalar())
 
                         If dbPassword IsNot Nothing AndAlso dbPassword.Equals(password) Then
-
-                            Using loginCommand As New MySqlCommand("SELECT userName FROM tblUsers WHERE userName = @userName", connection)
-                                loginCommand.Parameters.AddWithValue("@userName", userName)
-                                Dim getUserName As String = Convert.ToString(loginCommand.ExecuteScalar())
-
-                                If getUserName IsNot Nothing AndAlso getUserName.Equals("browsing") Then
-                                    MessageBox.Show("Logged in successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                    frmBrowsing.Show()
-                                    Form1.Close()
-                                ElseIf getUserName IsNot Nothing AndAlso getUserName.Equals("attendance") Then
-                                    MessageBox.Show("Logged in successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                    frmAttendanceMonitoring.Show()
-                                    Form1.Close()
-                                Else
-                                    frmMain.Show()
-                                    Form1.Close()
-                                End If
+                            Using getUserCommand As New MySqlCommand("SELECT * FROM tblUsers WHERE userName = @userName", connection)
+                                getUserCommand.Parameters.AddWithValue("@userName", userName)
+                                Using reader As MySqlDataReader = getUserCommand.ExecuteReader()
+                                    If reader.Read() Then
+                                        frmAccountSettings.txtFirstname.Text = reader("firstName").ToString()
+                                        frmAccountSettings.txtLastname.Text = reader("lastName").ToString()
+                                        frmAccountSettings.txtPhoneNumber.Text = reader("phoneNumber").ToString()
+                                        frmAccountSettings.txtQuestion.Text = reader("securityQuestion").ToString()
+                                        frmAccountSettings.txtAnswer.Text = reader("securityAnswer").ToString()
+                                        frmAccountSettings.txtPassword.Text = reader("password").ToString
+                                        frmAccountSettings.txtStudentID.Text = reader("ID").ToString
+                                        frmAccountSettings.id = reader("userID")
+                                        frmAccountSettings.txtRole.Text = GetRoleName(userName)
+                                        frmAccountSettings.txtUsername.Text = userName
+                                    End If
+                                End Using
                             End Using
 
+                            Dim getUserName As String = Convert.ToString(userName)
+
+                            If getUserName IsNot Nothing AndAlso getUserName.Equals("browsing") Then
+                                MessageBox.Show("Logged in successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                frmBrowsing.Show()
+                                Form1.Close()
+                            ElseIf getUserName IsNot Nothing AndAlso getUserName.Equals("attendance") Then
+                                MessageBox.Show("Logged in successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                frmAttendanceMonitoring.Show()
+                                Form1.Close()
+                            Else
+                                frmMain.Show()
+                                Form1.Close()
+                            End If
                         Else
                             MessageBox.Show("Incorrect Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
@@ -95,19 +106,32 @@ Module mdlOthers
                     MessageBox.Show("Email not exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End Using
-
-            Dim fullname As String = GetFullName(userName)
-            frmMain.txtFullname.Text = fullname
-            Dim role As String = GetRoleName(userName)
-            frmMain.txtRoles.Text = role
-            If role = "Assistant Librarian" Then
-                frmMain.btnMaintenance.Visible = False
-                frmMain.btnReports.Visible = False
-                frmMain.btnBookInventory.Visible = False
-                frmMain.btnAudit.Visible = False
-            End If
         End Using
     End Sub
+
+    Public Sub UpdateAccount(studentID As String, firstName As String, lastName As String, phoneNumber As String, password As String, securityQuestion As String, securityAnswer As String, userID As Integer)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using updateCommand As New MySqlCommand("UPDATE tblUsers SET ID = @id, firstName = @firstName, lastName = @lastName, phoneNumber = @phoneNumber, password = @password, securityQuestion = @securityQuestion, securityAnswer = @securityAnswer WHERE userID = @userID", connection)
+                updateCommand.Parameters.AddWithValue("@firstName", firstName)
+                updateCommand.Parameters.AddWithValue("@lastName", lastName)
+                updateCommand.Parameters.AddWithValue("@phoneNumber", phoneNumber)
+                updateCommand.Parameters.AddWithValue("@password", password)
+                updateCommand.Parameters.AddWithValue("@securityQuestion", securityQuestion)
+                updateCommand.Parameters.AddWithValue("@securityAnswer", securityAnswer)
+                updateCommand.Parameters.AddWithValue("@id", studentID)
+                updateCommand.Parameters.AddWithValue("@userID", userID)
+
+                Dim rowsAffected As Integer = updateCommand.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Account updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Failed to update account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Using
+        End Using
+    End Sub
+
+
 
 #End Region
 
@@ -166,6 +190,18 @@ Module mdlOthers
             End Using
         End Using
     End Sub
+
+    Public Function DisplayAudit() As DataTable
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using command As New MySqlCommand("SELECT * FROM tblAudit", connection)
+                Using adp As New MySqlDataAdapter(command)
+                    Dim dt As New DataTable
+                    adp.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 #End Region
 
 #Region "Dashboard"

@@ -23,7 +23,6 @@ Partial Class frmAddUsers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblUsers = New System.Windows.Forms.Label()
-        Me.btnClose = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtLastname = New Guna.UI2.WinForms.Guna2TextBox()
@@ -43,6 +42,9 @@ Partial Class frmAddUsers
         Me.txtAnswer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'lblUsers
@@ -58,26 +60,11 @@ Partial Class frmAddUsers
         Me.lblUsers.Text = "ADD NEW USER"
         Me.lblUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btnClose
-        '
-        Me.btnClose.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnClose.AutoSize = True
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.btnClose.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.btnClose.LinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnClose.Location = New System.Drawing.Point(690, 9)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(48, 16)
-        Me.btnClose.TabIndex = 1
-        Me.btnClose.TabStop = True
-        Me.btnClose.Text = "[close]"
-        Me.btnClose.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1, 81)
+        Me.Label2.Location = New System.Drawing.Point(1, 153)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 20)
         Me.Label2.TabIndex = 2
@@ -97,7 +84,7 @@ Partial Class frmAddUsers
         Me.txtFirstname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFirstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtFirstname.Location = New System.Drawing.Point(5, 105)
+        Me.txtFirstname.Location = New System.Drawing.Point(5, 177)
         Me.txtFirstname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -120,7 +107,7 @@ Partial Class frmAddUsers
         Me.txtLastname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLastname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtLastname.Location = New System.Drawing.Point(5, 177)
+        Me.txtLastname.Location = New System.Drawing.Point(5, 249)
         Me.txtLastname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -133,7 +120,7 @@ Partial Class frmAddUsers
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(1, 153)
+        Me.Label3.Location = New System.Drawing.Point(1, 225)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 20)
         Me.Label3.TabIndex = 4
@@ -153,7 +140,7 @@ Partial Class frmAddUsers
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtPhoneNumber.Location = New System.Drawing.Point(5, 249)
+        Me.txtPhoneNumber.Location = New System.Drawing.Point(5, 321)
         Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPhoneNumber.MaxLength = 11
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
@@ -167,7 +154,7 @@ Partial Class frmAddUsers
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(1, 225)
+        Me.Label4.Location = New System.Drawing.Point(1, 297)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 20)
         Me.Label4.TabIndex = 6
@@ -187,7 +174,7 @@ Partial Class frmAddUsers
         Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(5, 321)
+        Me.txtUsername.Location = New System.Drawing.Point(5, 393)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -200,7 +187,7 @@ Partial Class frmAddUsers
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1, 297)
+        Me.Label5.Location = New System.Drawing.Point(1, 369)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(78, 20)
         Me.Label5.TabIndex = 8
@@ -276,7 +263,7 @@ Partial Class frmAddUsers
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(1, 369)
+        Me.Label8.Location = New System.Drawing.Point(389, 369)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(42, 20)
         Me.Label8.TabIndex = 14
@@ -295,7 +282,7 @@ Partial Class frmAddUsers
         Me.txtRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.txtRole.ItemHeight = 30
-        Me.txtRole.Location = New System.Drawing.Point(5, 392)
+        Me.txtRole.Location = New System.Drawing.Point(393, 392)
         Me.txtRole.Name = "txtRole"
         Me.txtRole.Size = New System.Drawing.Size(348, 36)
         Me.txtRole.TabIndex = 15
@@ -371,18 +358,68 @@ Partial Class frmAddUsers
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(393, 392)
+        Me.btnSave.Location = New System.Drawing.Point(393, 444)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(350, 44)
         Me.btnSave.TabIndex = 20
         Me.btnSave.Text = "SAVE"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(1, 81)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(27, 20)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "ID:"
+        '
+        'txtID
+        '
+        Me.txtID.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtID.DefaultText = ""
+        Me.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtID.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txtID.Location = New System.Drawing.Point(5, 105)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtID.MaxLength = 6
+        Me.txtID.Name = "txtID"
+        Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtID.PlaceholderText = ""
+        Me.txtID.SelectedText = ""
+        Me.txtID.Size = New System.Drawing.Size(350, 44)
+        Me.txtID.TabIndex = 9
+        '
+        'btnClose
+        '
+        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClose.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.btnClose.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Location = New System.Drawing.Point(5, 444)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(350, 44)
+        Me.btnClose.TabIndex = 20
+        Me.btnClose.Text = "CANCEL"
+        '
         'frmAddUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(750, 445)
+        Me.ClientSize = New System.Drawing.Size(750, 515)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtAnswer)
         Me.Controls.Add(Me.Label10)
@@ -394,7 +431,9 @@ Partial Class frmAddUsers
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtPhoneNumber)
         Me.Controls.Add(Me.Label4)
@@ -402,7 +441,6 @@ Partial Class frmAddUsers
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtFirstname)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lblUsers)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAddUsers"
@@ -413,7 +451,6 @@ Partial Class frmAddUsers
     End Sub
 
     Friend WithEvents lblUsers As Label
-    Friend WithEvents btnClose As LinkLabel
     Friend WithEvents Label2 As Label
     Friend WithEvents txtFirstname As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtLastname As Guna.UI2.WinForms.Guna2TextBox
@@ -433,4 +470,7 @@ Partial Class frmAddUsers
     Friend WithEvents txtAnswer As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
 End Class

@@ -1,7 +1,7 @@
 ﻿
 Public Class frmAddUsers
 
-    Private Sub btnClose_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnClose.LinkClicked
+    Private Sub btnClose_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Me.Close()
     End Sub
 
@@ -9,24 +9,28 @@ Public Class frmAddUsers
         Dim roleID As Integer = txtRole.SelectedValue
         Dim roleName As String = txtRole.Text
         If String.IsNullOrEmpty(txtFirstname.Text) OrElse
-           String.IsNullOrEmpty(txtLastname.Text) OrElse
-           String.IsNullOrEmpty(txtPhoneNumber.Text) OrElse
-           String.IsNullOrEmpty(txtUsername.Text) OrElse
-           String.IsNullOrEmpty(txtPassword.Text) OrElse
-           String.IsNullOrEmpty(txtConfirmPassword.Text) OrElse
-           String.IsNullOrEmpty(txtAnswer.Text) Then
+       String.IsNullOrEmpty(txtLastname.Text) OrElse
+       String.IsNullOrEmpty(txtPhoneNumber.Text) OrElse
+       String.IsNullOrEmpty(txtUsername.Text) OrElse
+       String.IsNullOrEmpty(txtPassword.Text) OrElse
+       String.IsNullOrEmpty(txtConfirmPassword.Text) OrElse
+       String.IsNullOrEmpty(txtID.Text) OrElse
+       String.IsNullOrEmpty(txtAnswer.Text) Then
             MessageBox.Show("Please fill in the necessary fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf txtPassword.Text <> txtConfirmPassword.Text Then
             MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            AddUser(txtFirstname.Text, txtLastname.Text, txtPhoneNumber.Text, txtUsername.Text, txtPassword.Text, txtAnswer.Text, txtQuestions.Text, roleID, roleName)
-            'If txtRole.SelectedItem = "Assistant Librarian" Then
-            '    AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Assistant Librarian.")
-            'ElseIf txtRole.SelectedItem = "Librarian" Then
-            '    AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Librarian.")
-            'End If
+            AddUser(txtFirstname.Text, txtLastname.Text, txtPhoneNumber.Text, txtUsername.Text, txtPassword.Text, txtAnswer.Text, txtQuestions.Text, roleID, roleName, txtID.Text)
+            If roleName = "Assistant Librarian" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Assistant Librarian.")
+            ElseIf roleName = "Librarian" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Librarian.")
+            ElseIf roleName = "Principal" Then
+                AuditTrail($"{frmMain.txtFullname.Text} added {txtFirstname.Text} {txtLastname.Text} as new Principal.")
+            End If
         End If
     End Sub
+
 
     Private Sub frmAddUsers_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim dtRoles As DataTable = DisplayRoles(frmMain.txtRoles.Text)
@@ -37,7 +41,7 @@ Public Class frmAddUsers
         txtQuestions.SelectedIndex = 0
     End Sub
 
-    Private Sub AntiDoubleSpace(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtPhoneNumber.KeyPress, txtUsername.KeyPress, txtPassword.KeyPress, txtAnswer.KeyPress
+    Private Sub AntiDoubleSpace(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtPhoneNumber.KeyPress, txtUsername.KeyPress, txtPassword.KeyPress, txtAnswer.KeyPress, txtID.KeyPress
         If e.KeyChar = " " AndAlso txtFirstname.Text.EndsWith(" ") Then
             e.Handled = True
         ElseIf e.KeyChar = " " AndAlso txtLastname.Text.EndsWith(" ") Then
@@ -65,5 +69,9 @@ Public Class frmAddUsers
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
     End Sub
 End Class

@@ -108,22 +108,22 @@ Module mdlBorrowSetup
         End Using
     End Function
 
-    'Public Sub SMSBorrow(borrowerID)
-    '    Using connection As MySqlConnection = ConnectionOpen()
-    '        Using getPhoneNumber As New MySqlCommand("SELECT b.guardianContact, CONCAT(b.firstName, ' ', b.lastName) AS fullName
-    '                          FROM tblBorrowers b
-    '                          WHERE b.borrowerID = @borrowerID", connection)
-    '            getPhoneNumber.Parameters.AddWithValue("@borrowerID", borrowerID)
-    '            Dim reader As MySqlDataReader = getPhoneNumber.ExecuteReader()
+    Public Sub SMSBorrow(borrowerID)
+        Using connection As MySqlConnection = ConnectionOpen()
+            Using getPhoneNumber As New MySqlCommand("SELECT b.guardianContact, CONCAT(b.firstName, ' ', b.lastName) AS fullName
+                              FROM tblBorrowers b
+                              WHERE b.borrowerID = @borrowerID", connection)
+                getPhoneNumber.Parameters.AddWithValue("@borrowerID", borrowerID)
+                Dim reader As MySqlDataReader = getPhoneNumber.ExecuteReader()
 
-    '            If reader.Read() Then
-    '                Dim number As String = reader("guardianContact").ToString()
-    '                Dim fullName As String = reader("fullName").ToString()
-    '                SMSNotif(number, $"{fullName} borrowed {frmBorrowBooks.smsMessage} from St. Mark Academy of Primarosa, Inc.")
-    '            End If
-    '        End Using
-    '    End Using
-    'End Sub
+                If reader.Read() Then
+                    Dim number As String = reader("guardianContact").ToString()
+                    Dim fullName As String = reader("fullName").ToString()
+                    SMSNotif(number, $"{fullName} borrowed {frmBorrowBooks.smsMessage} from St. Mark Academy of Primarosa, Inc.")
+                End If
+            End Using
+        End Using
+    End Sub
     Public Sub BorrowBooks(copyID As Integer, borrowerID As Integer)
         Dim dateBorrowed As Date = Date.Now
         Dim dueDate As DateTime = CalculateDueDate(dateBorrowed)
@@ -224,7 +224,7 @@ Module mdlBorrowSetup
                 updateAvailability.ExecuteNonQuery()
             End Using
 
-            Using updateBorrowStatus As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Returned' WHERE borrowID = @borrowID", connection)
+            Using updateBorrowStatus As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Returned', dateReturned = NOW() WHERE borrowID = @borrowID", connection)
                 updateBorrowStatus.Parameters.AddWithValue("@borrowID", borrowID)
                 updateBorrowStatus.ExecuteNonQuery()
             End Using
@@ -245,7 +245,7 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Overdue' WHERE borrowID = @borrowID", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Overdue', dateReturned = NOW() WHERE borrowID = @borrowID", connection)
                 updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
@@ -268,7 +268,7 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Damaged' WHERE borrowID = @borrowID", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Damaged', dateReturned = NOW() WHERE borrowID = @borrowID", connection)
                 updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
@@ -291,7 +291,7 @@ Module mdlBorrowSetup
                 insertCommand.ExecuteNonQuery()
             End Using
 
-            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Lost' WHERE borrowID = @borrowID", connection)
+            Using updateCommand As New MySqlCommand("UPDATE tblBorrowedBooks SET borrowStatus = 'Lost', dateReturned = NOW() WHERE borrowID = @borrowID", connection)
                 updateCommand.Parameters.AddWithValue("@borrowID", borrowID)
                 updateCommand.ExecuteNonQuery()
             End Using
@@ -425,7 +425,7 @@ Module mdlBorrowSetup
                                            JOIN tblCopies c ON bb.copyID = c.copyID
                                            JOIN tblBooks b ON c.bookID = b.bookID
                                            JOIN tblBorrowers br ON bb.borrowerID = br.borrowerID
-                                           WHERE p.status = 'Not Paid/Replaced'", connection)
+                                           WHERE p.status = 'Not Paid/Replaced' OR p.status = 'Not Paid'", connection)
                 Using adapter As New MySqlDataAdapter(command)
                     Dim dt As New DataTable
                     adapter.Fill(dt)

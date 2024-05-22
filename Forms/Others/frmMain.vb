@@ -46,6 +46,7 @@ Public Class frmMain
         AuditTrail($"{txtFullname.Text} has logged out.")
         Form1.Show()
         Me.Close()
+        frmAccountSettings.id = Nothing
     End Sub
 
 
@@ -220,5 +221,9 @@ Public Class frmMain
         Threading.Thread.Sleep(1000) ' Wait for modem response
         smsport.WriteLine(message & Chr(26))
         Threading.Thread.Sleep(1000) ' Wait for modem response
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        DisplayFormPanel(frmAccountSettings, panelDisplay)
     End Sub
 End Class

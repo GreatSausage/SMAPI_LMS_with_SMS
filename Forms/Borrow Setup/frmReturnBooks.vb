@@ -42,9 +42,10 @@ Public Class frmReturnBooks
                     If overDue >= 1 AndAlso overDue <= 7 Then
                         Using getOverdueCommand As New MySqlCommand("SELECT overduePenalty FROM tblMaintenance WHERE id = 1", connection)
                             Dim overdueCharge As Decimal = Convert.ToDecimal(getOverdueCommand.ExecuteScalar())
-                            Dim penalty As Decimal = Convert.ToDecimal(overDue) * overdueCharge
+                            Dim penalty As Decimal = overDue * overdueCharge
                             MsgBox(penalty)
-                            txtPenalty.Text = penalty.ToString
+                            txtPenalty.Text = penalty
+                            txtPenalty.ReadOnly = True
                             txtStatus.SelectedItem = "Overdue"
                             txtStatus.Enabled = False
                         End Using
@@ -66,6 +67,7 @@ Public Class frmReturnBooks
             txtStatus.Items.Remove("Overdue")
         End If
     End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
@@ -110,10 +112,9 @@ Public Class frmReturnBooks
                 txtPenalty.ReadOnly = True
             End If
 
-        Else
+        ElseIf txtStatus.SelectedIndex = 0 Then
             txtPenalty.Clear()
             txtPenalty.ReadOnly = False
-
         End If
     End Sub
 

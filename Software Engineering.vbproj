@@ -476,6 +476,9 @@
     <EmbeddedResource Include="Forms\Others\crystal.resx">
       <DependentUpon>crystal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Others\frmAccountSettings.resx">
+      <DependentUpon>frmAccountSettings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Others\frmAttendanceMonitoring.resx">
       <DependentUpon>frmAttendanceMonitoring.vb</DependentUpon>
     </EmbeddedResource>

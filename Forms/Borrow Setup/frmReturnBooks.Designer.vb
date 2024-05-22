@@ -94,6 +94,7 @@ Partial Class frmReturnBooks
         Me.txtStudentID.Name = "txtStudentID"
         Me.txtStudentID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudentID.PlaceholderText = ""
+        Me.txtStudentID.ReadOnly = True
         Me.txtStudentID.SelectedText = ""
         Me.txtStudentID.Size = New System.Drawing.Size(350, 44)
         Me.txtStudentID.TabIndex = 35
@@ -127,6 +128,7 @@ Partial Class frmReturnBooks
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstname.PlaceholderText = ""
+        Me.txtFirstname.ReadOnly = True
         Me.txtFirstname.SelectedText = ""
         Me.txtFirstname.Size = New System.Drawing.Size(350, 44)
         Me.txtFirstname.TabIndex = 35
@@ -160,6 +162,7 @@ Partial Class frmReturnBooks
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastname.PlaceholderText = ""
+        Me.txtLastname.ReadOnly = True
         Me.txtLastname.SelectedText = ""
         Me.txtLastname.Size = New System.Drawing.Size(350, 44)
         Me.txtLastname.TabIndex = 35
@@ -317,6 +320,7 @@ Partial Class frmReturnBooks
         Me.txtISBN.Name = "txtISBN"
         Me.txtISBN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtISBN.PlaceholderText = ""
+        Me.txtISBN.ReadOnly = True
         Me.txtISBN.SelectedText = ""
         Me.txtISBN.Size = New System.Drawing.Size(350, 44)
         Me.txtISBN.TabIndex = 10
@@ -340,6 +344,7 @@ Partial Class frmReturnBooks
         Me.txtType.Name = "txtType"
         Me.txtType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtType.PlaceholderText = ""
+        Me.txtType.ReadOnly = True
         Me.txtType.SelectedText = ""
         Me.txtType.Size = New System.Drawing.Size(348, 44)
         Me.txtType.TabIndex = 10
@@ -363,6 +368,7 @@ Partial Class frmReturnBooks
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTitle.PlaceholderText = ""
+        Me.txtTitle.ReadOnly = True
         Me.txtTitle.SelectedText = ""
         Me.txtTitle.Size = New System.Drawing.Size(348, 44)
         Me.txtTitle.TabIndex = 10
@@ -406,6 +412,7 @@ Partial Class frmReturnBooks
         Me.txtAcn.Name = "txtAcn"
         Me.txtAcn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAcn.PlaceholderText = ""
+        Me.txtAcn.ReadOnly = True
         Me.txtAcn.SelectedText = ""
         Me.txtAcn.Size = New System.Drawing.Size(350, 44)
         Me.txtAcn.TabIndex = 12
@@ -429,6 +436,7 @@ Partial Class frmReturnBooks
         Me.txtAuthors.Name = "txtAuthors"
         Me.txtAuthors.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAuthors.PlaceholderText = ""
+        Me.txtAuthors.ReadOnly = True
         Me.txtAuthors.SelectedText = ""
         Me.txtAuthors.Size = New System.Drawing.Size(350, 44)
         Me.txtAuthors.TabIndex = 12

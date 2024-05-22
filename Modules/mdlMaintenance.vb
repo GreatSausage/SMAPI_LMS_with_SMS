@@ -67,7 +67,7 @@ Module mdlMaintenance
         End Using
     End Function
 
-    Public Sub AddUser(firstName As String, lastName As String, phoneNumber As String, userName As String, password As String, answer As String, question As String, roleID As Integer, roleName As String)
+    Public Sub AddUser(firstName As String, lastName As String, phoneNumber As String, userName As String, password As String, answer As String, question As String, roleID As Integer, roleName As String, id As String)
         Dim cultureInfo As New CultureInfo("en-US")
         Dim textInfo As TextInfo = cultureInfo.TextInfo
         Dim capitalizedFirstName As String = textInfo.ToTitleCase(firstName.ToLower())
@@ -75,8 +75,8 @@ Module mdlMaintenance
 
         Try
             Using connection As MySqlConnection = ConnectionOpen()
-                Using command As New MySqlCommand("INSERT INTO tblUsers(firstName, lastName, phoneNumber, userName, password, securityAnswer, securityQuestion, roleID) 
-                                                 VALUES (@firstName, @lastName, @phoneNumber, @userName, @password, @answer, @question, @roleID)", connection)
+                Using command As New MySqlCommand("INSERT INTO tblUsers(firstName, lastName, phoneNumber, userName, password, securityAnswer, securityQuestion, roleID, ID) 
+                                                 VALUES (@firstName, @lastName, @phoneNumber, @userName, @password, @answer, @question, @roleID, @ID)", connection)
                     With command.Parameters
                         .AddWithValue("@firstName", capitalizedFirstName)
                         .AddWithValue("@lastName", capitalizedLastName)
@@ -86,6 +86,7 @@ Module mdlMaintenance
                         .AddWithValue("@answer", answer)
                         .AddWithValue("@question", question)
                         .AddWithValue("@roleID", roleID)
+                        .AddWithValue("@ID", id)
                     End With
                     command.ExecuteNonQuery()
                     MessageBox.Show($"{capitalizedFirstName} {capitalizedLastName} added as {roleName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -102,9 +103,12 @@ Module mdlMaintenance
                 If ex.Message.Contains("phoneNumber") Then
                     errorMessage &= vbCrLf & "- Phone Number"
                 End If
+                If ex.Message.Contains("ID") Then
+                    errorMessage &= vbCrLf & "- ID"
+                End If
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End Try
 

@@ -49,76 +49,25 @@ Public Class frmBorrowBooks
     Public smsMessage As String = ""
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim smsport As New SerialPort
-        Try
-            If smsport.IsOpen Then
-                MessageBox.Show("The COM port is already open.")
-                Return
-            End If
+        ' Reset smsMessage before adding new titles
+        smsMessage = ""
 
-            With smsport
-                .PortName = "COM6"
-                .BaudRate = 9600
-                .DataBits = 8
-                .StopBits = StopBits.One
-                .Handshake = Handshake.None
-                .DtrEnable = True
-                .RtsEnable = True
-                .NewLine = vbCrLf
-            End With
+        For Each row As DataGridViewRow In dgBooks.Rows
+            Dim title As String = row.Cells("distinctTitle").Value.ToString()
+            smsMessage &= title & ", " ' Concatenate titles with commas
+            Dim accessionNo As String = row.Cells("acnNo").Value.ToString()
+            Dim copyID As Integer = GetCopyIDFunction(accessionNo)
 
-            smsport.Open()
+            BorrowBooks(copyID, getBorrowerID)
+        Next
 
-            If String.IsNullOrEmpty(txtStudentID.Text) OrElse String.IsNullOrEmpty(txtTitle.Text) Then
-                MessageBox.Show("Please fill in the necessary fields.")
-            ElseIf dgBooks.Rows.Cast(Of DataGridViewRow)().Any(Function(row) row.Cells.Cast(Of DataGridViewCell)().Any(Function(cell) Not String.IsNullOrEmpty(cell.Value?.ToString()))) = False Then
-                MessageBox.Show("Please add at least one book.")
-            Else
-                smsMessage = ""
+        ' Remove the trailing comma and space
+        smsMessage = smsMessage.TrimEnd(", ".ToCharArray())
 
-                For Each row As DataGridViewRow In dgBooks.Rows
-                    If Not row.IsNewRow Then
-                        Dim title As String = row.Cells("distinctTitle").Value.ToString()
-                        smsMessage &= title & ", "
-                        Dim accessionNo As String = row.Cells("acnNo").Value.ToString()
-                        Dim copyID As Integer = GetCopyIDFunction(accessionNo)
-
-                        BorrowBooks(copyID, getBorrowerID)
-                    End If
-                Next
-
-                smsMessage = smsMessage.TrimEnd(", ".ToCharArray())
-
-                MessageBox.Show("Book has been borrowed successfully.")
-                AuditTrail($"{txtFirstname.Text} {txtLastname.Text} borrowed {smsMessage}.")
-                Using connection As MySqlConnection = ConnectionOpen()
-                    Using getPhoneNumber As New MySqlCommand("SELECT b.guardianContact, CONCAT(b.firstName, ' ', b.lastName) AS fullName
-                          FROM tblBorrowers b
-                          WHERE b.borrowerID = @borrowerID", connection)
-                        getPhoneNumber.Parameters.AddWithValue("@borrowerID", getBorrowerID)
-                        Dim reader As MySqlDataReader = getPhoneNumber.ExecuteReader()
-
-                        If reader.Read() Then
-                            Dim number As String = reader("guardianContact").ToString()
-                            Dim fullName As String = reader("fullName").ToString()
-                            Dim message As String = $"Dear {fullName}, your child has borrowed the following books: {smsMessage}. Please ensure their return on time. Thank you."
-                            SMSNotifs(smsport, number, message)
-                        End If
-                    End Using
-                End Using
-                Me.Close()
-            End If
-        Catch ex As UnauthorizedAccessException
-            MessageBox.Show("Access to the port 'COM6' is denied.")
-        Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message)
-        Finally
-            If smsport IsNot Nothing AndAlso smsport.IsOpen Then
-                smsport.Close()
-            End If
-        End Try
+        MessageBox.Show("Book has been borrowed successfully.")
+        SMSBorrow(getBorrowerID)
+        Me.Close()
     End Sub
-
     Private Sub SMSNotifs(smsport As SerialPort, phoneNumber As String, message As String)
         smsport.WriteLine("AT" & Chr(13))
         Threading.Thread.Sleep(1000) ' Wait for modem response

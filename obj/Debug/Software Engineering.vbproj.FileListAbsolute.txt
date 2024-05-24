@@ -371,3 +371,4 @@ C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Soft
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.exe
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.xml
 C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.pdb
+C:\Users\Clifford\source\repos\SMAPI-LMS with SMS\Soft_Eng-master\obj\Debug\Software Engineering.vbproj.AssemblyReference.cache
